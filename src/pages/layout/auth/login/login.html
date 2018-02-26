@@ -1,0 +1,41 @@
+<ion-header no-border>
+    <ion-navbar transparent>
+        <button ion-button menuToggle>
+      <ion-icon name="menu" color="light"></ion-icon>
+    </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="masters">
+    <div class="login-container">
+        <img class="logo" src="./assets/1Artboard 7.png" />
+
+        <!--*********** Form ***********-->
+        <form [formGroup]="loginForm" (submit)="login()" novalidate>
+            <ion-item>
+                <ion-label stacked>Email Address:</ion-label>
+                <ion-input tappable color="light" #email type="email" formControlName="email" [class.invalid]="!loginForm.controls.email.valid &&loginForm.controls.email.dirty">
+                </ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Password:</ion-label>
+                <ion-input tappable #password type="password" formControlName="password" [class.invalid]="!loginForm.controls.password.valid &&loginForm.controls.password.dirty">
+                </ion-input>
+            </ion-item>
+            <ion-item class="error-message">
+                <p *ngIf="!loginForm.controls.email.valid  &&
+                loginForm.controls.email.dirty">*Please enter a valid email.</p>
+                <p *ngIf="!loginForm.controls.password.valid  &&
+                loginForm.controls.password.dirty">*Password needs more than 6 characters.</p>
+            </ion-item>
+
+            <div class="submit-box">
+                <button ion-button mode="ios" block icon-left color="light" outline type="submit">Log In</button>
+                <button ion-button type="button" mode="ios" block icon-left color="light" outline (click)="createAccount()" margin-top>
+             Register Profile
+        </button>
+            </div>
+        </form>
+        <button class="bottom" ion-button mode="ios" type="button" block color="light" outline (click)="forgot()" margin-top>Forgot Password?</button>
+    </div>
+</ion-content>

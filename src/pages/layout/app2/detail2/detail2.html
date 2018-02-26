@@ -1,0 +1,199 @@
+<ion-header>
+    <ion-navbar color="black">
+        <ion-title color="light">{{(item | async)?.name}}</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="goToHome()">
+                <ion-icon name="home"></ion-icon>
+            </button>
+            <button ion-button icon-only (click)="openCart()">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge id="cart-badge" *ngIf="(profile4 | async)?.cartIcon" color="red">*</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+    <!--*********** Header with image background  *********** NEED TO CLEAN THIS UP A BIT-->
+
+    <div class="product-header" [ngStyle]="{'background-image': 'url(' + (item | async)?.imgSmall + ')'}">
+        <div *ngIf="(item | async)?.discount" class="ribbon">SALE</div>
+    </div>
+
+    <!--******** ************-->
+    <!--******** Start of the form ************-->
+    <form [formGroup]="orderForm" (ngSubmit)="addToCart()">
+
+        <!--<img scr="'background-image': 'url(' + (item | async)?.imgSmall + ')'}">-->
+        <!--Pricing!!! Here is where you need to do those price conditonals-->
+
+        <div text-center>
+            <h2 ion-text [formControl]=" orderForm.controls['name']" ngDefaultControl>{{(item | async)?.name}}</h2>
+            <!--
+            <h2 *ngIf="!(item | async)?.coffee" ion-text color="special-blue">Price: R {{(item | async)?.price}}</h2>
+            <strong>
+            <p *ngIf="(item | async)?.coffee" ion-text color="special-blue">1kg Price: R {{(item | async)?.retailOne}}</p>
+            <p *ngIf="(item | async)?.coffee" ion-text color="special-blue">Wholesale (4kgs+) Price: R {{(item | async)?.wholesaleOne}}</p>
+            <p *ngIf="(item | async)?.coffee" ion-text color="special-blue">250g Price: R {{(item | async)?.twofifty}}</p>
+        </strong>
+    -->
+        </div>
+
+
+
+        <!--The below here is just for submission purposes-->
+        <!-- <ion-item hidden *ngIf="(item | async)?.coffee">
+            <ion-label floating>Dynamic Pricing:</ion-label>
+            <ion-input type="text" value="{{dynamicPrice}}" [formControl]="orderForm.controls['dynamicPrice']">{{dynamicPrice}}</ion-input>
+            <hr>
+        </ion-item> -->
+        <div text-center>
+            <h3 padding>
+                Current Price (ZAR):
+                <ion-item *ngIf="dynamicPrice" no-lines text-center>
+                    <b>{{dynamicPrice}}</b>
+                </ion-item>
+                <!--This here is after you have already selcted the option-->
+                <ion-input type="text" value="{{(item | async)?.price}}" [formControl]="orderForm.controls['price']" *ngIf="!dynamicPrice" text-center><b>{{(item | async)?.price}}</b></ion-input>
+            </h3>
+        </div>
+        <!-- So the standard price displayed is retailOne. Let's now try and make it change to twofifty. -->
+
+        <!--*********** Detail ( Description,Color,Size)  ***********-->
+        <ion-card>
+            <ion-card-content>
+                <div class="description" padding>
+                    <div [innerHTML]="(item | async)?.description"></div>
+                    <!--<p>{{(item | async)?.description}}</p> -->
+                </div>
+
+                <ion-list no-lines margin-top>
+
+                    <!--Coffee Options-->
+
+                    <ion-item hidden>
+                        <ion-label floating>Product Name:</ion-label>
+                        <ion-input type="text" value="{{(item | async)?.name}}" [formControl]="orderForm.controls['name']">{{(item | async)?.name}}</ion-input>
+                        <hr>
+                    </ion-item>
+
+                    <hr>
+
+                    <ion-item hidden>
+                        <ion-label floating>Coffee True?</ion-label>
+                        <ion-input type="text" value="{{(item | async)?.coffee}}" [formControl]="orderForm.controls['coffee']">{{(item | async)?.coffee}}</ion-input>
+                        <hr>
+                    </ion-item>
+
+                    <ion-item hidden>
+                        <ion-label floating>dripFilterCustom True?</ion-label>
+                        <ion-input type="text" value="{{(item | async)?.dripFilterCustom}}" [formControl]="orderForm.controls['dripFilterCustom']">{{(item | async)?.dripFilterCustom}}</ion-input>
+                        <hr>
+                    </ion-item>
+
+                    <ion-item hidden>
+                        <ion-label floating>emptyDripFiltersCustom True?</ion-label>
+                        <ion-input type="text" value="{{(item | async)?.emptyDripFiltersCustom}}" [formControl]="orderForm.controls['emptyDripFiltersCustom']">{{(item | async)?.emptyDripFiltersCustom}}</ion-input>
+                        <hr>
+                    </ion-item>
+
+                    <ion-item hidden>
+                        <ion-label floating>Quantity:</ion-label>
+                        <ion-input type="text" value="{{currentNumber}}" [formControl]="orderForm.controls['Quantity']">
+                            {{currentNumber}}
+                        </ion-input>
+                        <hr>
+                    </ion-item>
+                    <ion-item>
+                        Quantity:&nbsp;&nbsp;
+                        <ion-icon name="remove" (click)="decrement()"></ion-icon>
+                        &nbsp;&nbsp;{{ currentNumber }}&nbsp;&nbsp;
+                        <ion-icon name="add" (click)="increment()"></ion-icon>
+                        <hr>
+                    </ion-item>
+
+                    <ion-list radio-group [formControl]="orderForm.controls['grindType']" *ngIf="(item | async)?.coffee" ngDefaultControl>
+                        <ion-item>
+                            <ion-label>Whole Beans</ion-label>
+                            <ion-radio type="radio" value="Whole Beans"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Ground</ion-label>
+                            <ion-radio value="Ground"></ion-radio>
+                        </ion-item>
+                        <hr>
+                    </ion-list>
+
+                    <ion-list radio-group [formControl]="orderForm.controls['dripFilterCoffee']" *ngIf="(item | async)?.dripFilterCustom" ngDefaultControl>
+                        <ion-label><b>Coffee Type</b></ion-label>
+                        <ion-item>
+                            <ion-label>Estandar</ion-label>
+                            <ion-radio type="radio" value="Estandar" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Estandar")'></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Minimo</ion-label>
+                            <ion-radio value="Minimo" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Minimo")'></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Tanzania</ion-label>
+                            <ion-radio value="Tanzania" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Tanzania")'></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Columbia</ion-label>
+                            <ion-radio value="Columbia" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Columbia")'></ion-radio>
+                        </ion-item>
+                        <hr>
+                    </ion-list>
+
+                    <ion-list radio-group [formControl]="orderForm.controls['emptyDripFilters']" *ngIf="(item | async)?.emptyDripFiltersCustom" ngDefaultControl>
+                        <ion-label><b>Coffee Type</b></ion-label>
+                        <ion-item>
+                            <ion-label>Pack of 25</ion-label>
+                            <ion-radio type="radio" value="Pack of 25" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 25")'></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Pack of 50</ion-label>
+                            <ion-radio value="Pack of 50" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 50")'></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Pack of 100</ion-label>
+                            <ion-radio value="Pack of 100" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 100")'></ion-radio>
+                        </ion-item>
+                        <hr>
+                    </ion-list>
+
+                    <ion-list radio-group [formControl]="orderForm.controls['bagSize']" *ngIf="(item | async)?.coffee" ngDefaultControl>
+                        <ion-item *ngIf="!(item | async)?.singleOrigin">
+                            <ion-label>1kg Bag</ion-label>
+                            <ion-radio type="radio" value="1kg" checked (click)='priceChangeAll(orderForm.value.bagSize, "blend")'></ion-radio>
+                        </ion-item>
+                        <ion-item *ngIf="!(item | async)?.singleOrigin">
+                            <ion-label>250g Bag</ion-label>
+                            <ion-radio value="250g" (click)='priceChangeAll(orderForm.value.bagSize, "blend")'></ion-radio>
+                        </ion-item>
+                        <hr *ngIf="!(item | async)?.singleOrigin">
+                    </ion-list>
+
+                    <ion-list radio-group [formControl]="orderForm.controls['bagSize']" *ngIf="(item | async)?.singleOrigin" ngDefaultControl>
+                        <ion-item>
+                            <ion-label>1kg Bag</ion-label>
+                            <ion-radio type="radio" value="1kg" checked (click)='priceChangeAll(orderForm.value.bagSize, "Single Origin")'></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>250g Bag</ion-label>
+                            <ion-radio value="250g" (click)='priceChangeAll(orderForm.value.bagSize, "Single Origin")'></ion-radio>
+                        </ion-item>
+                        <hr>
+                    </ion-list>
+                </ion-list>
+
+            </ion-card-content>
+
+        </ion-card>
+
+        <div>
+            <button full color="red" type="submit" ion-button>Add To Cart</button>
+        </div>
+    </form>
+</ion-content>

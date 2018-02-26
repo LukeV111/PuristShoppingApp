@@ -1,0 +1,34 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Order Payment</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-label>
+        <h2>Payment Methods</h2>
+        <p><i>The total amount for your order is: <b>(CartValue)</b>.</i></p>
+    </ion-label>
+    <hr>
+    <ion-label>
+        <h3>Pay By Card</h3>
+    </ion-label>
+    <p><i>Payment is processed by PayFast</i></p>
+    <button ion-button outline color="black" (click)="window.open('http://purist.ai', '_system')">Click Here</button>
+    <!-- Insert reference href and interperlate amount here-->
+    <hr>
+    <ion-label>
+        <h2>Pay By Snapscan</h2>
+        <p><i>Enter the amount shown above and close the page when you are done.</i></p>
+    </ion-label>
+    <hr>
+    <ion-label>
+        <h2>7 Day Account</h2>
+        <p><i>Prior Arrangement Required</i></p>
+    </ion-label>
+    <hr>
+</ion-content>

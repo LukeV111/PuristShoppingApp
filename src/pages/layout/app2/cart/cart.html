@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-navbar color="black">
+        <button ion-button menuToggle color="light">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title color="light">Your Cart</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="goToHome()">
+                <ion-icon name="home"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <!--
+    <ion-toolbar color="Black">
+    </ion-toolbar>
+-->
+</ion-header>
+
+<!--
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let item of items">
+            <ion-label>{{item.name}}</ion-label>
+            <ion-item *ngIf="item.coffee" ion-text color="black">Grind Type: {{item.grindType}}</ion-item>
+            <p *ngIf="item.coffee" ion-text color="black"><strong>Bag Size: {{item.bagSize}}</strong></p>
+            <p ion-text color="black"><strong>Quantity: {{item.Quantity}}</strong></p>
+        </ion-item>
+    </ion-list>
+    </ion-content>
+-->
+
+
+<ion-content padding>
+
+    <ion-label>
+        <h2>Review Your Cart</h2>
+    </ion-label>
+    <!--Name Input-->
+    <!--Name Display-->
+    <ion-card *ngFor="let item of items">
+        <ion-card-header>
+            <b>{{item.name}}</b><br>
+        </ion-card-header>
+        <hr>
+        <ion-card-content *ngIf="item.coffee">
+            Grind Type: {{item.grindType}}<br>Bag Size: {{item.bagSize}}
+        </ion-card-content>
+        <ion-card-content *ngIf="item.dripFilterCustom">
+            Coffee Type: {{item.dripFilterCoffee}}<br>
+        </ion-card-content>
+        <ion-card-content *ngIf="item.emptyDripFiltersCustom">
+            Pack Size: {{item.emptyDripFilters}}<br>
+        </ion-card-content>
+        <ion-card-content>
+            Quantity: {{item.Quantity}}
+            <br><b>Price: {{item.dynamicPrice}}</b> (R{{item.uPrice}} x {{item.Quantity}})
+        </ion-card-content>
+
+        <!--Buttons Below -->
+
+        <ion-row>
+            <ion-col>
+                <button ion-button block icon-centr (click)="deleteProduct(item)">
+                    Remove
+      </button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+    <ion-label>
+        <p><strong>Cart Total: R{{cartTotal}}</strong></p>
+    </ion-label>
+    <hr>
+    <!--
+    <ion-item>
+        <ion-label floating>Delivery Address<br>(If we don't have it):</ion-label>
+        <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>
+    </ion-item>
+-->
+    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()">Complete Order</button><br>
+    <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>
+</ion-content>

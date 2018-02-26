@@ -1,0 +1,127 @@
+<ion-header>
+    <ion-navbar color="black">
+        <button ion-button menuToggle color="light">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title color="light">Products</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="goToHome()">
+                <ion-icon name="home"></ion-icon>
+            </button>
+            <button ion-button icon-only (click)="openCart()">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge id="cart-badge" *ngIf="(profile4 | async)?.cartIcon" color="red">*</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <!--
+    <ion-toolbar color="Black">
+    </ion-toolbar>
+-->
+</ion-header>
+<!--
+<ion-content>
+    <ion-card class="cardList" *ngFor="let item of items" (click)="goToDetail(item.$key)" color="gray">
+        <div *ngIf="item.discount" class="ribbon pop-in">SALE</div>
+        <img class="pop-in" src={{item.imgSmall}} />
+        <hr>
+        <ion-card-header>
+            {{item.name}}
+        </ion-card-header>
+        <ion-card-content>
+            <p *ngIf="item.coffee" ion-text color="black"><strong>250g From R {{item.twofifty}}<br>1kg From R {{item.wholesaleOne}}</strong></p>
+            <p *ngIf="!item.coffee" ion-text color="black"><strong>R {{item.price}}</strong></p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+-->
+<ion-content>
+    <ion-list>
+        <ion-item tappable *ngFor="let item of items" (click)="goToDetail(item.$key)">
+            <button>
+                <ion-item no-lines>
+            <ion-thumbnail class="-avatar" item-start>
+                <img src={{item.imgSmall}}>
+            </ion-thumbnail>
+            </ion-item>
+            <ion-item no-lines>
+            <p>{{item.name}}</p>
+            <p *ngIf="item.coffee" ion-text color="black"><strong>- 250g From R {{item.twofifty}}<br>- 1kg From R {{item.retailOne}}</strong></p>
+            <p *ngIf="item.dripFilterCustom" ion-text color="black"><strong>Starting at:</strong></p>
+            <p *ngIf="item.emptyDripFiltersCustom" ion-text color="black"><strong>Starting at:</strong></p>
+            <p *ngIf="!item.coffee" ion-text color="black"><strong>R {{item.price}}</strong></p>
+        </ion-item>
+        </button>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<!--
+<ion-content>
+    <ion-grid>
+        <ion-row wrap>
+            <ion-col col-4>
+                <ion-list *ngFor="let item of items">
+                    <ion-card tappable (click)="goToDetail(item.$key)">
+                        <img src={{item.imgSmall}}/>
+                        <ion-card-content>
+                            <ion-card-title>
+                                {{item.name}}
+                                <hr>
+                            </ion-card-title>
+                            <p *ngIf="item.coffee" ion-text color="black"><strong>- 250g From R {{item.twofifty}}<br>- 1kg From R {{item.retailOne}}</strong></p>
+                            <p *ngIf="item.dripFilterCustom" ion-text color="black"><strong>Starting at:</strong></p>
+                            <p *ngIf="item.emptyDripFiltersCustom" ion-text color="black"><strong>Starting at:</strong></p>
+                            <p *ngIf="!item.coffee" ion-text color="black"><strong>R {{item.price}}</strong></p>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+-->
+<!--
+<ion-content>
+    <ion-grid>
+        <ion-row wrap>
+            <ion-col tappable col-6 *ngFor="let item of items" (click)="goToDetail(item.$key)" color="gray">
+                <ion-card class="cardList">
+                    <img class="pop-in" src={{item.imgSmall}} />
+                    <ion-card-header>
+                        {{item.name}}
+                    </ion-card-header>
+                    <ion-card-content>
+                        <p *ngIf="item.coffee" ion-text color="black"><strong>- 250g From R {{item.twofifty}}<br>- 1kg From R {{item.retailOne}}</strong></p>
+                        <p *ngIf="item.dripFilterCustom" ion-text color="black"><strong>Starting at:</strong></p>
+                        <p *ngIf="item.emptyDripFiltersCustom" ion-text color="black"><strong>Starting at:</strong></p>
+                        <p *ngIf="!item.coffee" ion-text color="black"><strong>R {{item.price}}</strong></p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+-->
+<!--
+<ion-content>
+    <ion-grid>
+        <ion-row wrap>
+            <ion-col tappable col-6 *ngFor="let item of items" (click)="goToDetail(item.$key)" color="gray">
+                <ion-card class="cardList">
+                    <div *ngIf="item.discount" class="ribbon pop-in">SALE</div>
+                    <img class="pop-in" src={{item.imgSmall}} />
+                    <hr>
+                    <ion-card-header>
+                        {{item.name}}
+                    </ion-card-header>
+                    <ion-card-content>
+                        <p *ngIf="item.coffee" ion-text color="black"><strong>250g From R {{item.twofifty}}<br>1kg From R {{item.wholesaleOne}}</strong></p>
+                        <p *ngIf="!item.coffee" ion-text color="black"><strong>R {{item.price}}</strong></p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+-->
