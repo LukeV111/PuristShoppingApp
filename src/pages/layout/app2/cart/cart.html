@@ -3,7 +3,7 @@
         <button ion-button menuToggle color="light">
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title color="light">Your Cart</ion-title>
+        <ion-title color="black">Your Cart</ion-title>
         <ion-buttons right>
             <button ion-button icon-only (click)="goToHome()">
                 <ion-icon name="home"></ion-icon>
@@ -76,6 +76,6 @@
         <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>
     </ion-item>
 -->
-    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()">Complete Order</button><br>
+    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()">Complete Order</button><br>
     <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>
 </ion-content>

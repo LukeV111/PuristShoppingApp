@@ -1,13 +1,13 @@
 webpackJsonp([9],{
 
-/***/ 470:
+/***/ 471:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login__ = __webpack_require__(674);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login__ = __webpack_require__(675);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var LoginPageModule = (function () {
 
 /***/ }),
 
-/***/ 674:
+/***/ 675:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49,9 +49,10 @@ var LoginPageModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_facebook__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_plus__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_data__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_auth_data__ = __webpack_require__(277);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,21 +66,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 //***********  Facebook **************/
 
 //***********  Google plus **************/
 
 
 var LoginPage = (function () {
-    function LoginPage(navCtrl, authData, fb, alertCtrl, loadingCtrl, facebook, googleplus, platform) {
+    function LoginPage(navCtrl, authData, fb, alertCtrl, afAuth, loadingCtrl, facebook, googleplus, platform) {
         this.navCtrl = navCtrl;
         this.authData = authData;
         this.fb = fb;
         this.alertCtrl = alertCtrl;
+        this.afAuth = afAuth;
         this.loadingCtrl = loadingCtrl;
         this.facebook = facebook;
         this.googleplus = googleplus;
         this.platform = platform;
+        this.profileArray = [];
         this.backgroundImage = "./assets/bg1.jpg";
         this.imgLogo = "./assets/medium_150.70391061453px_1202562_easyicon.net.png";
         var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
@@ -88,6 +92,18 @@ var LoginPage = (function () {
             password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(0), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])]
         });
     }
+    LoginPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.afAuth.authState.subscribe(function (userAuth) {
+            if (userAuth) {
+                console.log("auth true!");
+                _this.navCtrl.setRoot('Category2Page');
+            }
+            else {
+                console.log("auth false");
+            }
+        });
+    };
     LoginPage.prototype.login = function () {
         var _this = this;
         if (!this.loginForm.valid) {
@@ -128,13 +144,12 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/layout/auth/login/login.html"*/'<ion-header no-border>\n    <ion-navbar transparent>\n        <button ion-button menuToggle>\n      <ion-icon name="menu" color="light"></ion-icon>\n    </button>\n    </ion-navbar>\n</ion-header>\n\n<ion-content class="masters">\n    <div class="login-container">\n        <img class="logo" src="./assets/1Artboard 7.png" />\n\n        <!--*********** Form ***********-->\n        <form [formGroup]="loginForm" (submit)="login()" novalidate>\n            <ion-item>\n                <ion-label stacked>Email Address:</ion-label>\n                <ion-input tappable color="light" #email type="email" formControlName="email" [class.invalid]="!loginForm.controls.email.valid &&loginForm.controls.email.dirty">\n                </ion-input>\n            </ion-item>\n            <ion-item>\n                <ion-label stacked>Password:</ion-label>\n                <ion-input tappable #password type="password" formControlName="password" [class.invalid]="!loginForm.controls.password.valid &&loginForm.controls.password.dirty">\n                </ion-input>\n            </ion-item>\n            <ion-item class="error-message">\n                <p *ngIf="!loginForm.controls.email.valid  &&\n                loginForm.controls.email.dirty">*Please enter a valid email.</p>\n                <p *ngIf="!loginForm.controls.password.valid  &&\n                loginForm.controls.password.dirty">*Password needs more than 6 characters.</p>\n            </ion-item>\n\n            <div class="submit-box">\n                <button ion-button mode="ios" block icon-left color="light" outline type="submit">Log In</button>\n                <button ion-button type="button" mode="ios" block icon-left color="light" outline (click)="createAccount()" margin-top>\n             Register Profile\n        </button>\n            </div>\n        </form>\n        <button class="bottom" ion-button mode="ios" type="button" block color="light" outline (click)="forgot()" margin-top>Forgot Password?</button>\n    </div>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/layout/auth/login/login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/auth/login/login.html"*/'<ion-header no-border>\n    <ion-navbar transparent>\n        <button ion-button menuToggle>\n      <ion-icon name="menu" color="light"></ion-icon>\n    </button>\n    </ion-navbar>\n</ion-header>\n\n<ion-content class="masters">\n    <div class="login-container">\n        <img class="logo" src="./assets/1Artboard 7.png" />\n\n        <!--*********** Form ***********-->\n        <form [formGroup]="loginForm" (submit)="login()" novalidate>\n            <ion-item>\n                <ion-label stacked>Email Address:</ion-label>\n                <ion-input tappable color="light" #email type="email" formControlName="email" [class.invalid]="!loginForm.controls.email.valid &&loginForm.controls.email.dirty">\n                </ion-input>\n            </ion-item>\n            <ion-item>\n                <ion-label stacked>Password:</ion-label>\n                <ion-input tappable #password type="password" formControlName="password" [class.invalid]="!loginForm.controls.password.valid &&loginForm.controls.password.dirty">\n                </ion-input>\n            </ion-item>\n            <ion-item class="error-message">\n                <p *ngIf="!loginForm.controls.email.valid  &&\n                loginForm.controls.email.dirty">*Please enter a valid email.</p>\n                <p *ngIf="!loginForm.controls.password.valid  &&\n                loginForm.controls.password.dirty">*Password needs more than 6 characters.</p>\n            </ion-item>\n\n            <div class="submit-box">\n                <button ion-button mode="ios" block icon-left color="light" outline type="submit">Log In</button>\n                <button ion-button type="button" mode="ios" block icon-left color="light" outline (click)="createAccount()" margin-top>\n             Register Profile\n        </button>\n            </div>\n        </form>\n        <button class="bottom" ion-button mode="ios" type="button" block color="light" outline (click)="forgot()" margin-top>Forgot Password?</button>\n    </div>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/auth/login/login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__providers_auth_data__["a" /* AuthData */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_facebook__["a" /* Facebook */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_plus__["a" /* GooglePlus */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__providers_auth_data__["a" /* AuthData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_auth_data__["a" /* AuthData */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__["a" /* Facebook */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__["a" /* Facebook */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__["a" /* GooglePlus */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__["a" /* GooglePlus */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */]) === "function" && _j || Object])
     ], LoginPage);
     return LoginPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 }());
 
 //# sourceMappingURL=login.js.map

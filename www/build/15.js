@@ -1,6 +1,6 @@
 webpackJsonp([15],{
 
-/***/ 462:
+/***/ 463:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartPageModule", function() { return CartPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart__ = __webpack_require__(578);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart__ = __webpack_require__(579);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,16 +38,16 @@ var CartPageModule = (function () {
 
 /***/ }),
 
-/***/ 578:
+/***/ 579:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__ = __webpack_require__(277);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -152,6 +152,9 @@ var CartPage = (function () {
     CartPage.prototype.addAddress = function () {
         this.profile2.push(this.address);
     };
+    CartPage.prototype.toAfterCart = function () {
+        this.navCtrl.push('AfterCartPage');
+    };
     CartPage.prototype.completeOrder = function (items) {
         var _this = this;
         this.profile2.push(items).then(function () {
@@ -172,7 +175,7 @@ var CartPage = (function () {
     };
     CartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/layout/app2/cart/cart.html"*/'<ion-header>\n    <ion-navbar color="black">\n        <button ion-button menuToggle color="light">\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title color="light">Your Cart</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n    <!--\n    <ion-toolbar color="Black">\n    </ion-toolbar>\n-->\n</ion-header>\n\n<!--\n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let item of items">\n            <ion-label>{{item.name}}</ion-label>\n            <ion-item *ngIf="item.coffee" ion-text color="black">Grind Type: {{item.grindType}}</ion-item>\n            <p *ngIf="item.coffee" ion-text color="black"><strong>Bag Size: {{item.bagSize}}</strong></p>\n            <p ion-text color="black"><strong>Quantity: {{item.Quantity}}</strong></p>\n        </ion-item>\n    </ion-list>\n    </ion-content>\n-->\n\n\n<ion-content padding>\n\n    <ion-label>\n        <h2>Review Your Cart</h2>\n    </ion-label>\n    <!--Name Input-->\n    <!--Name Display-->\n    <ion-card *ngFor="let item of items">\n        <ion-card-header>\n            <b>{{item.name}}</b><br>\n        </ion-card-header>\n        <hr>\n        <ion-card-content *ngIf="item.coffee">\n            Grind Type: {{item.grindType}}<br>Bag Size: {{item.bagSize}}\n        </ion-card-content>\n        <ion-card-content *ngIf="item.dripFilterCustom">\n            Coffee Type: {{item.dripFilterCoffee}}<br>\n        </ion-card-content>\n        <ion-card-content *ngIf="item.emptyDripFiltersCustom">\n            Pack Size: {{item.emptyDripFilters}}<br>\n        </ion-card-content>\n        <ion-card-content>\n            Quantity: {{item.Quantity}}\n            <br><b>Price: {{item.dynamicPrice}}</b> (R{{item.uPrice}} x {{item.Quantity}})\n        </ion-card-content>\n\n        <!--Buttons Below -->\n\n        <ion-row>\n            <ion-col>\n                <button ion-button block icon-centr (click)="deleteProduct(item)">\n                    Remove\n      </button>\n            </ion-col>\n        </ion-row>\n    </ion-card>\n    <ion-label>\n        <p><strong>Cart Total: R{{cartTotal}}</strong></p>\n    </ion-label>\n    <hr>\n    <!--\n    <ion-item>\n        <ion-label floating>Delivery Address<br>(If we don\'t have it):</ion-label>\n        <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>\n    </ion-item>\n-->\n    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()">Complete Order</button><br>\n    <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/layout/app2/cart/cart.html"*/,
+            selector: 'page-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/cart/cart.html"*/'<ion-header>\n    <ion-navbar color="black">\n        <button ion-button menuToggle color="light">\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title color="black">Your Cart</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n    <!--\n    <ion-toolbar color="Black">\n    </ion-toolbar>\n-->\n</ion-header>\n\n<!--\n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let item of items">\n            <ion-label>{{item.name}}</ion-label>\n            <ion-item *ngIf="item.coffee" ion-text color="black">Grind Type: {{item.grindType}}</ion-item>\n            <p *ngIf="item.coffee" ion-text color="black"><strong>Bag Size: {{item.bagSize}}</strong></p>\n            <p ion-text color="black"><strong>Quantity: {{item.Quantity}}</strong></p>\n        </ion-item>\n    </ion-list>\n    </ion-content>\n-->\n\n\n<ion-content padding>\n\n    <ion-label>\n        <h2>Review Your Cart</h2>\n    </ion-label>\n    <!--Name Input-->\n    <!--Name Display-->\n    <ion-card *ngFor="let item of items">\n        <ion-card-header>\n            <b>{{item.name}}</b><br>\n        </ion-card-header>\n        <hr>\n        <ion-card-content *ngIf="item.coffee">\n            Grind Type: {{item.grindType}}<br>Bag Size: {{item.bagSize}}\n        </ion-card-content>\n        <ion-card-content *ngIf="item.dripFilterCustom">\n            Coffee Type: {{item.dripFilterCoffee}}<br>\n        </ion-card-content>\n        <ion-card-content *ngIf="item.emptyDripFiltersCustom">\n            Pack Size: {{item.emptyDripFilters}}<br>\n        </ion-card-content>\n        <ion-card-content>\n            Quantity: {{item.Quantity}}\n            <br><b>Price: {{item.dynamicPrice}}</b> (R{{item.uPrice}} x {{item.Quantity}})\n        </ion-card-content>\n\n        <!--Buttons Below -->\n\n        <ion-row>\n            <ion-col>\n                <button ion-button block icon-centr (click)="deleteProduct(item)">\n                    Remove\n      </button>\n            </ion-col>\n        </ion-row>\n    </ion-card>\n    <ion-label>\n        <p><strong>Cart Total: R{{cartTotal}}</strong></p>\n    </ion-label>\n    <hr>\n    <!--\n    <ion-item>\n        <ion-label floating>Delivery Address<br>(If we don\'t have it):</ion-label>\n        <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>\n    </ion-item>\n-->\n    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()">Complete Order</button><br>\n    <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/cart/cart.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__["a" /* AuthData */]])
     ], CartPage);

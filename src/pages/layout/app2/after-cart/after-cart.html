@@ -1,6 +1,6 @@
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="black">
         <ion-title>Order Payment</ion-title>
     </ion-navbar>
 
@@ -8,27 +8,37 @@
 
 
 <ion-content padding>
+    <ion-label>
+        <h2>Thank you for your order!</h2>
+        <p><i>The total amount for your order is: <b><br><br>(CartValue)</b>.</i></p>
+    </ion-label>
+
 
     <ion-label>
-        <h2>Payment Methods</h2>
-        <p><i>The total amount for your order is: <b>(CartValue)</b>.</i></p>
+        <u><b>Payment Methods:</b></u>
     </ion-label>
     <hr>
     <ion-label>
-        <h3>Pay By Card</h3>
+        <u><b>Pay By Card</b></u>
     </ion-label>
-    <p><i>Payment is processed by PayFast</i></p>
-    <button ion-button outline color="black" (click)="window.open('http://purist.ai', '_system')">Click Here</button>
+    <i>Payment is processed by PayFast</i>
+    <p></p>
+    <button ion-button outline color="black" (click)="openBrowser()">Click Here To Pay</button>
+    <p></p>
     <!-- Insert reference href and interperlate amount here-->
     <hr>
     <ion-label>
-        <h2>Pay By Snapscan</h2>
-        <p><i>Enter the amount shown above and close the page when you are done.</i></p>
+        <u><b>7 Day Account</b></u>
     </ion-label>
+    <p> <i>Prior Arrangement Required. You may close the page if this applies to you.</i>
+    </p>
+    <hr>
     <hr>
     <ion-label>
-        <h2>7 Day Account</h2>
-        <p><i>Prior Arrangement Required</i></p>
+        <u><b>Pay By Snapscan</b></u>
     </ion-label>
+    <i>Enter the amount shown above and close the page when you are done. We will be notified of your payment.</i>
+    <p></p>
+    <img src="https://puristcoffee.com/wp-content/uploads/2018/02/Purist-Coffee-e1519653336313.png" align="middle">
     <hr>
 </ion-content>

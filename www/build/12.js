@@ -1,6 +1,6 @@
 webpackJsonp([12],{
 
-/***/ 466:
+/***/ 467:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditProductInCartPageModule", function() { return EditProductInCartPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_product_in_cart__ = __webpack_require__(583);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_product_in_cart__ = __webpack_require__(584);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var EditProductInCartPageModule = (function () {
 
 /***/ }),
 
-/***/ 583:
+/***/ 584:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72,7 +72,7 @@ var EditProductInCartPage = (function () {
     };
     EditProductInCartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-edit-product-in-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/layout/app2/edit-product-in-cart/edit-product-in-cart.html"*/'<!--\n  Generated template for the EditProductInCartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>Edit Product</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    Ability to edit the product here.\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/layout/app2/edit-product-in-cart/edit-product-in-cart.html"*/,
+            selector: 'page-edit-product-in-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/edit-product-in-cart/edit-product-in-cart.html"*/'<!--\n  Generated template for the EditProductInCartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar color="black">\n        <ion-title>Edit Product</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    Ability to edit the product here.\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/edit-product-in-cart/edit-product-in-cart.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], EditProductInCartPage);

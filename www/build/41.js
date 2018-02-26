@@ -1,13 +1,13 @@
 webpackJsonp([41],{
 
-/***/ 434:
+/***/ 435:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionPageModule", function() { return AccordionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion__ = __webpack_require__(546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion__ = __webpack_require__(547);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var AccordionPageModule = (function () {
 
 /***/ }),
 
-/***/ 546:
+/***/ 547:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -111,7 +111,7 @@ var AccordionPage = (function () {
     ;
     AccordionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-accordion',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/components/accordion/accordion.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Accordion</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content >\n\n\n  <ion-list>\n    <ion-list-header>\n      Our customers \n    </ion-list-header>\n    <ion-item class="item-align" tappable *ngFor="let list of lists; let i=index" text-wrap (click)="toggleDetail(i)" [ngClass]="{active: isDetailShown(i)}">\n      <ion-avatar item-left>\n          <img src={{list.img}} >\n      </ion-avatar>\n    <!--<ion-thumbnail item-left>\n      <ion-img src="{{list.img}} " padding-bottom></ion-img>\n    </ion-thumbnail>-->\n      <h2> {{list.name}} </h2>\n      <p *ngIf="isDetailShown(i)" margin-top>{{list.detail}}</p>\n       <ion-icon color="gray" item-right [name]="isDetailShown(i) ? \'arrow-dropdown\' : \'arrow-dropright\'"></ion-icon>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/components/accordion/accordion.html"*/
+            selector: 'page-accordion',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/components/accordion/accordion.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Accordion</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content >\n\n\n  <ion-list>\n    <ion-list-header>\n      Our customers \n    </ion-list-header>\n    <ion-item class="item-align" tappable *ngFor="let list of lists; let i=index" text-wrap (click)="toggleDetail(i)" [ngClass]="{active: isDetailShown(i)}">\n      <ion-avatar item-left>\n          <img src={{list.img}} >\n      </ion-avatar>\n    <!--<ion-thumbnail item-left>\n      <ion-img src="{{list.img}} " padding-bottom></ion-img>\n    </ion-thumbnail>-->\n      <h2> {{list.name}} </h2>\n      <p *ngIf="isDetailShown(i)" margin-top>{{list.detail}}</p>\n       <ion-icon color="gray" item-right [name]="isDetailShown(i) ? \'arrow-dropdown\' : \'arrow-dropright\'"></ion-icon>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/components/accordion/accordion.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
     ], AccordionPage);

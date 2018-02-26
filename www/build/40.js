@@ -1,13 +1,13 @@
 webpackJsonp([40],{
 
-/***/ 435:
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionsheetPageModule", function() { return ActionsheetPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actionsheet__ = __webpack_require__(547);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actionsheet__ = __webpack_require__(548);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var ActionsheetPageModule = (function () {
 
 /***/ }),
 
-/***/ 547:
+/***/ 548:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -112,7 +112,7 @@ var ActionsheetPage = (function () {
     };
     ActionsheetPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-actionsheet',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/components/actionsheet/actionsheet.html"*/'\n<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Action Sheets</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding class="action-sheets-basic-page">\n  <button ion-button block color="gray" (click)="openMenu()">\n    Show Action Sheet\n  </button>\n</ion-content>\n<ion-footer color="danger">\n  <ion-toolbar tappable (click)="openMenu()" color="danger"> \n    <ion-title>Show Action Sheet</ion-title>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/components/actionsheet/actionsheet.html"*/
+            selector: 'page-actionsheet',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/components/actionsheet/actionsheet.html"*/'\n<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Action Sheets</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding class="action-sheets-basic-page">\n  <button ion-button block color="gray" (click)="openMenu()">\n    Show Action Sheet\n  </button>\n</ion-content>\n<ion-footer color="danger">\n  <ion-toolbar tappable (click)="openMenu()" color="danger"> \n    <ion-title>Show Action Sheet</ion-title>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/components/actionsheet/actionsheet.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
     ], ActionsheetPage);

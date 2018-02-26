@@ -24,8 +24,9 @@ export class AfterCartPage {
   }
 
 //You're here
-
-browser = this.iab.create('https://ionicframework.com/');
-  create(url, target, options)
-
+  openBrowser() {
+    const browser = this.iab.create('https://ionic.io', '_system');
+    browser.close();
+  }
 }
+

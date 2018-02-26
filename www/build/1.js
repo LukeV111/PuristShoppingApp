@@ -1,15 +1,15 @@
 webpackJsonp([1],{
 
-/***/ 451:
+/***/ 452:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RatingPageModule", function() { return RatingPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rating__ = __webpack_require__(563);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rating__ = __webpack_require__(564);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_rating__ = __webpack_require__(564);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_rating__ = __webpack_require__(565);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -45,7 +45,7 @@ var RatingPageModule = (function () {
 
 /***/ }),
 
-/***/ 511:
+/***/ 512:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -229,7 +229,7 @@ var Ionic2Rating = (function () {
 
 /***/ }),
 
-/***/ 563:
+/***/ 564:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -254,7 +254,7 @@ var RatingPage = (function () {
     }
     RatingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-rating',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/components/rating/rating.html"*/'<ion-header>\n  <ion-navbar color="lightblue">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Rating</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  text-center>\n\n  <h2>Rating</h2>\n    <rating [(ngModel)]="rate" \n      readOnly="true" \n      max="2" \n      emptyStarIconName="star-outline" \n      halfStarIconName="star-half" \n      starIconName="star"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n\n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="5" \n      emptyStarIconName="star-outline" \n      halfStarIconName="star-half" \n      starIconName="star"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n\n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="7" \n      emptyStarIconName="star-outline" \n      halfStarIconName="star-half" \n      starIconName="star"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n\n  <h2>Custom icons</h2>\n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="5" \n      emptyStarIconName="ios-cafe-outline" \n      halfStarIconName="ios-cafe-outline" \n      starIconName="ios-cafe"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="5" \n      emptyStarIconName="ios-woman-outline" \n      halfStarIconName="ios-woman-outline" \n      starIconName="ios-woman"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="5" \n      emptyStarIconName="ios-thumbs-up-outline" \n      halfStarIconName="ios-thumbs-up-outline" \n      starIconName="ios-thumbs-up"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/components/rating/rating.html"*/
+            selector: 'page-rating',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/components/rating/rating.html"*/'<ion-header>\n  <ion-navbar color="lightblue">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Rating</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  text-center>\n\n  <h2>Rating</h2>\n    <rating [(ngModel)]="rate" \n      readOnly="true" \n      max="2" \n      emptyStarIconName="star-outline" \n      halfStarIconName="star-half" \n      starIconName="star"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n\n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="5" \n      emptyStarIconName="star-outline" \n      halfStarIconName="star-half" \n      starIconName="star"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n\n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="7" \n      emptyStarIconName="star-outline" \n      halfStarIconName="star-half" \n      starIconName="star"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n\n  <h2>Custom icons</h2>\n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="5" \n      emptyStarIconName="ios-cafe-outline" \n      halfStarIconName="ios-cafe-outline" \n      starIconName="ios-cafe"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="5" \n      emptyStarIconName="ios-woman-outline" \n      halfStarIconName="ios-woman-outline" \n      starIconName="ios-woman"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n<rating [(ngModel)]="rate" \n      readOnly="true" \n      max="5" \n      emptyStarIconName="ios-thumbs-up-outline" \n      halfStarIconName="ios-thumbs-up-outline" \n      starIconName="ios-thumbs-up"\n      nullable="false"\n      (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->\n</rating>  \n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/components/rating/rating.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
     ], RatingPage);
@@ -265,13 +265,13 @@ var RatingPage = (function () {
 
 /***/ }),
 
-/***/ 564:
+/***/ 565:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic2_rating_module__ = __webpack_require__(565);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic2_rating_module__ = __webpack_require__(566);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__ionic2_rating_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic2_rating__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic2_rating__ = __webpack_require__(512);
 /* unused harmony reexport Ionic2Rating */
 
 
@@ -279,15 +279,15 @@ var RatingPage = (function () {
 
 /***/ }),
 
-/***/ 565:
+/***/ 566:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Ionic2RatingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic2_rating__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic2_rating__ = __webpack_require__(512);
 
 
 

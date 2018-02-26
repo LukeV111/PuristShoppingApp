@@ -1,13 +1,13 @@
 webpackJsonp([6],{
 
-/***/ 473:
+/***/ 474:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profile__ = __webpack_require__(677);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profile__ = __webpack_require__(678);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,15 +41,15 @@ var ProfilePageModule = (function () {
 
 /***/ }),
 
-/***/ 677:
+/***/ 678:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_data__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database_deprecated__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_data__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database_deprecated__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(138);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -153,7 +153,7 @@ var ProfilePage = (function () {
     };
     ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/layout/profile/profile/profile.html"*/'<ion-header no-border>\n    <ion-navbar transparent color="white">\n        <button ion-button menuToggle>\n      <ion-icon name="menu" color="black"></ion-icon>\n    </button>\n    </ion-navbar>\n</ion-header>\n\n<ion-content fullscreen="true" no-padding>\n\n    <div class="profile-box">\n        <div text-center>\n            <!-- <img *ngIf="(profile | async)?.photo" src="{{(profile | async)?.photo}}" class="edit-avatar pop-in" alt="">-->\n            <!--<img *ngIf="!(profile | async)?.photo" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" class="edit-avatar pop-in" alt="">-->\n            <h3 class="name-text">{{(profile | async)?.name}}</h3>\n            <hr>\n        </div>\n    </div>\n\n    <div padding>\n        <ion-list no-lines>\n            <ion-item>\n                <ion-icon name="ios-person" item-left></ion-icon>\n                <p>Name</p>\n                <h2>{{(profile | async)?.name}}</h2>\n            </ion-item>\n            <ion-item>\n                <ion-icon name="ios-mail" item-left></ion-icon>\n                <p>E-mail</p>\n                <h2>{{(profile | async)?.email}}</h2>\n            </ion-item>\n            <ion-item>\n                <ion-icon name="ios-call" item-left></ion-icon>\n                <p>Contact Number</p>\n                <h2>{{(profile | async)?.phone}}</h2>\n            </ion-item>\n        </ion-list>\n\n        <ion-item>\n            <h3>Your Orders</h3>\n        </ion-item>\n\n        <ion-list *ngFor="let item of items">\n            <ion-item>\n                Items\n            </ion-item>\n        </ion-list>\n        <button ion-button block mode="ios" color="black" (click)="logout()">\n          Logout\n        </button>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/Shopping_App/src/pages/layout/profile/profile/profile.html"*/
+            selector: 'page-profile',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/profile/profile/profile.html"*/'<ion-header no-border>\n    <ion-navbar transparent color="white">\n        <button ion-button menuToggle>\n      <ion-icon name="menu" color="black"></ion-icon>\n    </button>\n    </ion-navbar>\n</ion-header>\n\n<ion-content fullscreen="true" no-padding>\n\n    <div class="profile-box">\n        <div text-center>\n            <!-- <img *ngIf="(profile | async)?.photo" src="{{(profile | async)?.photo}}" class="edit-avatar pop-in" alt="">-->\n            <!--<img *ngIf="!(profile | async)?.photo" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" class="edit-avatar pop-in" alt="">-->\n            <h3 class="name-text">{{(profile | async)?.name}}</h3>\n            <hr>\n        </div>\n    </div>\n\n    <div padding>\n        <ion-list no-lines>\n            <ion-item>\n                <ion-icon name="ios-person" item-left></ion-icon>\n                <p>Name</p>\n                <h2>{{(profile | async)?.name}}</h2>\n            </ion-item>\n            <ion-item>\n                <ion-icon name="ios-mail" item-left></ion-icon>\n                <p>E-mail</p>\n                <h2>{{(profile | async)?.email}}</h2>\n            </ion-item>\n            <ion-item>\n                <ion-icon name="ios-call" item-left></ion-icon>\n                <p>Contact Number</p>\n                <h2>{{(profile | async)?.phone}}</h2>\n            </ion-item>\n        </ion-list>\n\n        <ion-item>\n            <h3>Your Orders</h3>\n        </ion-item>\n\n        <ion-list *ngFor="let item of items">\n            <ion-item>\n                Items\n            </ion-item>\n        </ion-list>\n        <button ion-button block mode="ios" color="black" (click)="logout()">\n          Logout\n        </button>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/profile/profile/profile.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_data__["a" /* AuthData */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database_deprecated__["a" /* AngularFireDatabase */]])
     ], ProfilePage);

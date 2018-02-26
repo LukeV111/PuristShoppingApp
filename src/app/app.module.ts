@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 //*********** ionic Native **************/
 import { StatusBar } from '@ionic-native/status-bar';
@@ -53,13 +55,14 @@ export const config = {
   
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp
   ],
   providers: [
+    InAppBrowser,
     StatusBar,
     SplashScreen,
     Geolocation,

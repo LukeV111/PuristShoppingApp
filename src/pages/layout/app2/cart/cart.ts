@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthData } from '../../../../providers/auth-data';
 import * as firebase from 'firebase';
 import { EditProductInCartPage } from '../edit-product-in-cart/edit-product-in-cart';
+import { AfterCartPage } from '../after-cart/after-cart';
 
 
 /**
@@ -127,6 +128,10 @@ export class CartPage {
 
   addAddress() {
     this.profile2.push(this.address);
+  }
+
+  toAfterCart() {
+    this.navCtrl.push('AfterCartPage');
   }
 
   completeOrder(items) {

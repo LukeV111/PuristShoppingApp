@@ -22,171 +22,171 @@ webpackEmptyAsyncContext.id = 148;
 
 var map = {
 	"../pages/components/accordion/accordion.module": [
-		434,
+		435,
 		41
 	],
 	"../pages/components/actionsheet/actionsheet.module": [
-		435,
+		436,
 		40
 	],
 	"../pages/components/alert/alert.module": [
-		436,
+		437,
 		39
 	],
 	"../pages/components/animations/animations.module": [
-		437,
+		438,
 		38
 	],
 	"../pages/components/badge/badge.module": [
-		438,
+		439,
 		37
 	],
 	"../pages/components/button/button.module": [
-		439,
+		440,
 		36
 	],
 	"../pages/components/datetime/datetime.module": [
-		440,
+		441,
 		35
 	],
 	"../pages/components/fab/fab.module": [
-		441,
+		442,
 		34
 	],
 	"../pages/components/fading-header/fading-header.module": [
-		442,
+		443,
 		33
 	],
 	"../pages/components/grid/grid.module": [
-		443,
+		444,
 		32
 	],
 	"../pages/components/header/header.module": [
-		444,
+		445,
 		31
 	],
 	"../pages/components/input/input.module": [
-		445,
+		446,
 		30
 	],
 	"../pages/components/item-sliding/item-sliding.module": [
-		446,
+		447,
 		29
 	],
 	"../pages/components/item/item.module": [
-		447,
+		448,
 		28
 	],
 	"../pages/components/label/label.module": [
-		448,
+		449,
 		27
 	],
 	"../pages/components/radio-button/radio-button.module": [
-		449,
+		450,
 		26
 	],
 	"../pages/components/range/range.module": [
-		450,
+		451,
 		25
 	],
 	"../pages/components/rating/rating.module": [
-		451,
+		452,
 		1
 	],
 	"../pages/components/search-bar/search-bar.module": [
-		452,
+		453,
 		24
 	],
 	"../pages/components/segment/segment.module": [
-		453,
+		454,
 		23
 	],
 	"../pages/components/select-option/select-option.module": [
-		454,
+		455,
 		22
 	],
 	"../pages/components/shrinking/shrinking.module": [
-		455,
+		456,
 		2
 	],
 	"../pages/components/tab/tab.module": [
-		456,
+		457,
 		21
 	],
 	"../pages/components/table/table.module": [
-		457,
+		458,
 		20
 	],
 	"../pages/components/tag/tag.module": [
-		458,
+		459,
 		19
 	],
 	"../pages/components/toast/toast.module": [
-		459,
+		460,
 		18
 	],
 	"../pages/components/transparent-header/transparent-header.module": [
-		460,
+		461,
 		17
 	],
 	"../pages/layout/app2/after-cart/after-cart.module": [
-		461,
+		462,
 		16
 	],
 	"../pages/layout/app2/cart/cart.module": [
-		462,
+		463,
 		15
 	],
 	"../pages/layout/app2/category2/category2.module": [
-		463,
+		464,
 		14
 	],
 	"../pages/layout/app2/contact-us/contact-us.module": [
-		464,
+		465,
 		13
 	],
 	"../pages/layout/app2/detail2/detail2.module": [
-		465,
+		466,
 		3
 	],
 	"../pages/layout/app2/edit-product-in-cart/edit-product-in-cart.module": [
-		466,
+		467,
 		12
 	],
 	"../pages/layout/app2/list2/list2.module": [
-		467,
+		468,
 		11
 	],
 	"../pages/layout/auth/after-login/after-login.module": [
-		468,
+		469,
 		0
 	],
 	"../pages/layout/auth/forgot/forgot.module": [
-		469,
+		470,
 		10
 	],
 	"../pages/layout/auth/login/login.module": [
-		470,
+		471,
 		9
 	],
 	"../pages/layout/auth/main/main.module": [
-		471,
+		472,
 		8
 	],
 	"../pages/layout/auth/register/register.module": [
-		472,
+		473,
 		7
 	],
 	"../pages/layout/profile/profile/profile.module": [
-		473,
+		474,
 		6
 	],
 	"../pages/layout/profile/profile2/profile2.module": [
-		474,
+		475,
 		5
 	],
 	"../pages/theme/theme.module": [
-		475,
+		476,
 		4
 	]
 };
@@ -206,14 +206,14 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 276:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(139);
@@ -314,13 +314,13 @@ var AuthData = (function () {
 
 /***/ }),
 
-/***/ 279:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(302);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -328,7 +328,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 301:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -337,24 +337,26 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__ = __webpack_require__(430);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(431);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database_deprecated__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_facebook__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_google_plus__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_auth_data__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_radio_service__ = __webpack_require__(432);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ionic_gallery_modal__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database_deprecated__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_auth__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_facebook__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_google_plus__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_auth_data__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_radio_service__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ionic_gallery_modal__ = __webpack_require__(434);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -393,12 +395,12 @@ var AppModule = (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_14_ionic_gallery_modal__["b" /* GalleryModalModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_15_ionic_gallery_modal__["b" /* GalleryModalModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/components/accordion/accordion.module#AccordionPageModule', name: 'AccordionPage', segment: 'accordion', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/components/actionsheet/actionsheet.module#ActionsheetPageModule', name: 'ActionsheetPage', segment: 'actionsheet', priority: 'low', defaultHistory: [] },
@@ -444,28 +446,29 @@ var AppModule = (function () {
                         { loadChildren: '../pages/theme/theme.module#ThemePageModule', name: 'ThemePage', segment: 'theme', priority: 'low', defaultHistory: [] }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_7_angularfire2__["a" /* AngularFireModule */].initializeApp(config),
-                __WEBPACK_IMPORTED_MODULE_8_angularfire2_database_deprecated__["b" /* AngularFireDatabaseModule */],
-                __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__["b" /* AngularFireAuthModule */]
+                __WEBPACK_IMPORTED_MODULE_8_angularfire2__["a" /* AngularFireModule */].initializeApp(config),
+                __WEBPACK_IMPORTED_MODULE_9_angularfire2_database_deprecated__["b" /* AngularFireDatabaseModule */],
+                __WEBPACK_IMPORTED_MODULE_10_angularfire2_auth__["b" /* AngularFireAuthModule */],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__["a" /* Geolocation */],
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__["a" /* Geolocation */],
                 {
                     provide: __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["d" /* HAMMER_GESTURE_CONFIG */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_14_ionic_gallery_modal__["a" /* GalleryModalHammerConfig */],
+                    useClass: __WEBPACK_IMPORTED_MODULE_15_ionic_gallery_modal__["a" /* GalleryModalHammerConfig */],
                 },
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_12__providers_auth_data__["a" /* AuthData */],
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_facebook__["a" /* Facebook */],
-                __WEBPACK_IMPORTED_MODULE_13__providers_radio_service__["a" /* RadioPlayer */],
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_facebook__["a" /* Facebook */],
-                __WEBPACK_IMPORTED_MODULE_11__ionic_native_google_plus__["a" /* GooglePlus */]
+                __WEBPACK_IMPORTED_MODULE_13__providers_auth_data__["a" /* AuthData */],
+                __WEBPACK_IMPORTED_MODULE_11__ionic_native_facebook__["a" /* Facebook */],
+                __WEBPACK_IMPORTED_MODULE_14__providers_radio_service__["a" /* RadioPlayer */],
+                __WEBPACK_IMPORTED_MODULE_11__ionic_native_facebook__["a" /* Facebook */],
+                __WEBPACK_IMPORTED_MODULE_12__ionic_native_google_plus__["a" /* GooglePlus */]
             ]
         })
     ], AppModule);
@@ -476,7 +479,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 431:
+/***/ 432:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -568,7 +571,7 @@ var MyApp = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/LukeVenter/Desktop/Shopping_App/src/app/app.html"*/'<ion-menu [content]="content">\n    <ion-content>\n\n        <!--***********  Side menu for android ***********-->\n        <div id="menu-material" showWhen="android">\n            <!-- <ion-header class="menu-header">\n                 <img class="user-avatar round" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" />\n                <p class="name">ionic3fullapp</p>\n                <p class="email">with firebase backend</p>\n             \n            </ion-header>  -->\n            <!--***********  Menu for android  ***********-->\n            <div class="list-box">\n                <ion-list no-lines>\n\n                    <div *ngFor="let d of menu">\n                        <ion-item tappable (click)="toggleDetails(d)">\n                            <ion-icon color="gray" [name]="d.iconLeft" item-left></ion-icon>\n                            {{d.title}}\n                            <ion-icon item-right [name]="d.icon"></ion-icon>\n                        </ion-item>\n                        <div class="sub-menu" *ngIf="d.showDetails">\n                            <ion-item tappable menuClose item-right *ngFor="let item of d.items" (click)="openPage(item)">\n                                <div>{{item.name}}</div>\n                            </ion-item>\n                        </div>\n                    </div>\n\n                    <div *ngFor="let p of pages">\n                        <ion-item menuClose (click)="openPage(p)">\n                            <ion-icon [name]="p.icon" color="gray" item-left></ion-icon>\n                            {{p.title}}\n                        </ion-item>\n                    </div>\n\n                </ion-list>\n            </div>\n        </div>\n\n\n\n\n\n        <!--***********  Header for ios ***********-->\n\n        <div id="menu-ios" showWhen="ios" class="sideMenu-header" color="gray">\n            <div class="menu-header">\n\n                <img class="user-avatar round" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" />\n                <p class="name">ionic3fullapp</p>\n                <p class="email">with firebase backend</p>\n\n            </div>\n            <!--\n            ***********  menu ***********-->\n            <ion-list no-lines>\n                <div *ngFor="let d of menu">\n                    <ion-item tappable (click)="toggleDetails(d)">\n                        <ion-icon color="gray" [name]="d.iconLeft" item-left></ion-icon>\n                        {{d.title}}\n                        <ion-icon item-right [name]="d.icon"></ion-icon>\n                    </ion-item>\n                    <div class="sub-menu" *ngIf="d.showDetails">\n                        <ion-item tappable menuClose item-right *ngFor="let item of d.items" (click)="openPage(item)">\n                            <div>{{item.name}}</div>\n                        </ion-item>\n                    </div>\n                </div>\n                <div *ngFor="let p of pages">\n                    <ion-item menuClose (click)="openPage(p)">\n                        <ion-icon [name]="p.icon" color="gray" item-left></ion-icon>\n                        {{p.title}}\n                    </ion-item>\n                </div>\n            </ion-list>\n        </div>\n\n\n\n        <!--***********  Side menu for PWA ***********-->\n        <div id="menu-pwa" hideWhen="android,ios">\n            <!-- <div class="menu-header">\n                \n                <img class="user-avatar round" src = "https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg"/>\n                <p class="name">Purist Coffee</p>\n                <p class="email">with firebase backend</p>             \n        </div>-->\n            <div class="list-box">\n                <ion-list no-lines>\n\n                    <div *ngFor="let d of menu">\n                        <ion-item tappable (click)="toggleDetails(d)">\n                            <ion-icon color="gray" [name]="d.iconLeft" item-left></ion-icon>\n                            <b>{{d.title}}</b>\n                            <ion-icon item-right [name]="d.icon"></ion-icon>\n                        </ion-item>\n                        <div class="sub-menu" *ngIf="d.showDetails">\n                            <ion-item tappable menuClose item-right *ngFor="let item of d.items" (click)="openPage(item)">\n                                <div>{{item.name}}</div>\n                            </ion-item>\n                        </div>\n                    </div>\n\n                    <div *ngFor="let p of pages">\n                        <ion-item menuClose (click)="openPage(p)">\n                            <ion-icon [name]="p.icon" color="gray" item-left></ion-icon>\n                            {{p.title}}\n                        </ion-item>\n                    </div>\n\n                </ion-list>\n            </div>\n        </div>\n\n\n\n    </ion-content>\n\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/LukeVenter/Desktop/Shopping_App/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/app/app.html"*/'<ion-menu [content]="content">\n    <ion-content>\n\n        <!--***********  Side menu for android ***********-->\n        <div id="menu-material" showWhen="android">\n            <!-- <ion-header class="menu-header">\n                 <img class="user-avatar round" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" />\n                <p class="name">ionic3fullapp</p>\n                <p class="email">with firebase backend</p>\n             \n            </ion-header>  -->\n            <!--***********  Menu for android  ***********-->\n            <div class="list-box">\n                <ion-list no-lines>\n\n                    <div *ngFor="let d of menu">\n                        <ion-item tappable (click)="toggleDetails(d)">\n                            <ion-icon color="gray" [name]="d.iconLeft" item-left></ion-icon>\n                            {{d.title}}\n                            <ion-icon item-right [name]="d.icon"></ion-icon>\n                        </ion-item>\n                        <div class="sub-menu" *ngIf="d.showDetails">\n                            <ion-item tappable menuClose item-right *ngFor="let item of d.items" (click)="openPage(item)">\n                                <div>{{item.name}}</div>\n                            </ion-item>\n                        </div>\n                    </div>\n\n                    <div *ngFor="let p of pages">\n                        <ion-item menuClose (click)="openPage(p)">\n                            <ion-icon [name]="p.icon" color="gray" item-left></ion-icon>\n                            {{p.title}}\n                        </ion-item>\n                    </div>\n\n                </ion-list>\n            </div>\n        </div>\n\n\n\n\n\n        <!--***********  Header for ios ***********-->\n\n        <div id="menu-ios" showWhen="ios" class="sideMenu-header" color="gray">\n            <div class="menu-header">\n                <!--\n                <img class="user-avatar round" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" />\n                <p class="name">ionic3fullapp</p>\n                <p class="email">with firebase backend</p>\n-->\n\n            </div>\n            <!--\n            ***********  menu ***********-->\n            <ion-list no-lines>\n                <div *ngFor="let d of menu">\n                    <ion-item tappable (click)="toggleDetails(d)">\n                        <ion-icon color="gray" [name]="d.iconLeft" item-left></ion-icon>\n                        {{d.title}}\n                        <ion-icon item-right [name]="d.icon"></ion-icon>\n                    </ion-item>\n                    <div class="sub-menu" *ngIf="d.showDetails">\n                        <ion-item tappable menuClose item-right *ngFor="let item of d.items" (click)="openPage(item)">\n                            <div>{{item.name}}</div>\n                        </ion-item>\n                    </div>\n                </div>\n                <div *ngFor="let p of pages">\n                    <ion-item menuClose (click)="openPage(p)">\n                        <ion-icon [name]="p.icon" color="gray" item-left></ion-icon>\n                        {{p.title}}\n                    </ion-item>\n                </div>\n            </ion-list>\n        </div>\n\n\n\n        <!--***********  Side menu for PWA ***********-->\n        <div id="menu-pwa" hideWhen="android,ios">\n            <!-- <div class="menu-header">\n                \n                <img class="user-avatar round" src = "https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg"/>\n                <p class="name">Purist Coffee</p>\n                <p class="email">with firebase backend</p>             \n        </div>-->\n            <div class="list-box">\n                <ion-list no-lines>\n\n                    <div *ngFor="let d of menu">\n                        <ion-item tappable (click)="toggleDetails(d)">\n                            <ion-icon color="gray" [name]="d.iconLeft" item-left></ion-icon>\n                            <b>{{d.title}}</b>\n                            <ion-icon item-right [name]="d.icon"></ion-icon>\n                        </ion-item>\n                        <div class="sub-menu" *ngIf="d.showDetails">\n                            <ion-item tappable menuClose item-right *ngFor="let item of d.items" (click)="openPage(item)">\n                                <div>{{item.name}}</div>\n                            </ion-item>\n                        </div>\n                    </div>\n\n                    <div *ngFor="let p of pages">\n                        <ion-item menuClose (click)="openPage(p)">\n                            <ion-icon [name]="p.icon" color="gray" item-left></ion-icon>\n                            {{p.title}}\n                        </ion-item>\n                    </div>\n\n                </ion-list>\n            </div>\n        </div>\n\n\n\n    </ion-content>\n\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -579,7 +582,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 432:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -645,5 +648,5 @@ var RadioPlayer = (function () {
 
 /***/ })
 
-},[279]);
+},[280]);
 //# sourceMappingURL=main.js.map

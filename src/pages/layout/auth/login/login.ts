@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, LoadingController, AlertController } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { FormBuilder, Validators } from '@angular/forms';
-
 import { Platform } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 //***********  Facebook **************/
@@ -21,11 +22,14 @@ import { AuthData } from '../../../../providers/auth-data';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+  public uid: any;
+  public profile: FirebaseObjectObservable<any>;
+  public profileArray: any = [];
   public loginForm: any;
   public backgroundImage: any = "./assets/bg1.jpg";
   public imgLogo: any = "./assets/medium_150.70391061453px_1202562_easyicon.net.png";
 
-  constructor(public navCtrl: NavController, public authData: AuthData, public fb: FormBuilder, public alertCtrl: AlertController,public loadingCtrl: LoadingController,private facebook: Facebook,
+  constructor(public navCtrl: NavController, public authData: AuthData, public fb: FormBuilder, public alertCtrl: AlertController, public afAuth: AngularFireAuth, public loadingCtrl: LoadingController,private facebook: Facebook,
     private googleplus: GooglePlus,
     private platform: Platform,) {
       let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
@@ -34,6 +38,21 @@ export class LoginPage {
             password: ['', Validators.compose([Validators.minLength(0), Validators.required])]
       });
   }
+
+
+  ionViewDidLoad() {
+    this.afAuth.authState.subscribe(userAuth => {
+
+      if (userAuth) {
+        console.log("auth true!")
+        this.navCtrl.setRoot('Category2Page')
+      }else {
+        console.log("auth false");
+      }
+
+    });
+  }
+
 
   login(){
       if (!this.loginForm.valid){
