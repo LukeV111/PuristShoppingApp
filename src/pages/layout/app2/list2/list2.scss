@@ -11,6 +11,8 @@ page-list2 {
     ion-card.cardList {
         position: relative;
         text-align: center;
+        vertical-align: bottom;
+        height: 100%;
         margin: 20px 20px 0px 0px !important;
         width: 100% !important;
     }

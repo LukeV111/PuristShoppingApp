@@ -70,12 +70,18 @@
         <p><strong>Cart Total: R{{cartTotal}}</strong></p>
     </ion-label>
     <hr>
-    <!--
+    <form [formGroup]="cartForm">
+        <ion-input type="text" value="{{cartTotal}}" [formControl]="cartForm.controls['cartPrice']" text-center><b>{{cartTotal}}</b></ion-input>
+        <ion-input type="text" value="{{address}}" [formControl]="cartForm.controls['address']" text-center> Enter Your Address</ion-input>
+
+        <!--
     <ion-item>
         <ion-label floating>Delivery Address<br>(If we don't have it):</ion-label>
         <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>
     </ion-item>
 -->
-    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()">Complete Order</button><br>
+        <button full color="red" type="submit" ion-button>Submit Stuff</button>
+    </form>
+    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()" (click)="submitCart()">Complete Order</button><br>
     <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>
 </ion-content>

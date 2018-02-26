@@ -4,9 +4,8 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthData } from '../../../../providers/auth-data';
 import * as firebase from 'firebase';
-import { EditProductInCartPage } from '../edit-product-in-cart/edit-product-in-cart';
 import { AfterCartPage } from '../after-cart/after-cart';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
  * Generated class for the CartPage page.
@@ -36,8 +35,10 @@ export class CartPage {
   compliedPrice: any[] = [];
   name: any;
   public address: any[];
+  public cartForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public afDb: AngularFireDatabase, public afAuth: AngularFireAuth, private toastCtrl: ToastController, public authData: AuthData,) {
+
+  constructor(public navCtrl: NavController, public fb: FormBuilder, public navParams: NavParams, public loadingCtrl: LoadingController, public afDb: AngularFireDatabase, public afAuth: AngularFireAuth, private toastCtrl: ToastController, public authData: AuthData,) {
     let loadingPopup = this.loadingCtrl.create({
       spinner: 'crescent',
       content: ''
@@ -54,7 +55,10 @@ export class CartPage {
         loadingPopup.dismiss()
     });
 
-
+    this.cartForm = fb.group({
+      'cartPrice': [''],
+      'address': [''],
+    });    
 
 
   }
@@ -140,18 +144,24 @@ export class CartPage {
       const toast = this.toastCtrl.create({
         message: 'Order Placed - We will be in touch with an invoice shortly.',
         position: 'bottom',
-        duration: 3000
+        duration: 6000
       });
       //toast.onDidDismiss(this.dismissHandler);
       toast.present();
     });
+    this.profile2.push(this.cartForm.value)
   }
 
   private increment() { //Here is where you need to do the wholesale option.
     this.Quantity++;
   }
+  
   private decrement() { //Here is where you need to do the wholesale option.
     this.Quantity--;
   }
 
+  submitCart(items) {
+    this.profile2.push(this.cartForm.value)
   }
+
+}

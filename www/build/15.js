@@ -45,9 +45,10 @@ var CartPageModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,6 +63,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the CartPage page.
  *
@@ -69,8 +71,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var CartPage = (function () {
-    function CartPage(navCtrl, navParams, loadingCtrl, afDb, afAuth, toastCtrl, authData) {
+    function CartPage(navCtrl, fb, navParams, loadingCtrl, afDb, afAuth, toastCtrl, authData) {
         this.navCtrl = navCtrl;
+        this.fb = fb;
         this.navParams = navParams;
         this.loadingCtrl = loadingCtrl;
         this.afDb = afDb;
@@ -93,6 +96,10 @@ var CartPage = (function () {
             }
         }).subscribe(function (listItems) {
             loadingPopup.dismiss();
+        });
+        this.cartForm = fb.group({
+            'cartPrice': [''],
+            'address': [''],
         });
     }
     CartPage.prototype.ionViewDidLoad = function () {
@@ -161,11 +168,12 @@ var CartPage = (function () {
             var toast = _this.toastCtrl.create({
                 message: 'Order Placed - We will be in touch with an invoice shortly.',
                 position: 'bottom',
-                duration: 3000
+                duration: 6000
             });
             //toast.onDidDismiss(this.dismissHandler);
             toast.present();
         });
+        this.profile2.push(this.cartForm.value);
     };
     CartPage.prototype.increment = function () {
         this.Quantity++;
@@ -173,13 +181,17 @@ var CartPage = (function () {
     CartPage.prototype.decrement = function () {
         this.Quantity--;
     };
+    CartPage.prototype.submitCart = function (items) {
+        this.profile2.push(this.cartForm.value);
+    };
     CartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/cart/cart.html"*/'<ion-header>\n    <ion-navbar color="black">\n        <button ion-button menuToggle color="light">\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title color="black">Your Cart</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n    <!--\n    <ion-toolbar color="Black">\n    </ion-toolbar>\n-->\n</ion-header>\n\n<!--\n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let item of items">\n            <ion-label>{{item.name}}</ion-label>\n            <ion-item *ngIf="item.coffee" ion-text color="black">Grind Type: {{item.grindType}}</ion-item>\n            <p *ngIf="item.coffee" ion-text color="black"><strong>Bag Size: {{item.bagSize}}</strong></p>\n            <p ion-text color="black"><strong>Quantity: {{item.Quantity}}</strong></p>\n        </ion-item>\n    </ion-list>\n    </ion-content>\n-->\n\n\n<ion-content padding>\n\n    <ion-label>\n        <h2>Review Your Cart</h2>\n    </ion-label>\n    <!--Name Input-->\n    <!--Name Display-->\n    <ion-card *ngFor="let item of items">\n        <ion-card-header>\n            <b>{{item.name}}</b><br>\n        </ion-card-header>\n        <hr>\n        <ion-card-content *ngIf="item.coffee">\n            Grind Type: {{item.grindType}}<br>Bag Size: {{item.bagSize}}\n        </ion-card-content>\n        <ion-card-content *ngIf="item.dripFilterCustom">\n            Coffee Type: {{item.dripFilterCoffee}}<br>\n        </ion-card-content>\n        <ion-card-content *ngIf="item.emptyDripFiltersCustom">\n            Pack Size: {{item.emptyDripFilters}}<br>\n        </ion-card-content>\n        <ion-card-content>\n            Quantity: {{item.Quantity}}\n            <br><b>Price: {{item.dynamicPrice}}</b> (R{{item.uPrice}} x {{item.Quantity}})\n        </ion-card-content>\n\n        <!--Buttons Below -->\n\n        <ion-row>\n            <ion-col>\n                <button ion-button block icon-centr (click)="deleteProduct(item)">\n                    Remove\n      </button>\n            </ion-col>\n        </ion-row>\n    </ion-card>\n    <ion-label>\n        <p><strong>Cart Total: R{{cartTotal}}</strong></p>\n    </ion-label>\n    <hr>\n    <!--\n    <ion-item>\n        <ion-label floating>Delivery Address<br>(If we don\'t have it):</ion-label>\n        <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>\n    </ion-item>\n-->\n    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()">Complete Order</button><br>\n    <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/cart/cart.html"*/,
+            selector: 'page-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/cart/cart.html"*/'<ion-header>\n    <ion-navbar color="black">\n        <button ion-button menuToggle color="light">\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title color="black">Your Cart</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n    <!--\n    <ion-toolbar color="Black">\n    </ion-toolbar>\n-->\n</ion-header>\n\n<!--\n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let item of items">\n            <ion-label>{{item.name}}</ion-label>\n            <ion-item *ngIf="item.coffee" ion-text color="black">Grind Type: {{item.grindType}}</ion-item>\n            <p *ngIf="item.coffee" ion-text color="black"><strong>Bag Size: {{item.bagSize}}</strong></p>\n            <p ion-text color="black"><strong>Quantity: {{item.Quantity}}</strong></p>\n        </ion-item>\n    </ion-list>\n    </ion-content>\n-->\n\n\n<ion-content padding>\n\n    <ion-label>\n        <h2>Review Your Cart</h2>\n    </ion-label>\n    <!--Name Input-->\n    <!--Name Display-->\n    <ion-card *ngFor="let item of items">\n        <ion-card-header>\n            <b>{{item.name}}</b><br>\n        </ion-card-header>\n        <hr>\n        <ion-card-content *ngIf="item.coffee">\n            Grind Type: {{item.grindType}}<br>Bag Size: {{item.bagSize}}\n        </ion-card-content>\n        <ion-card-content *ngIf="item.dripFilterCustom">\n            Coffee Type: {{item.dripFilterCoffee}}<br>\n        </ion-card-content>\n        <ion-card-content *ngIf="item.emptyDripFiltersCustom">\n            Pack Size: {{item.emptyDripFilters}}<br>\n        </ion-card-content>\n        <ion-card-content>\n            Quantity: {{item.Quantity}}\n            <br><b>Price: {{item.dynamicPrice}}</b> (R{{item.uPrice}} x {{item.Quantity}})\n        </ion-card-content>\n\n        <!--Buttons Below -->\n\n        <ion-row>\n            <ion-col>\n                <button ion-button block icon-centr (click)="deleteProduct(item)">\n                    Remove\n      </button>\n            </ion-col>\n        </ion-row>\n    </ion-card>\n    <ion-label>\n        <p><strong>Cart Total: R{{cartTotal}}</strong></p>\n    </ion-label>\n    <hr>\n    <form [formGroup]="cartForm">\n        <ion-input type="text" value="{{cartTotal}}" [formControl]="cartForm.controls[\'cartPrice\']" text-center><b>{{cartTotal}}</b></ion-input>\n        <ion-input type="text" value="{{address}}" [formControl]="cartForm.controls[\'address\']" text-center> Enter Your Address</ion-input>\n\n        <!--\n    <ion-item>\n        <ion-label floating>Delivery Address<br>(If we don\'t have it):</ion-label>\n        <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>\n    </ion-item>\n-->\n        <button full color="red" type="submit" ion-button>Submit Stuff</button>\n    </form>\n    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()" (click)="submitCart()">Complete Order</button><br>\n    <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/cart/cart.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__["a" /* AuthData */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__["a" /* AuthData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__["a" /* AuthData */]) === "function" && _h || Object])
     ], CartPage);
     return CartPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
 }());
 
 //# sourceMappingURL=cart.js.map

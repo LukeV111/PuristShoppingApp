@@ -35,6 +35,7 @@
     </ion-card>
 </ion-content>
 -->
+<!--
 <ion-content>
     <ion-list>
         <ion-item tappable *ngFor="let item of items" (click)="goToDetail(item.$key)">
@@ -55,11 +56,11 @@
         </ion-item>
     </ion-list>
 </ion-content>
-
+-->
 <!--
 <ion-content>
     <ion-grid>
-        <ion-row wrap>
+        <ion-row>
             <ion-col col-4>
                 <ion-list *ngFor="let item of items">
                     <ion-card tappable (click)="goToDetail(item.$key)">
@@ -81,11 +82,11 @@
     </ion-grid>
 </ion-content>
 -->
-<!--
+
 <ion-content>
     <ion-grid>
-        <ion-row wrap>
-            <ion-col tappable col-6 *ngFor="let item of items" (click)="goToDetail(item.$key)" color="gray">
+        <ion-row>
+            <ion-col tappable col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 *ngFor="let item of items" (click)="goToDetail(item.$key)" color="gray">
                 <ion-card class="cardList">
                     <img class="pop-in" src={{item.imgSmall}} />
                     <ion-card-header>
@@ -102,7 +103,7 @@
         </ion-row>
     </ion-grid>
 </ion-content>
--->
+
 <!--
 <ion-content>
     <ion-grid>
