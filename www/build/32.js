@@ -1,13 +1,13 @@
 webpackJsonp([32],{
 
-/***/ 444:
+/***/ 443:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridPageModule", function() { return GridPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FadingHeaderPageModule", function() { return FadingHeaderPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__grid__ = __webpack_require__(556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fading_header__ = __webpack_require__(641);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var GridPageModule = (function () {
-    function GridPageModule() {
+var FadingHeaderPageModule = (function () {
+    function FadingHeaderPageModule() {
     }
-    GridPageModule = __decorate([
+    FadingHeaderPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__grid__["a" /* GridPage */],
+                __WEBPACK_IMPORTED_MODULE_1__fading_header__["a" /* FadingHeaderPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__grid__["a" /* GridPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__fading_header__["a" /* FadingHeaderPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__grid__["a" /* GridPage */]
+                __WEBPACK_IMPORTED_MODULE_1__fading_header__["a" /* FadingHeaderPage */]
             ]
         })
-    ], GridPageModule);
-    return GridPageModule;
+    ], FadingHeaderPageModule);
+    return FadingHeaderPageModule;
 }());
 
-//# sourceMappingURL=grid.module.js.map
+//# sourceMappingURL=fading-header.module.js.map
 
 /***/ }),
 
-/***/ 556:
+/***/ 641:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GridPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FadingHeaderPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -57,25 +57,92 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-/*
-  Generated class for the Search page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-var GridPage = (function () {
-    function GridPage() {
+var FadingHeaderPage = (function () {
+    function FadingHeaderPage(ref) {
+        this.ref = ref;
+        this.showToolbar = false;
+        this.transition = false;
+        // headerImgSize:string = '100%';
+        // headerImgUrl:string = '';
+        this.items = [
+            'Pokémon Yellow',
+            'Super Metroid',
+            'Mega Man X',
+            'The Legend of Zelda',
+            'Pac-Man',
+            'Super Mario World',
+            'Street Fighter II',
+            'Half Life',
+            'Final Fantasy VII',
+            'Star Fox',
+            'Tetris',
+            'Donkey Kong III',
+            'GoldenEye 007',
+            'Doom',
+            'Fallout',
+            'GTA',
+            'Halo',
+            'Pokémon Yellow',
+            'Super Metroid',
+            'Mega Man X',
+            'The Legend of Zelda',
+            'Pac-Man',
+            'Super Mario World',
+            'Street Fighter II',
+            'Half Life',
+            'Final Fantasy VII',
+            'Star Fox', 'Pokémon Yellow',
+            'Super Metroid',
+            'Mega Man X',
+            'The Legend of Zelda',
+            'Pac-Man',
+            'Super Mario World',
+            'Street Fighter II',
+            'Half Life',
+            'Final Fantasy VII',
+            'Star Fox',
+            'Tetris',
+            'Donkey Kong III',
+            'GoldenEye 007',
+            'Doom',
+            'Fallout',
+            'GTA',
+            'Halo',
+            'Pokémon Yellow',
+            'Super Metroid',
+            'Mega Man X',
+            'The Legend of Zelda',
+            'Pac-Man',
+            'Super Mario World',
+            'Street Fighter II',
+            'Half Life',
+            'Final Fantasy VII',
+            'Star Fox'
+        ];
     }
-    GridPage = __decorate([
+    FadingHeaderPage.prototype.onScroll = function ($event) {
+        var scrollTop = $event.scrollTop;
+        this.showToolbar = scrollTop >= 100;
+        if (scrollTop < 0) {
+            this.transition = false;
+            //this.headerImgSize = `${ Math.abs(scrollTop)/2 + 100}%`;
+        }
+        else {
+            this.transition = true;
+            //this.headerImgSize = '100%'
+        }
+        this.ref.detectChanges();
+    };
+    FadingHeaderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-grid',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/grid/grid.html"*/'\n<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Grid</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content class="grid-basic-page">\n  <p padding>\n    Equal-width columns\n  </p>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <div>1 of 3</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 3</div>\n      </ion-col>\n      <ion-col>\n        <div>3 of 3</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <p padding>\n    Setting one column width\n  </p>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div>1 of 3</div>\n      </ion-col>\n      <ion-col col-6>\n        <div>2 of 3 (wider)</div>\n      </ion-col>\n      <ion-col>\n        <div>3 of 3</div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6>\n        <div>1 of 3 (wider)</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 3</div>\n      </ion-col>\n      <ion-col>\n        <div>3 of 3</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <p padding>\n    Variable-width columns\n  </p>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div>1 of 3</div>\n      </ion-col>\n      <ion-col col-auto>\n        <div>Variable width content</div>\n      </ion-col>\n      <ion-col>\n        <div>3 of 3</div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <div>1 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 4</div>\n      </ion-col>\n      <ion-col col-auto>\n        <div><ion-icon name="globe"></ion-icon></div>\n      </ion-col>\n      <ion-col>\n        <div>4 of 4</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <p padding>\n    Offsetting columns\n  </p>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col offset-4>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col offset-4>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <p padding>\n    Push and pull\n  </p>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-9 push-3>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col col-3 pull-9>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col col-6 push-3>\n        <div>1 of 3</div>\n      </ion-col>\n      <ion-col col-3 push-3>\n        <div>2 of 3</div>\n      </ion-col>\n      <ion-col col-3 pull-9>\n        <div>3 of 3</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <p padding>\n    Setting all column widths<br>\n  </p>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-4>\n        <div>1 of 3</div>\n      </ion-col>\n      <ion-col col-3>\n        <div>2 of 3</div>\n      </ion-col>\n      <ion-col col-5>\n        <div>3 of 3</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <p padding>\n    Vertical alignment\n  </p>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div>1 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 4 <br>#</div>\n      </ion-col>\n      <ion-col>\n        <div>3 of 4 <br>#<br>#</div>\n      </ion-col>\n      <ion-col>\n        <div>4 of 4 <br>#<br>#<br>#</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row align-items-start>\n      <ion-col>\n        <div>1 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>3 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>4 of 4 <br>#<br>#<br>#</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row align-items-center>\n      <ion-col>\n        <div>1 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>3 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>4 of 4 <br>#<br>#<br>#</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row align-items-end>\n      <ion-col>\n        <div>1 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>2 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>3 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>4 of 4 <br>#<br>#<br>#</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col align-self-start>\n        <div>1 of 4</div>\n      </ion-col>\n      <ion-col align-self-center>\n        <div>2 of 4</div>\n      </ion-col>\n      <ion-col align-self-end>\n        <div>3 of 4</div>\n      </ion-col>\n      <ion-col>\n        <div>4 of 4 <br>#<br>#<br>#</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <p padding>\n    Horizontal Alignment\n  </p>\n  <ion-grid>\n    <ion-row justify-content-start>\n      <ion-col col-3>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col col-3>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row justify-content-center>\n      <ion-col col-3>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col col-3>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row justify-content-end>\n      <ion-col col-3>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col col-3>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row justify-content-around>\n      <ion-col col-3>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col col-3>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row justify-content-between>\n      <ion-col col-3>\n        <div>1 of 2</div>\n      </ion-col>\n      <ion-col col-3>\n        <div>2 of 2</div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/grid/grid.html"*/
+            selector: 'page-fading-header',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/fading-header/fading-header.html"*/'\n<ion-header>\n  <ion-navbar  transparent  [class.show-background]="showToolbar">\n    <button ion-button menuToggle  [hidden]="!showToolbar">\n      <ion-icon name="menu"></ion-icon>\n    </button>\n     <ion-title color="light" [hidden]="!showToolbar">Fading</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  no-padding  class="content" (ionScroll)="onScroll($event)" [class.transition]="transition"  >\n  \n  <ion-list margin-top>\n    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n      {{ item }}\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/fading-header/fading-header.html"*/
         }),
-        __metadata("design:paramtypes", [])
-    ], GridPage);
-    return GridPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]])
+    ], FadingHeaderPage);
+    return FadingHeaderPage;
 }());
 
-//# sourceMappingURL=grid.js.map
+//# sourceMappingURL=fading-header.js.map
 
 /***/ })
 

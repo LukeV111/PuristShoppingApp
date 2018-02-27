@@ -1,13 +1,13 @@
 webpackJsonp([25],{
 
-/***/ 451:
+/***/ 450:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RangePageModule", function() { return RangePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadioButtonPageModule", function() { return RadioButtonPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__range__ = __webpack_require__(563);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__radio_button__ = __webpack_require__(648);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var RangePageModule = (function () {
-    function RangePageModule() {
+var RadioButtonPageModule = (function () {
+    function RadioButtonPageModule() {
     }
-    RangePageModule = __decorate([
+    RadioButtonPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__range__["a" /* RangePage */],
+                __WEBPACK_IMPORTED_MODULE_1__radio_button__["a" /* RadioButtonPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__range__["a" /* RangePage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__radio_button__["a" /* RadioButtonPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__range__["a" /* RangePage */]
+                __WEBPACK_IMPORTED_MODULE_1__radio_button__["a" /* RadioButtonPage */]
             ]
         })
-    ], RangePageModule);
-    return RangePageModule;
+    ], RadioButtonPageModule);
+    return RadioButtonPageModule;
 }());
 
-//# sourceMappingURL=range.module.js.map
+//# sourceMappingURL=radio-button.module.js.map
 
 /***/ }),
 
-/***/ 563:
+/***/ 648:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RangePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RadioButtonPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -65,27 +65,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var RangePage = (function () {
-    function RangePage(navCtrl) {
+var RadioButtonPage = (function () {
+    function RadioButtonPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.brightness = 20;
-        this.saturation = 0;
-        this.warmth = 1300;
-        this.structure = { lower: 33, upper: 60 };
     }
-    RangePage.prototype.onChange = function (ev) {
-        console.log('Changed', ev);
-    };
-    RangePage = __decorate([
+    RadioButtonPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-range',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/range/range.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Range</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="outer-content">\n\n  <ion-list>\n    <ion-list-header>\n      Brightness\n      <ion-badge item-end>{{brightness}}</ion-badge>\n    </ion-list-header>\n    <ion-item>\n      <ion-range [(ngModel)]="brightness">\n        <ion-icon range-left small name="sunny"></ion-icon>\n        <ion-icon range-right name="sunny"></ion-icon>\n      </ion-range>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>\n      Saturation\n      <ion-badge item-end color="secondary">{{saturation}}</ion-badge>\n    </ion-list-header>\n    <ion-item>\n      <ion-range min="-200" max="200" pin="true" [(ngModel)]="saturation" color="secondary">\n        <ion-label range-left>-200</ion-label>\n        <ion-label range-right>200</ion-label>\n      </ion-range>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>\n      Warmth\n      <ion-badge item-end color="danger">{{warmth}}</ion-badge>\n    </ion-list-header>\n    <ion-item>\n      <ion-range min="1000" max="2000" step="100" snaps="true" [(ngModel)]="warmth" color="danger">\n        <ion-icon range-left small color="danger" name="thermometer"></ion-icon>\n        <ion-icon range-right color="danger" name="thermometer"></ion-icon>\n      </ion-range>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>\n      Structure\n      <ion-badge item-end color="dark">{{structure.lower}}</ion-badge>\n      <ion-badge item-end color="dark">{{structure.upper}}</ion-badge>\n    </ion-list-header>\n    <ion-item>\n      <ion-range dualKnobs="true" pin="true" [(ngModel)]="structure" (ionChange)="onChange($event)" color="dark">\n        <ion-label range-left>-0</ion-label>\n        <ion-label range-right>100</ion-label>\n      </ion-range>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n\n<style>\n  ion-list + ion-list {\n    margin-top: 0;\n  }\n</style>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/range/range.html"*/
+            selector: 'page-radio-button',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/radio-button/radio-button.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Radio button</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="outer-content">\n\n  <ion-list radio-group>\n    <ion-list-header>\n      Language\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Python</ion-label>\n      <ion-radio checked="true"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Ruby</ion-label>\n      <ion-radio></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Java</ion-label>\n      <ion-radio></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>PHP</ion-label>\n      <ion-radio></ion-radio>\n    </ion-item>\n  </ion-list>\n\n  <ion-list radio-group>\n    <ion-list-header>\n      Auto-Lock\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Enable "Never"</ion-label>\n      <ion-toggle (ionChange)="isDisabled = !isDisabled"></ion-toggle>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>1 Minute</ion-label>\n      <ion-radio></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>2 Minutes</ion-label>\n      <ion-radio checked></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>5 Minutes</ion-label>\n      <ion-radio></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Never</ion-label>\n      <ion-radio [disabled]="isDisabled"></ion-radio>\n    </ion-item>\n  </ion-list>\n\n  <ion-list radio-group>\n    <ion-list-header>\n      Silence\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Always</ion-label>\n      <ion-radio></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Only while phone is locked</ion-label>\n      <ion-radio checked="true"></ion-radio>\n    </ion-item>\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/radio-button/radio-button.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
-    ], RangePage);
-    return RangePage;
+    ], RadioButtonPage);
+    return RadioButtonPage;
 }());
 
-//# sourceMappingURL=range.js.map
+//# sourceMappingURL=radio-button.js.map
 
 /***/ })
 

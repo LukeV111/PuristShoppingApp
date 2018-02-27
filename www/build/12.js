@@ -1,14 +1,14 @@
 webpackJsonp([12],{
 
-/***/ 467:
+/***/ 465:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditProductInCartPageModule", function() { return EditProductInCartPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactUsPageModule", function() { return ContactUsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_product_in_cart__ = __webpack_require__(584);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_us__ = __webpack_require__(667);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EditProductInCartPageModule = (function () {
-    function EditProductInCartPageModule() {
+var ContactUsPageModule = (function () {
+    function ContactUsPageModule() {
     }
-    EditProductInCartPageModule = __decorate([
+    ContactUsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__edit_product_in_cart__["a" /* EditProductInCartPage */],
+                __WEBPACK_IMPORTED_MODULE_2__contact_us__["a" /* ContactUsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__edit_product_in_cart__["a" /* EditProductInCartPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__contact_us__["a" /* ContactUsPage */]),
             ],
         })
-    ], EditProductInCartPageModule);
-    return EditProductInCartPageModule;
+    ], ContactUsPageModule);
+    return ContactUsPageModule;
 }());
 
-//# sourceMappingURL=edit-product-in-cart.module.js.map
+//# sourceMappingURL=contact-us.module.js.map
 
 /***/ }),
 
-/***/ 584:
+/***/ 667:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProductInCartPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactUsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,29 +57,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the EditProductInCartPage page.
+ * Generated class for the ContactUsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var EditProductInCartPage = (function () {
-    function EditProductInCartPage(navCtrl, navParams) {
+var ContactUsPage = (function () {
+    function ContactUsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    EditProductInCartPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EditProductInCartPage');
+    ContactUsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ContactUsPage');
     };
-    EditProductInCartPage = __decorate([
+    ContactUsPage.prototype.goToHome = function () {
+        this.navCtrl.setRoot('Category2Page');
+    };
+    ContactUsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-edit-product-in-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/edit-product-in-cart/edit-product-in-cart.html"*/'<!--\n  Generated template for the EditProductInCartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar color="black">\n        <ion-title>Edit Product</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    Ability to edit the product here.\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/edit-product-in-cart/edit-product-in-cart.html"*/,
+            selector: 'page-contact-us',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/contact-us/contact-us.html"*/'<ion-header>\n    <ion-navbar color="black">\n        <ion-title>Contact Us</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n    <ion-list no-lines>\n        <ion-item>\n            <ion-icon name="ios-mail" item-left></ion-icon>\n            <p>E-mail</p>\n            <h2>hello@puristcoffee.com</h2>\n        </ion-item>\n        <ion-item>\n            <ion-icon name="ios-call" item-left></ion-icon>\n            <p>Contact Number</p>\n            <h2>087 822 1102</h2>\n        </ion-item>\n        <ion-item>\n            <ion-icon name="home" item-left></ion-icon>\n            <p>Address</p>\n            <h2>Block A, Georgian Place Office Park</h2>\n            <h2>18 Southway Street, Sandton</h2>\n        </ion-item>\n        <ion-item>\n            <ion-icon name="clock" item-left></ion-icon>\n            <p>Hours</p>\n            <h2>Weekdays: 8:30 - 4pm CAT</h2>\n        </ion-item>\n    </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/contact-us/contact-us.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], EditProductInCartPage);
-    return EditProductInCartPage;
+    ], ContactUsPage);
+    return ContactUsPage;
 }());
 
-//# sourceMappingURL=edit-product-in-cart.js.map
+//# sourceMappingURL=contact-us.js.map
 
 /***/ })
 

@@ -21,9 +21,6 @@ export class List2Page {
   public uid: any;
 
 
-
-
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public afDB: AngularFireDatabase, public afAuth: AngularFireAuth) {
       let loadingPopup = this.loadingCtrl.create({
         spinner: 'crescent',

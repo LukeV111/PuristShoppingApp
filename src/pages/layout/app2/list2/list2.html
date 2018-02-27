@@ -89,7 +89,7 @@
             <ion-col tappable col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2 *ngFor="let item of items" (click)="goToDetail(item.$key)" color="gray">
                 <ion-card class="cardList">
                     <img class="pop-in" src={{item.imgSmall}} />
-                    <ion-card-header>
+                    <ion-card-header text-wrap>
                         {{item.name}}
                     </ion-card-header>
                     <ion-card-content>

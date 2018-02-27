@@ -1,53 +1,36 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, AlertController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, AlertController, ToastController } from 'ionic-angular';
 import { AuthData } from '../../../../providers/auth-data';
 
-import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 import md5 from 'crypto-md5'; // dependencies:"crypto-md5"
-
 @IonicPage()
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
+
   email: any;
   profilePicture: any = "https://www.gravatar.com/avatar/"
   profileArray: any = [];
-  profile: FirebaseListObservable<any[]>;
-  profile2: FirebaseListObservable<any[]>;
+  profile: FirebaseObjectObservable<any[]>;
   uid: any;
-  key: any;
-  itemId: any;
-  Quantity: any;
-  items: any[] = [];
-  name: any;
-  orderId: any;
+  public profileForm: FormGroup;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authData: AuthData, public alertCtrl: AlertController, public loadingCtrl: LoadingController, private toastCtrl: ToastController, public afAuth: AngularFireAuth, public afDb: AngularFireDatabase) {
-    let loadingPopup = this.loadingCtrl.create({
-      spinner: 'crescent',
-      content: ''
-    });
+  constructor(public navCtrl: NavController, public fb: FormBuilder, public authData: AuthData, public alertCtrl: AlertController, public loadingCtrl: LoadingController, private toastCtrl: ToastController, public afAuth: AngularFireAuth, public afDb: AngularFireDatabase) {
 
-    this.itemId = this.navParams.get('itemId');
-    console.log("Test")
-    console.log("++++++itemId=" + this.navParams.get('itemId'));
-
-    this.afDb.list('/ userProfile / ' + this.uid,  { //Ok so here needs to be the list in the completedOrders thing.
-      query: {
-        orderByChild: "Quantity",
-        equalTo: this.Quantity
-      }
-    }).subscribe(listItems => {
-      this.items = listItems;
-      loadingPopup.dismiss()
-    });
+    this.profileForm = fb.group({
+      'name': [''],
+      'email': [''],
+      'phone': [''],
+      'address': [''],
+    });    
     
   }
   ionViewWillLoad() {
@@ -57,17 +40,16 @@ export class ProfilePage {
         console.log("auth true!")
         this.uid = userAuth.uid;
         this.email = userAuth.email;
-        //this.profilePicture = "https://www.gravatar.com/avatar/" + md5(this.email.toLowerCase(), 'hex');
+        this.profilePicture = "https://www.gravatar.com/avatar/" + md5(this.email.toLowerCase(), 'hex');
 
         let loadingPopup = this.loadingCtrl.create({
           spinner: 'crescent',
           content: '',
-          duration: 15000
+          duration: 5000
         });
         loadingPopup.present();
 
-        this.profile = this.afDb.list('/userProfile/' + this.uid);
-
+        this.profile = this.afDb.object('/userProfile/' + this.uid);
         this.profile.subscribe(profile => {
           this.profileArray = profile;
           loadingPopup.dismiss();
@@ -77,6 +59,12 @@ export class ProfilePage {
         console.log("auth false");
         this.navCtrl.setRoot('LoginPage');
       }
+    });
+  }
+
+  updateProfile() {
+    this.profile.update(this.profileForm.value).then(() => {
+      this.presentToast('bottom', 'Your Profile is updated');
 
     });
   }
@@ -93,7 +81,7 @@ export class ProfilePage {
         console.log(errorMessage);
         //this.presentAlert(errorMessage);
       });
-    }
+  }
 
   presentAlert(title) {
     let alert = this.alertCtrl.create({
@@ -111,5 +99,6 @@ export class ProfilePage {
     });
     toast.present();
   }
+
 
 }

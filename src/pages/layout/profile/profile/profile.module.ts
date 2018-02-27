@@ -13,4 +13,4 @@ import { IonicPageModule } from 'ionic-angular';
     ProfilePage
   ]
 })
-export class ProfilePageModule {}
+export class ProfilePageModule { }

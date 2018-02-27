@@ -1,4 +1,4 @@
-webpackJsonp([42],{
+webpackJsonp([41],{
 
 /***/ 148:
 /***/ (function(module, exports) {
@@ -23,171 +23,167 @@ webpackEmptyAsyncContext.id = 148;
 var map = {
 	"../pages/components/accordion/accordion.module": [
 		435,
-		41
+		40
 	],
 	"../pages/components/actionsheet/actionsheet.module": [
 		436,
-		40
+		39
 	],
 	"../pages/components/alert/alert.module": [
 		437,
-		39
+		38
 	],
 	"../pages/components/animations/animations.module": [
 		438,
-		38
+		37
 	],
 	"../pages/components/badge/badge.module": [
 		439,
-		37
+		36
 	],
 	"../pages/components/button/button.module": [
 		440,
-		36
+		35
 	],
 	"../pages/components/datetime/datetime.module": [
 		441,
-		35
+		34
 	],
 	"../pages/components/fab/fab.module": [
 		442,
-		34
+		33
 	],
 	"../pages/components/fading-header/fading-header.module": [
 		443,
-		33
+		32
 	],
 	"../pages/components/grid/grid.module": [
 		444,
-		32
+		31
 	],
 	"../pages/components/header/header.module": [
 		445,
-		31
+		30
 	],
 	"../pages/components/input/input.module": [
 		446,
-		30
+		29
 	],
 	"../pages/components/item-sliding/item-sliding.module": [
 		447,
-		29
+		28
 	],
 	"../pages/components/item/item.module": [
 		448,
-		28
+		27
 	],
 	"../pages/components/label/label.module": [
 		449,
-		27
+		26
 	],
 	"../pages/components/radio-button/radio-button.module": [
 		450,
-		26
+		25
 	],
 	"../pages/components/range/range.module": [
 		451,
-		25
+		24
 	],
 	"../pages/components/rating/rating.module": [
 		452,
-		1
+		2
 	],
 	"../pages/components/search-bar/search-bar.module": [
 		453,
-		24
+		23
 	],
 	"../pages/components/segment/segment.module": [
 		454,
-		23
+		22
 	],
 	"../pages/components/select-option/select-option.module": [
 		455,
-		22
+		21
 	],
 	"../pages/components/shrinking/shrinking.module": [
 		456,
-		2
+		3
 	],
 	"../pages/components/tab/tab.module": [
 		457,
-		21
+		20
 	],
 	"../pages/components/table/table.module": [
 		458,
-		20
+		19
 	],
 	"../pages/components/tag/tag.module": [
 		459,
-		19
+		18
 	],
 	"../pages/components/toast/toast.module": [
 		460,
-		18
+		17
 	],
 	"../pages/components/transparent-header/transparent-header.module": [
 		461,
-		17
+		16
 	],
 	"../pages/layout/app2/after-cart/after-cart.module": [
 		462,
-		16
+		15
 	],
 	"../pages/layout/app2/cart/cart.module": [
 		463,
-		15
+		14
 	],
 	"../pages/layout/app2/category2/category2.module": [
 		464,
-		14
+		13
 	],
 	"../pages/layout/app2/contact-us/contact-us.module": [
 		465,
-		13
+		12
 	],
 	"../pages/layout/app2/detail2/detail2.module": [
 		466,
-		3
-	],
-	"../pages/layout/app2/edit-product-in-cart/edit-product-in-cart.module": [
-		467,
-		12
+		4
 	],
 	"../pages/layout/app2/list2/list2.module": [
-		468,
+		467,
 		11
 	],
 	"../pages/layout/auth/after-login/after-login.module": [
-		469,
-		0
+		468,
+		1
 	],
 	"../pages/layout/auth/forgot/forgot.module": [
-		470,
+		469,
 		10
 	],
 	"../pages/layout/auth/login/login.module": [
-		471,
+		470,
 		9
 	],
 	"../pages/layout/auth/main/main.module": [
-		472,
+		471,
 		8
 	],
 	"../pages/layout/auth/register/register.module": [
-		473,
+		472,
 		7
 	],
 	"../pages/layout/profile/profile/profile.module": [
+		473,
+		0
+	],
+	"../pages/layout/profile/profile2/profile2.module": [
 		474,
 		6
 	],
-	"../pages/layout/profile/profile2/profile2.module": [
+	"../pages/theme/theme.module": [
 		475,
 		5
-	],
-	"../pages/theme/theme.module": [
-		476,
-		4
 	]
 };
 function webpackAsyncContext(req) {
@@ -337,7 +333,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(431);
@@ -434,7 +430,6 @@ var AppModule = (function () {
                         { loadChildren: '../pages/layout/app2/category2/category2.module#Category2PageModule', name: 'Category2Page', segment: 'category2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layout/app2/contact-us/contact-us.module#ContactUsPageModule', name: 'ContactUsPage', segment: 'contact-us', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layout/app2/detail2/detail2.module#Detail2PageModule', name: 'Detail2Page', segment: 'detail2', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/layout/app2/edit-product-in-cart/edit-product-in-cart.module#EditProductInCartPageModule', name: 'EditProductInCartPage', segment: 'edit-product-in-cart', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layout/app2/list2/list2.module#List2PageModule', name: 'List2Page', segment: 'list2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layout/auth/after-login/after-login.module#AfterLoginPageModule', name: 'AfterLoginPage', segment: 'after-login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layout/auth/forgot/forgot.module#ForgotPageModule', name: 'ForgotPage', segment: 'forgot', priority: 'low', defaultHistory: [] },

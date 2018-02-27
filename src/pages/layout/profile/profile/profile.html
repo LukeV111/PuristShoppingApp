@@ -1,53 +1,61 @@
-<ion-header no-border>
-    <ion-navbar transparent color="white">
-        <button ion-button menuToggle>
-      <ion-icon name="menu" color="black"></ion-icon>
+<ion-header>
+    <ion-navbar color="black">
+        <button ion-button menuToggle class="TopLMenu">
+      <ion-icon name="menu"></ion-icon>
     </button>
+        <ion-title>Your Profile</ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content fullscreen="true" no-padding>
 
+<ion-content padding>
+    <!--
     <div class="profile-box">
         <div text-center>
-            <!-- <img *ngIf="(profile | async)?.photo" src="{{(profile | async)?.photo}}" class="edit-avatar pop-in" alt="">-->
-            <!--<img *ngIf="!(profile | async)?.photo" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" class="edit-avatar pop-in" alt="">-->
-            <h3 class="name-text">{{(profile | async)?.name}}</h3>
-            <hr>
+            <img *ngIf="(profile | async)?.photo" src="{{(profile | async)?.photo}}" class="edit-avatar pop-in" alt="">
+            <img *ngIf="!(profile | async)?.photo" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" class="edit-avatar pop-in" alt="">
+            <p class="name-text">{{(profile | async)?.name}}</p>
         </div>
     </div>
+-->
 
-    <div padding>
-        <ion-list no-lines>
-            <ion-item>
-                <ion-icon name="ios-person" item-left></ion-icon>
-                <p>Name</p>
-                <h2>{{(profile | async)?.name}}</h2>
-            </ion-item>
-            <ion-item>
-                <ion-icon name="ios-mail" item-left></ion-icon>
-                <p>E-mail</p>
-                <h2>{{(profile | async)?.email}}</h2>
-            </ion-item>
-            <ion-item>
-                <ion-icon name="ios-call" item-left></ion-icon>
-                <p>Contact Number</p>
-                <h2>{{(profile | async)?.phone}}</h2>
-            </ion-item>
-        </ion-list>
+    <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
 
-        <ion-item>
-            <h3>Your Orders</h3>
-        </ion-item>
-
-        <ion-list *ngFor="let item of items">
+        <div padding>
+            <ion-list no-lines>
+                <ion-item>
+                    <ion-icon name="ios-mail" item-left></ion-icon>
+                    <ion-label floating>E-mail</ion-label>
+                    <ion-input type="text" value="{{(profile | async)?.email}}" [formControl]="profileForm.controls['email']"><b>{{(profile | async)?.email}}</b></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="person" item-left></ion-icon>
+                    <ion-label floating>Name</ion-label>
+                    <ion-input type="text" value="{{(profile | async)?.name}}" [formControl]="profileForm.controls['name']"><b>{{(profile | async)?.name}}</b></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="ios-call" item-left></ion-icon>
+                    <ion-label floating>Phone</ion-label>
+                    <ion-input type="text" value="{{(profile | async)?.phone}}" [formControl]="profileForm.controls['phone']"><b>{{(profile | async)?.phone}}</b></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="cart" item-left></ion-icon>
+                    <ion-label floating>Delivery Address</ion-label>
+                    <ion-textarea type="text" value="{{(profile | async)?.address}}" [formControl]="profileForm.controls['address']"><b>{{(profile | async)?.address}}</b></ion-textarea>
+                </ion-item>
+                <!--
             <ion-item>
-                Items
+                <ion-icon name="md-finger-print" item-left></ion-icon>
+                <h2>{{uid}}</h2>
+                <p>Firebase uid</p>
             </ion-item>
-        </ion-list>
-        <button ion-button block mode="ios" color="black" (click)="logout()">
+        -->
+            </ion-list>
+            <button full color="gray" type="submit" ion-button>Update Profile</button>
+            <br>
+            <button ion-button block mode="ios" color="black" (click)="logout()">
           Logout
         </button>
-    </div>
-
+        </div>
+    </form>
 </ion-content>

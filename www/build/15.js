@@ -1,14 +1,14 @@
 webpackJsonp([15],{
 
-/***/ 463:
+/***/ 462:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartPageModule", function() { return CartPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AfterCartPageModule", function() { return AfterCartPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart__ = __webpack_require__(579);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__after_cart__ = __webpack_require__(664);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CartPageModule = (function () {
-    function CartPageModule() {
+var AfterCartPageModule = (function () {
+    function AfterCartPageModule() {
     }
-    CartPageModule = __decorate([
+    AfterCartPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cart__["a" /* CartPage */],
+                __WEBPACK_IMPORTED_MODULE_2__after_cart__["a" /* AfterCartPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cart__["a" /* CartPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__after_cart__["a" /* AfterCartPage */]),
             ],
         })
-    ], CartPageModule);
-    return CartPageModule;
+    ], AfterCartPageModule);
+    return AfterCartPageModule;
 }());
 
-//# sourceMappingURL=cart.module.js.map
+//# sourceMappingURL=after-cart.module.js.map
 
 /***/ }),
 
-/***/ 579:
+/***/ 664:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AfterCartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(279);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,140 +58,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
 /**
- * Generated class for the CartPage page.
+ * Generated class for the AfterCartPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CartPage = (function () {
-    function CartPage(navCtrl, fb, navParams, loadingCtrl, afDb, afAuth, toastCtrl, authData) {
+var AfterCartPage = (function () {
+    function AfterCartPage(navCtrl, navParams, iab) {
         this.navCtrl = navCtrl;
-        this.fb = fb;
         this.navParams = navParams;
-        this.loadingCtrl = loadingCtrl;
-        this.afDb = afDb;
-        this.afAuth = afAuth;
-        this.toastCtrl = toastCtrl;
-        this.authData = authData;
-        this.items = [];
-        this.cartTotal = 0;
-        this.profileArray = [];
-        this.compliedPrice = [];
-        var loadingPopup = this.loadingCtrl.create({
-            spinner: 'crescent',
-            content: ''
-        });
-        this.itemId = this.navParams.get('itemId');
-        this.afDb.list('/ userProfile / ' + this.uid + ' / currentOrder', {
-            query: {
-                orderByChild: "Quantity",
-                equalTo: this.Quantity
-            }
-        }).subscribe(function (listItems) {
-            loadingPopup.dismiss();
-        });
-        this.cartForm = fb.group({
-            'cartPrice': [''],
-            'address': [''],
-        });
+        this.iab = iab;
     }
-    CartPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.afAuth.authState.subscribe(function (userAuth) {
-            if (userAuth) {
-                console.log("auth true!");
-                _this.uid = userAuth.uid;
-                //this.email = userAuth.email;
-                //this.profilePicture = "https://www.gravatar.com/avatar/" + md5(this.email.toLowerCase(), 'hex');
-                var loadingPopup_1 = _this.loadingCtrl.create({
-                    spinner: 'crescent',
-                    content: '',
-                    duration: 3000
-                });
-                loadingPopup_1.present();
-                _this.profile = _this.afDb.list('/userProfile/' + _this.uid + '/currentOrder/');
-                _this.profile2 = _this.afDb.list('/userProfile/' + _this.uid + '/completedOrders/');
-                _this.afDb.list('/userProfile/' + _this.uid + '/currentOrder', {
-                    query: {
-                        orderByChild: "Quantity",
-                        equalTo: _this.Quantity
-                    }
-                }).subscribe(function (listItems) {
-                    _this.cartTotal = 0;
-                    _this.items = listItems;
-                    _this.items.forEach(function (item) {
-                        _this.cartTotal = _this.cartTotal + (item.uPrice * item.Quantity);
-                    });
-                    console.log("Cart things", _this.items, "Cart Total", _this.cartTotal);
-                    loadingPopup_1.dismiss();
-                });
-            }
-            else {
-                console.log("auth false");
-                _this.navCtrl.setRoot('LoginPage');
-            }
-            ;
-        });
+    AfterCartPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AfterCartPage');
     };
-    CartPage.prototype.goToHome = function () {
-        this.navCtrl.setRoot('Category2Page');
+    //You're here
+    AfterCartPage.prototype.openBrowser = function () {
+        var browser = this.iab.create('https://ionic.io', '_system');
+        browser.close();
     };
-    CartPage.prototype.editProduct = function () {
-        this.navCtrl.push('EditProductInCartPage');
-    };
-    CartPage.prototype.deleteProduct = function (item) {
-        console.log("Item =>", item);
-        this.afDb.list('/userProfile/' + this.uid + '/currentOrder/').remove(item);
-    };
-    CartPage.prototype.clearCart = function () {
-        this.afDb.list('/userProfile/' + this.uid + '/currentOrder/').remove();
-    };
-    CartPage.prototype.clearIcon = function () {
-        this.afDb.object('/userProfile/' + this.uid + '/cartIcon/').remove();
-    };
-    CartPage.prototype.addAddress = function () {
-        this.profile2.push(this.address);
-    };
-    CartPage.prototype.toAfterCart = function () {
-        this.navCtrl.push('AfterCartPage');
-    };
-    CartPage.prototype.completeOrder = function (items) {
-        var _this = this;
-        this.profile2.push(items).then(function () {
-            var toast = _this.toastCtrl.create({
-                message: 'Order Placed - We will be in touch with an invoice shortly.',
-                position: 'bottom',
-                duration: 6000
-            });
-            //toast.onDidDismiss(this.dismissHandler);
-            toast.present();
-        });
-        this.profile2.push(this.cartForm.value);
-    };
-    CartPage.prototype.increment = function () {
-        this.Quantity++;
-    };
-    CartPage.prototype.decrement = function () {
-        this.Quantity--;
-    };
-    CartPage.prototype.submitCart = function (items) {
-        this.profile2.push(this.cartForm.value);
-    };
-    CartPage = __decorate([
+    AfterCartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/cart/cart.html"*/'<ion-header>\n    <ion-navbar color="black">\n        <button ion-button menuToggle color="light">\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title color="black">Your Cart</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n    <!--\n    <ion-toolbar color="Black">\n    </ion-toolbar>\n-->\n</ion-header>\n\n<!--\n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let item of items">\n            <ion-label>{{item.name}}</ion-label>\n            <ion-item *ngIf="item.coffee" ion-text color="black">Grind Type: {{item.grindType}}</ion-item>\n            <p *ngIf="item.coffee" ion-text color="black"><strong>Bag Size: {{item.bagSize}}</strong></p>\n            <p ion-text color="black"><strong>Quantity: {{item.Quantity}}</strong></p>\n        </ion-item>\n    </ion-list>\n    </ion-content>\n-->\n\n\n<ion-content padding>\n\n    <ion-label>\n        <h2>Review Your Cart</h2>\n    </ion-label>\n    <!--Name Input-->\n    <!--Name Display-->\n    <ion-card *ngFor="let item of items">\n        <ion-card-header>\n            <b>{{item.name}}</b><br>\n        </ion-card-header>\n        <hr>\n        <ion-card-content *ngIf="item.coffee">\n            Grind Type: {{item.grindType}}<br>Bag Size: {{item.bagSize}}\n        </ion-card-content>\n        <ion-card-content *ngIf="item.dripFilterCustom">\n            Coffee Type: {{item.dripFilterCoffee}}<br>\n        </ion-card-content>\n        <ion-card-content *ngIf="item.emptyDripFiltersCustom">\n            Pack Size: {{item.emptyDripFilters}}<br>\n        </ion-card-content>\n        <ion-card-content>\n            Quantity: {{item.Quantity}}\n            <br><b>Price: {{item.dynamicPrice}}</b> (R{{item.uPrice}} x {{item.Quantity}})\n        </ion-card-content>\n\n        <!--Buttons Below -->\n\n        <ion-row>\n            <ion-col>\n                <button ion-button block icon-centr (click)="deleteProduct(item)">\n                    Remove\n      </button>\n            </ion-col>\n        </ion-row>\n    </ion-card>\n    <ion-label>\n        <p><strong>Cart Total: R{{cartTotal}}</strong></p>\n    </ion-label>\n    <hr>\n    <form [formGroup]="cartForm">\n        <ion-input type="text" value="{{cartTotal}}" [formControl]="cartForm.controls[\'cartPrice\']" text-center><b>{{cartTotal}}</b></ion-input>\n        <ion-input type="text" value="{{address}}" [formControl]="cartForm.controls[\'address\']" text-center> Enter Your Address</ion-input>\n\n        <!--\n    <ion-item>\n        <ion-label floating>Delivery Address<br>(If we don\'t have it):</ion-label>\n        <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>\n    </ion-item>\n-->\n        <button full color="red" type="submit" ion-button>Submit Stuff</button>\n    </form>\n    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()" (click)="submitCart()">Complete Order</button><br>\n    <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/cart/cart.html"*/,
+            selector: 'page-after-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/after-cart/after-cart.html"*/'<ion-header>\n\n    <ion-navbar color="black">\n        <ion-title>Order Payment</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-label>\n        <h2>Thank you for your order!</h2>\n        <p><i>The total amount for your order is: <b><br><br>(CartValue)</b>.</i></p>\n    </ion-label>\n\n\n    <ion-label>\n        <u><b>Payment Methods:</b></u>\n    </ion-label>\n    <hr>\n    <ion-label>\n        <u><b>Pay By Card</b></u>\n    </ion-label>\n    <i>Payment is processed by PayFast</i>\n    <p></p>\n    <button ion-button outline color="black" (click)="openBrowser()">Click Here To Pay</button>\n    <p></p>\n    <!-- Insert reference href and interperlate amount here-->\n    <hr>\n    <ion-label>\n        <u><b>7 Day Account</b></u>\n    </ion-label>\n    <p> <i>Prior Arrangement Required. You may close the page if this applies to you.</i>\n    </p>\n    <hr>\n    <ion-label>\n        <u><b>Pay By Snapscan</b></u>\n    </ion-label>\n    <i>Enter the amount shown above and close the page when you are done. We will be notified of your payment.</i>\n    <p></p>\n    <img src="https://puristcoffee.com/wp-content/uploads/2018/02/Purist-Coffee-e1519653336313.png" align="middle">\n    <hr>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/after-cart/after-cart.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__["a" /* AuthData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_auth_data__["a" /* AuthData */]) === "function" && _h || Object])
-    ], CartPage);
-    return CartPage;
-    var _a, _b, _c, _d, _e, _f, _g, _h;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
+    ], AfterCartPage);
+    return AfterCartPage;
 }());
 
-//# sourceMappingURL=cart.js.map
+//# sourceMappingURL=after-cart.js.map
 
 /***/ })
 

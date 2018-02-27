@@ -36,7 +36,9 @@ export class CartPage {
   name: any;
   public address: any[];
   public cartForm: FormGroup;
+  public itemName: any[];
 
+  //public formItems: firebase.database.Reference = firebase.database().ref('/userProfile/' + this.uid + '/completedOrders2/');
 
   constructor(public navCtrl: NavController, public fb: FormBuilder, public navParams: NavParams, public loadingCtrl: LoadingController, public afDb: AngularFireDatabase, public afAuth: AngularFireAuth, private toastCtrl: ToastController, public authData: AuthData,) {
     let loadingPopup = this.loadingCtrl.create({
@@ -58,6 +60,7 @@ export class CartPage {
     this.cartForm = fb.group({
       'cartPrice': [''],
       'address': [''],
+      'itemName': ['{{item.name}}'],
     });    
 
 
@@ -158,10 +161,6 @@ export class CartPage {
   
   private decrement() { //Here is where you need to do the wholesale option.
     this.Quantity--;
-  }
-
-  submitCart(items) {
-    this.profile2.push(this.cartForm.value)
   }
 
 }

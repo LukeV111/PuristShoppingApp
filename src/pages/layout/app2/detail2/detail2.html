@@ -114,13 +114,14 @@
                     </ion-item>
 
                     <ion-list radio-group [formControl]="orderForm.controls['grindType']" *ngIf="(item | async)?.coffee" ngDefaultControl>
+                        <ion-label><b>Coffee Type</b></ion-label>
                         <ion-item>
                             <ion-label>Whole Beans</ion-label>
-                            <ion-radio type="radio" value="Whole Beans"></ion-radio>
+                            <ion-radio item-left type="radio" value="Whole Beans"></ion-radio>
                         </ion-item>
                         <ion-item>
                             <ion-label>Ground</ion-label>
-                            <ion-radio value="Ground"></ion-radio>
+                            <ion-radio item-left value="Ground"></ion-radio>
                         </ion-item>
                         <hr>
                     </ion-list>
@@ -129,48 +130,48 @@
                         <ion-label><b>Coffee Type</b></ion-label>
                         <ion-item>
                             <ion-label>Estandar</ion-label>
-                            <ion-radio type="radio" value="Estandar" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Estandar")'></ion-radio>
+                            <ion-radio item-left type="radio" value="Estandar" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Estandar")'></ion-radio>
                         </ion-item>
                         <ion-item>
                             <ion-label>Minimo</ion-label>
-                            <ion-radio value="Minimo" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Minimo")'></ion-radio>
+                            <ion-radio item-left value="Minimo" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Minimo")'></ion-radio>
                         </ion-item>
                         <ion-item>
                             <ion-label>Tanzania</ion-label>
-                            <ion-radio value="Tanzania" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Tanzania")'></ion-radio>
+                            <ion-radio item-left value="Tanzania" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Tanzania")'></ion-radio>
                         </ion-item>
                         <ion-item>
                             <ion-label>Columbia</ion-label>
-                            <ion-radio value="Columbia" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Columbia")'></ion-radio>
+                            <ion-radio item-left value="Columbia" (click)='priceChangedripFilters(orderForm.value.dripFilterCoffee, "Columbia")'></ion-radio>
                         </ion-item>
                         <hr>
                     </ion-list>
 
                     <ion-list radio-group [formControl]="orderForm.controls['emptyDripFilters']" *ngIf="(item | async)?.emptyDripFiltersCustom" ngDefaultControl>
-                        <ion-label><b>Coffee Type</b></ion-label>
+                        <ion-label><b>Pack Size</b></ion-label>
                         <ion-item>
                             <ion-label>Pack of 25</ion-label>
-                            <ion-radio type="radio" value="Pack of 25" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 25")'></ion-radio>
+                            <ion-radio item-left type="radio" value="Pack of 25" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 25")'></ion-radio>
                         </ion-item>
                         <ion-item>
                             <ion-label>Pack of 50</ion-label>
-                            <ion-radio value="Pack of 50" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 50")'></ion-radio>
+                            <ion-radio item-left value="Pack of 50" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 50")'></ion-radio>
                         </ion-item>
                         <ion-item>
                             <ion-label>Pack of 100</ion-label>
-                            <ion-radio value="Pack of 100" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 100")'></ion-radio>
+                            <ion-radio item-left value="Pack of 100" (click)='priceChangeEmptyFilters(orderForm.value.emptyDripFilters, "Pack of 100")'></ion-radio>
                         </ion-item>
                         <hr>
                     </ion-list>
-
+                    <ion-label *ngIf="(item | async)?.coffee"><b>Bag Size</b></ion-label>
                     <ion-list radio-group [formControl]="orderForm.controls['bagSize']" *ngIf="(item | async)?.coffee" ngDefaultControl>
                         <ion-item *ngIf="!(item | async)?.singleOrigin">
                             <ion-label>1kg Bag</ion-label>
-                            <ion-radio type="radio" value="1kg" checked (click)='priceChangeAll(orderForm.value.bagSize, "blend")'></ion-radio>
+                            <ion-radio item-left type="radio" value="1kg" checked (click)='priceChangeAll(orderForm.value.bagSize, "blend")'></ion-radio>
                         </ion-item>
                         <ion-item *ngIf="!(item | async)?.singleOrigin">
                             <ion-label>250g Bag</ion-label>
-                            <ion-radio value="250g" (click)='priceChangeAll(orderForm.value.bagSize, "blend")'></ion-radio>
+                            <ion-radio item-left value="250g" (click)='priceChangeAll(orderForm.value.bagSize, "blend")'></ion-radio>
                         </ion-item>
                         <hr *ngIf="!(item | async)?.singleOrigin">
                     </ion-list>
@@ -178,11 +179,11 @@
                     <ion-list radio-group [formControl]="orderForm.controls['bagSize']" *ngIf="(item | async)?.singleOrigin" ngDefaultControl>
                         <ion-item>
                             <ion-label>1kg Bag</ion-label>
-                            <ion-radio type="radio" value="1kg" checked (click)='priceChangeAll(orderForm.value.bagSize, "Single Origin")'></ion-radio>
+                            <ion-radio item-left type="radio" value="1kg" checked (click)='priceChangeAll(orderForm.value.bagSize, "Single Origin")'></ion-radio>
                         </ion-item>
                         <ion-item>
                             <ion-label>250g Bag</ion-label>
-                            <ion-radio value="250g" (click)='priceChangeAll(orderForm.value.bagSize, "Single Origin")'></ion-radio>
+                            <ion-radio item-left value="250g" (click)='priceChangeAll(orderForm.value.bagSize, "Single Origin")'></ion-radio>
                         </ion-item>
                         <hr>
                     </ion-list>

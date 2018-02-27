@@ -1,13 +1,13 @@
 webpackJsonp([39],{
 
-/***/ 437:
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlertPageModule", function() { return AlertPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionsheetPageModule", function() { return ActionsheetPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert__ = __webpack_require__(549);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actionsheet__ = __webpack_require__(634);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AlertPageModule = (function () {
-    function AlertPageModule() {
+var ActionsheetPageModule = (function () {
+    function ActionsheetPageModule() {
     }
-    AlertPageModule = __decorate([
+    ActionsheetPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__alert__["a" /* AlertPage */],
+                __WEBPACK_IMPORTED_MODULE_1__actionsheet__["a" /* ActionsheetPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__alert__["a" /* AlertPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__actionsheet__["a" /* ActionsheetPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__alert__["a" /* AlertPage */]
+                __WEBPACK_IMPORTED_MODULE_1__actionsheet__["a" /* ActionsheetPage */]
             ]
         })
-    ], AlertPageModule);
-    return AlertPageModule;
+    ], ActionsheetPageModule);
+    return ActionsheetPageModule;
 }());
 
-//# sourceMappingURL=alert.module.js.map
+//# sourceMappingURL=actionsheet.module.js.map
 
 /***/ }),
 
-/***/ 549:
+/***/ 634:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlertPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActionsheetPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -59,79 +59,67 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var AlertPage = (function () {
-    function AlertPage(alertCtrl) {
-        this.alertCtrl = alertCtrl;
-        this.lists = [];
-        this.shownDetail = null;
+var ActionsheetPage = (function () {
+    function ActionsheetPage(platform, actionsheetCtrl) {
+        this.platform = platform;
+        this.actionsheetCtrl = actionsheetCtrl;
     }
-    AlertPage.prototype.basicAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Low battery',
-            subTitle: '10% of battery remaining',
-            buttons: ['Dismiss']
-        });
-        alert.present();
-    };
-    AlertPage.prototype.confirmAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Confirm purchase',
-            message: 'Do you want to buy this book?',
+    ActionsheetPage.prototype.openMenu = function () {
+        var actionSheet = this.actionsheetCtrl.create({
+            title: 'Albums',
+            cssClass: 'action-sheets',
             buttons: [
+                {
+                    text: 'Delete',
+                    role: 'destructive',
+                    icon: !this.platform.is('ios') ? 'trash' : null,
+                    handler: function () {
+                        console.log('Delete clicked');
+                    }
+                },
+                {
+                    text: 'Share',
+                    icon: !this.platform.is('ios') ? 'share' : null,
+                    handler: function () {
+                        console.log('Share clicked');
+                    }
+                },
+                {
+                    text: 'Play',
+                    icon: !this.platform.is('ios') ? 'arrow-dropright-circle' : null,
+                    handler: function () {
+                        console.log('Play clicked');
+                    }
+                },
+                {
+                    text: 'Favorite',
+                    icon: !this.platform.is('ios') ? 'heart-outline' : null,
+                    handler: function () {
+                        console.log('Favorite clicked');
+                    }
+                },
                 {
                     text: 'Cancel',
                     role: 'cancel',
+                    icon: !this.platform.is('ios') ? 'close' : null,
                     handler: function () {
                         console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Buy',
-                    handler: function () {
-                        console.log('Buy clicked');
                     }
                 }
             ]
         });
-        alert.present();
+        actionSheet.present();
     };
-    AlertPage.prototype.promptAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Login',
-            message: "Enter a name for this new album you're so keen on adding",
-            inputs: [
-                {
-                    name: 'title',
-                    placeholder: 'Title'
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Save',
-                    handler: function (data) {
-                        console.log('Saved clicked');
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    AlertPage = __decorate([
+    ActionsheetPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-alert',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/alert/alert.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Alert</ion-title>\n  </ion-navbar>\n \n</ion-header>\n\n\n<ion-content padding>\n  <button ion-button block color="gray" (click)="basicAlert()" large>Show Basic Alert</button>\n <button ion-button block color="gray" (click)="confirmAlert()" large>Confirm Alert</button>\n  <button ion-button block color="gray" (click)="promptAlert()" large>Prompt Alert</button>\n</ion-content>\n'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/alert/alert.html"*/
+            selector: 'page-actionsheet',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/actionsheet/actionsheet.html"*/'\n<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Action Sheets</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding class="action-sheets-basic-page">\n  <button ion-button block color="gray" (click)="openMenu()">\n    Show Action Sheet\n  </button>\n</ion-content>\n<ion-footer color="danger">\n  <ion-toolbar tappable (click)="openMenu()" color="danger"> \n    <ion-title>Show Action Sheet</ion-title>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/actionsheet/actionsheet.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
-    ], AlertPage);
-    return AlertPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
+    ], ActionsheetPage);
+    return ActionsheetPage;
 }());
 
-//# sourceMappingURL=alert.js.map
+//# sourceMappingURL=actionsheet.js.map
 
 /***/ })
 

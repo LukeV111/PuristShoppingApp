@@ -1,13 +1,13 @@
 webpackJsonp([17],{
 
-/***/ 461:
+/***/ 460:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransparentHeaderPageModule", function() { return TransparentHeaderPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToastPageModule", function() { return ToastPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transparent_header__ = __webpack_require__(577);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toast__ = __webpack_require__(662);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TransparentHeaderPageModule = (function () {
-    function TransparentHeaderPageModule() {
+var ToastPageModule = (function () {
+    function ToastPageModule() {
     }
-    TransparentHeaderPageModule = __decorate([
+    ToastPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__transparent_header__["a" /* TransparentHeaderPage */],
+                __WEBPACK_IMPORTED_MODULE_1__toast__["a" /* ToastPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__transparent_header__["a" /* TransparentHeaderPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__toast__["a" /* ToastPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__transparent_header__["a" /* TransparentHeaderPage */]
+                __WEBPACK_IMPORTED_MODULE_1__toast__["a" /* ToastPage */]
             ]
         })
-    ], TransparentHeaderPageModule);
-    return TransparentHeaderPageModule;
+    ], ToastPageModule);
+    return ToastPageModule;
 }());
 
-//# sourceMappingURL=transparent-header.module.js.map
+//# sourceMappingURL=toast.module.js.map
 
 /***/ }),
 
-/***/ 577:
+/***/ 662:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransparentHeaderPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -59,26 +59,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/*
-  Generated class for the Search page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-var TransparentHeaderPage = (function () {
-    function TransparentHeaderPage(navCtrl) {
-        this.navCtrl = navCtrl;
+var ToastPage = (function () {
+    function ToastPage(toastCtrl) {
+        this.toastCtrl = toastCtrl;
     }
-    TransparentHeaderPage = __decorate([
+    ToastPage.prototype.showToast = function (position) {
+        var toast = this.toastCtrl.create({
+            message: 'User was created successfully',
+            position: position,
+            duration: 3000
+        });
+        toast.onDidDismiss(this.dismissHandler);
+        toast.present();
+    };
+    ToastPage.prototype.showLongToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptatibus quibusdam eum nihil optio, ullam accusamus magni, nobis suscipit reprehenderit, sequi quam amet impedit. Accusamus dolorem voluptates laborum dolor obcaecati.',
+            duration: 3000
+        });
+        toast.onDidDismiss(this.dismissHandler);
+        toast.present();
+    };
+    ToastPage.prototype.showDismissDurationToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'I am dismissed after 1.5 seconds',
+            duration: 1500
+        });
+        toast.onDidDismiss(this.dismissHandler);
+        toast.present();
+    };
+    ToastPage.prototype.showToastWithCloseButton = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Your internet connection appears to be offline. Data integrity is not guaranteed.',
+            showCloseButton: true,
+            closeButtonText: 'Ok'
+        });
+        toast.onDidDismiss(this.dismissHandler);
+        toast.present();
+    };
+    ToastPage.prototype.dismissHandler = function () {
+        console.info('Toast onDidDismiss()');
+    };
+    ToastPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-transparent-header',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/transparent-header/transparent-header.html"*/'<ion-header no-border>\n  <ion-navbar transparent>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" color="light"></ion-icon>\n    </button>\n    <ion-title color="light">Transparent header</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content fullscreen>\n\n  <ion-card color="lightblue">\n    <ion-card-header>\n      Card header\n    </ion-card-header>\n    <ion-card-content>\n      <ion-card-title>\n        Title\n      </ion-card-title>\n      Some normal text in content.\n      <h3>h3 in content</h3>\n      <p>\n        Paragraph in content.\n      </p>\n      <p>\n        Another paragraph in content.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card color="lightblue">\n    <ion-card-header>\n      Card header\n    </ion-card-header>\n    <ion-card-content>\n      <ion-card-title>\n        Title\n      </ion-card-title>\n      Some normal text in content.\n      <h3>h3 in content</h3>\n      <p>\n        Paragraph in content.\n      </p>\n      <p>\n        Another paragraph in content.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card color="lightblue">\n    <ion-card-header>\n      Card header\n    </ion-card-header>\n    <ion-card-content>\n      <ion-card-title>\n        Title\n      </ion-card-title>\n      Some normal text in content.\n      <h3>h3 in content</h3>\n      <p>\n        Paragraph in content.\n      </p>\n      <p>\n        Another paragraph in content.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card color="lightblue">\n    <ion-card-header>\n      Card header\n    </ion-card-header>\n    <ion-card-content>\n      <ion-card-title>\n        Title\n      </ion-card-title>\n      Some normal text in content.\n      <h3>h3 in content</h3>\n      <p>\n        Paragraph in content.\n      </p>\n      <p>\n        Another paragraph in content.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/transparent-header/transparent-header.html"*/
+            selector: 'page-toast',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/toast/toast.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Toast</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <button ion-button block (click)="showToast(\'bottom\')" color="light">Show Toast Bottom Position</button>\n  <button ion-button block (click)="showToast(\'top\')" color="light">Show Toast Top Position</button>\n  <button ion-button block (click)="showToast(\'middle\')" color="light">Show Toast Middle Position</button>\n  <button ion-button block margin-bottom (click)="showLongToast()" color="light">Show Long Toast</button>\n\n  <button ion-button block (click)="showDismissDurationToast()" color="light">Show Custom Duration Toast</button>\n  <button ion-button block (click)="showToastWithCloseButton()" color="light">Show Close Button Toast</button>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/toast/toast.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
-    ], TransparentHeaderPage);
-    return TransparentHeaderPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
+    ], ToastPage);
+    return ToastPage;
 }());
 
-//# sourceMappingURL=transparent-header.js.map
+//# sourceMappingURL=toast.js.map
 
 /***/ })
 

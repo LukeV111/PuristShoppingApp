@@ -5,9 +5,9 @@ webpackJsonp([6],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Profile2PageModule", function() { return Profile2PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profile__ = __webpack_require__(678);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profile2__ = __webpack_require__(677);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,39 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ProfilePageModule = (function () {
-    function ProfilePageModule() {
+var Profile2PageModule = (function () {
+    function Profile2PageModule() {
     }
-    ProfilePageModule = __decorate([
+    Profile2PageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_1__profile2__["a" /* Profile2Page */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__profile__["a" /* ProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__profile2__["a" /* Profile2Page */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__profile__["a" /* ProfilePage */]
+                __WEBPACK_IMPORTED_MODULE_1__profile2__["a" /* Profile2Page */]
             ]
         })
-    ], ProfilePageModule);
-    return ProfilePageModule;
+    ], Profile2PageModule);
+    return Profile2PageModule;
 }());
 
-//# sourceMappingURL=profile.module.js.map
+//# sourceMappingURL=profile2.module.js.map
 
 /***/ }),
 
-/***/ 678:
+/***/ 677:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Profile2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_data__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database_deprecated__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(277);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -63,104 +61,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-var ProfilePage = (function () {
-    function ProfilePage(navCtrl, navParams, authData, alertCtrl, loadingCtrl, toastCtrl, afAuth, afDb) {
-        var _this = this;
+var Profile2Page = (function () {
+    //****************************//
+    function Profile2Page(navCtrl, navParams, toastCtrl, loadingCtrl, afDB, ref) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.authData = authData;
-        this.alertCtrl = alertCtrl;
-        this.loadingCtrl = loadingCtrl;
         this.toastCtrl = toastCtrl;
-        this.afAuth = afAuth;
-        this.afDb = afDb;
-        this.profilePicture = "https://www.gravatar.com/avatar/";
-        this.profileArray = [];
-        this.items = [];
-        var loadingPopup = this.loadingCtrl.create({
+        this.loadingCtrl = loadingCtrl;
+        this.afDB = afDB;
+        this.ref = ref;
+        this.following = false;
+        //*********** Variables for fading header **************//
+        this.showToolbar = false;
+        this.transition = false;
+        this.headerImgSize = '100%';
+        this.headerImgUrl = '';
+        var loading = this.loadingCtrl.create({
             spinner: 'crescent',
             content: ''
         });
-        this.itemId = this.navParams.get('itemId');
-        console.log("Test");
-        console.log("++++++itemId=" + this.navParams.get('itemId'));
-        this.afDb.list('/ userProfile / ' + this.uid, {
-            query: {
-                orderByChild: "Quantity",
-                equalTo: this.Quantity
-            }
-        }).subscribe(function (listItems) {
-            _this.items = listItems;
-            loadingPopup.dismiss();
-        });
+        loading.present();
+        this.profile2 = afDB.object('/profile/0');
+        this.profile2.subscribe(function () { return loading.dismiss(); });
     }
-    ProfilePage.prototype.ionViewWillLoad = function () {
-        var _this = this;
-        this.afAuth.authState.subscribe(function (userAuth) {
-            if (userAuth) {
-                console.log("auth true!");
-                _this.uid = userAuth.uid;
-                _this.email = userAuth.email;
-                //this.profilePicture = "https://www.gravatar.com/avatar/" + md5(this.email.toLowerCase(), 'hex');
-                var loadingPopup_1 = _this.loadingCtrl.create({
-                    spinner: 'crescent',
-                    content: '',
-                    duration: 15000
-                });
-                loadingPopup_1.present();
-                _this.profile = _this.afDb.list('/userProfile/' + _this.uid);
-                _this.profile.subscribe(function (profile) {
-                    _this.profileArray = profile;
-                    loadingPopup_1.dismiss();
-                });
-            }
-            else {
-                console.log("auth false");
-                _this.navCtrl.setRoot('LoginPage');
-            }
-        });
+    //*********** Fading header  **************/
+    Profile2Page.prototype.onScroll = function ($event) {
+        var scrollTop = $event.scrollTop;
+        this.showToolbar = scrollTop >= 80;
+        if (scrollTop < 0) {
+            this.transition = false;
+        }
+        else {
+            this.transition = true;
+        }
+        this.ref.detectChanges();
     };
-    ProfilePage.prototype.logout = function () {
-        var _this = this;
-        this.authData.logoutUser()
-            .then(function (authData) {
-            console.log("Logged out");
-            // toast message
-            _this.presentToast('bottom', 'You are now logged out');
-            _this.navCtrl.setRoot('LoginPage');
-        }, function (error) {
-            var errorMessage = error.message;
-            console.log(errorMessage);
-            //this.presentAlert(errorMessage);
-        });
+    Profile2Page.prototype.follow = function () {
+        this.following = !this.following;
+        this.presentToast('bottom', 'Follow user clicked');
     };
-    ProfilePage.prototype.presentAlert = function (title) {
-        var alert = this.alertCtrl.create({
-            title: title,
-            buttons: ['OK']
-        });
-        alert.present();
-    };
-    ProfilePage.prototype.presentToast = function (position, message) {
+    Profile2Page.prototype.presentToast = function (position, message) {
         var toast = this.toastCtrl.create({
             message: message,
             position: position,
-            duration: 3000
+            duration: 1000
         });
         toast.present();
     };
-    ProfilePage = __decorate([
+    Profile2Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/profile/profile/profile.html"*/'<ion-header no-border>\n    <ion-navbar transparent color="white">\n        <button ion-button menuToggle>\n      <ion-icon name="menu" color="black"></ion-icon>\n    </button>\n    </ion-navbar>\n</ion-header>\n\n<ion-content fullscreen="true" no-padding>\n\n    <div class="profile-box">\n        <div text-center>\n            <!-- <img *ngIf="(profile | async)?.photo" src="{{(profile | async)?.photo}}" class="edit-avatar pop-in" alt="">-->\n            <!--<img *ngIf="!(profile | async)?.photo" src="https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" class="edit-avatar pop-in" alt="">-->\n            <h3 class="name-text">{{(profile | async)?.name}}</h3>\n            <hr>\n        </div>\n    </div>\n\n    <div padding>\n        <ion-list no-lines>\n            <ion-item>\n                <ion-icon name="ios-person" item-left></ion-icon>\n                <p>Name</p>\n                <h2>{{(profile | async)?.name}}</h2>\n            </ion-item>\n            <ion-item>\n                <ion-icon name="ios-mail" item-left></ion-icon>\n                <p>E-mail</p>\n                <h2>{{(profile | async)?.email}}</h2>\n            </ion-item>\n            <ion-item>\n                <ion-icon name="ios-call" item-left></ion-icon>\n                <p>Contact Number</p>\n                <h2>{{(profile | async)?.phone}}</h2>\n            </ion-item>\n        </ion-list>\n\n        <ion-item>\n            <h3>Your Orders</h3>\n        </ion-item>\n\n        <ion-list *ngFor="let item of items">\n            <ion-item>\n                Items\n            </ion-item>\n        </ion-list>\n        <button ion-button block mode="ios" color="black" (click)="logout()">\n          Logout\n        </button>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/profile/profile/profile.html"*/
+            selector: 'page-profile2',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/profile/profile2/profile2.html"*/'<ion-header no-border>\n    <ion-navbar transparent>\n        <button ion-button menuToggle>\n          <ion-icon name="menu" color="light"  [hidden]="showToolbar"></ion-icon>\n        </button>\n        <ion-title color="light" [hidden]="showToolbar">Detail</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content no-padding class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n\n    <div class="profile-header" [ngStyle]="{\'background-image\': \'url(\' + (profile2 | async)?.imgCover + \')\'}"></div>\n    <div class="profile">\n        <div class="profile-box">\n            <ion-img class="profile-image" src="{{(profile2 | async)?.imgProfile}}"></ion-img>\n            <h3 id="profile2-name" padding-top>{{(profile2 | async)?.name}}</h3>\n            <button ion-button *ngIf="!following" block color="green" (click)="follow()">Follow</button>\n            <button ion-button icon-left *ngIf="following" block color="gray" (click)="follow()">\n            <ion-icon name="checkmark"></ion-icon>\n            Following\n          </button>\n\n            <ion-list no-lines padding-top>\n                <ion-item class="icon-align">\n                    <ion-icon name="md-cafe" item-left></ion-icon>\n                    <h2>Opening time</h2>\n                    <div [innerHTML]="(profile2 | async)?.openingTime" class="opening-time"></div>\n                </ion-item>\n                <ion-item class="icon-align" text-wrap>\n                    <ion-icon name="ios-pin" item-left></ion-icon>\n                    <h2>About</h2>\n                    <p>{{(profile2 | async)?.aboutMe}}</p>\n                </ion-item>\n                <ion-item class="icon-align">\n                    <ion-icon name="ios-call" item-left></ion-icon>\n                    <h2>{{(profile2 | async)?.phone}}</h2>\n                    <p>Contact</p>\n                </ion-item>\n                <ion-item class="icon-align">\n                    <ion-icon name="logo-facebook" item-left></ion-icon>\n                    <h2>facebook.com/starbuck</h2>\n                    <p>facebook</p>\n                </ion-item>\n                <ion-item class="icon-align">\n                    <ion-icon name="logo-skype" item-left></ion-icon>\n                    <h2>starbuck@outlook.com</h2>\n                    <p>skype</p>\n                </ion-item>\n            </ion-list>\n\n        </div>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/profile/profile2/profile2.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_data__["a" /* AuthData */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database_deprecated__["a" /* AngularFireDatabase */]])
-    ], ProfilePage);
-    return ProfilePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]])
+    ], Profile2Page);
+    return Profile2Page;
 }());
 
-//# sourceMappingURL=profile.js.map
+//# sourceMappingURL=profile2.js.map
 
 /***/ })
 

@@ -1,13 +1,13 @@
 webpackJsonp([38],{
 
-/***/ 438:
+/***/ 437:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnimationsPageModule", function() { return AnimationsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlertPageModule", function() { return AlertPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animations__ = __webpack_require__(550);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert__ = __webpack_require__(635);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AnimationsPageModule = (function () {
-    function AnimationsPageModule() {
+var AlertPageModule = (function () {
+    function AlertPageModule() {
     }
-    AnimationsPageModule = __decorate([
+    AlertPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__animations__["a" /* AnimationsPage */],
+                __WEBPACK_IMPORTED_MODULE_1__alert__["a" /* AlertPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__animations__["a" /* AnimationsPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__alert__["a" /* AlertPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__animations__["a" /* AnimationsPage */]
+                __WEBPACK_IMPORTED_MODULE_1__alert__["a" /* AlertPage */]
             ]
         })
-    ], AnimationsPageModule);
-    return AnimationsPageModule;
+    ], AlertPageModule);
+    return AlertPageModule;
 }());
 
-//# sourceMappingURL=animations.module.js.map
+//# sourceMappingURL=alert.module.js.map
 
 /***/ }),
 
-/***/ 550:
+/***/ 635:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnimationsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlertPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -59,68 +59,79 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var AnimationsPage = (function () {
-    function AnimationsPage(platform, actionsheetCtrl) {
-        this.platform = platform;
-        this.actionsheetCtrl = actionsheetCtrl;
-        this.viewMode = "set1";
+var AlertPage = (function () {
+    function AlertPage(alertCtrl) {
+        this.alertCtrl = alertCtrl;
+        this.lists = [];
+        this.shownDetail = null;
     }
-    AnimationsPage.prototype.openMenu = function () {
-        var actionSheet = this.actionsheetCtrl.create({
-            title: 'Albums',
-            cssClass: 'action-sheets',
+    AlertPage.prototype.basicAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Low battery',
+            subTitle: '10% of battery remaining',
+            buttons: ['Dismiss']
+        });
+        alert.present();
+    };
+    AlertPage.prototype.confirmAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Confirm purchase',
+            message: 'Do you want to buy this book?',
             buttons: [
-                {
-                    text: 'Delete',
-                    role: 'destructive',
-                    icon: !this.platform.is('ios') ? 'trash' : null,
-                    handler: function () {
-                        console.log('Delete clicked');
-                    }
-                },
-                {
-                    text: 'Share',
-                    icon: !this.platform.is('ios') ? 'share' : null,
-                    handler: function () {
-                        console.log('Share clicked');
-                    }
-                },
-                {
-                    text: 'Play',
-                    icon: !this.platform.is('ios') ? 'arrow-dropright-circle' : null,
-                    handler: function () {
-                        console.log('Play clicked');
-                    }
-                },
-                {
-                    text: 'Favorite',
-                    icon: !this.platform.is('ios') ? 'heart-outline' : null,
-                    handler: function () {
-                        console.log('Favorite clicked');
-                    }
-                },
                 {
                     text: 'Cancel',
                     role: 'cancel',
-                    icon: !this.platform.is('ios') ? 'close' : null,
                     handler: function () {
                         console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Buy',
+                    handler: function () {
+                        console.log('Buy clicked');
                     }
                 }
             ]
         });
-        actionSheet.present();
+        alert.present();
     };
-    AnimationsPage = __decorate([
+    AlertPage.prototype.promptAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Login',
+            message: "Enter a name for this new album you're so keen on adding",
+            inputs: [
+                {
+                    name: 'title',
+                    placeholder: 'Title'
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        console.log('Saved clicked');
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    AlertPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-animations',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/animations/animations.html"*/'<ion-header>\n  <ion-navbar  color="lightblue">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Animation</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only >\n        <ion-icon name="more"></ion-icon>\n      </button>\n    </ion-buttons>\n</ion-navbar>\n\n  <ion-toolbar no-border-top   color="lightblue">\n    <ion-segment [(ngModel)]="viewMode" color="light">\n      <ion-segment-button value="set1">\n        Set 1\n      </ion-segment-button>\n      <ion-segment-button value="set2">\n        Set 2\n      </ion-segment-button>\n      <ion-segment-button value="set3">\n        Set 3\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content >\n\n\n<div *ngIf="viewMode===\'set1\'">\n  <!--********** Drop in *************-->\n    <ion-card color="darkGray" class="drop-in">\n      <ion-card-content text-center>   \n        <h3>Drop-In</h3>\n        <p>\n          Usage: class="drop-in"\n        </p>\n      </ion-card-content>\n    </ion-card>\n  <!--********** wobble*************-->\n    <ion-card color="darkGray" class="wobble">\n      <ion-card-content text-center>   \n        <h3>Wobble</h3>\n        <p>\n          Usage: class="wobble"\n        </p>\n      </ion-card-content>\n    </ion-card>\n\n  <!--********** Fadein-down *************-->\n <ion-card color="darkGray" class="fadein-down">\n      <ion-card-content text-center>   \n        <h3>Fadein-down</h3>\n        <p>\n          Usage: class="fadein-down"\n        </p>\n      </ion-card-content>\n    </ion-card>\n  <!--********** Ta-da *************-->\n    <ion-card color="darkGray" class="ta-da">\n      <ion-card-content text-center>   \n        <h3>Ta-da</h3>\n        <p>\n          Usage: class="ta-da"\n        </p>\n      </ion-card-content>\n    </ion-card>   \n\n</div>\n\n\n\n\n<div *ngIf="viewMode===\'set2\'">\n \n\n  <!--********** Slide up *************-->\n <ion-card color="darkGray" class="slide-up">\n      <ion-card-content text-center margin-bottom>   \n        <h3>Slide-Up</h3>\n        <p>\n          Usage: class="slide-up"\n        </p>\n      </ion-card-content>\n    </ion-card>\n  <!--********** Wave *************-->\n    <ion-card color="darkGray" class="wave">\n      <ion-card-content text-center>   \n        <h3>Wave</h3>\n        <p>\n          Usage: class="wave"\n        </p>\n      </ion-card-content>\n    </ion-card>   \n  <!--********** Pop in *************-->\n    <ion-card color="darkGray" class="pop-in">\n      <ion-card-content text-center>   \n        <h3>Pop-In</h3>\n        <p>\n          Usage: class="pop-in"\n        </p>\n      </ion-card-content>\n    </ion-card>\n  <!--********** Pop put *************-->\n    <ion-card color="darkGray" class="pop-out">\n      <ion-card-content text-center>   \n        <h3>Pop-Out</h3>\n        <p>\n          Usage: class="pop-out"\n        </p>\n      </ion-card-content>\n    </ion-card>\n\n\n</div>\n\n\n\n<div *ngIf="viewMode===\'set3\'">\n  <!--********** Swing *************-->\n    <ion-card color="darkGray" class="swing">\n      <ion-card-content text-center>   \n        <h3>Swing</h3>\n        <p>\n          Usage: class="swing"\n        </p>\n      </ion-card-content>\n    </ion-card>\n  <!--********** Shake*************-->\n    <ion-card color="darkGray" class="shake">\n      <ion-card-content text-center>   \n        <h3>Shake</h3>\n        <p>\n          Usage: class="shake"\n        </p>\n      </ion-card-content >\n    </ion-card>\n\n  <!--********** Bounce *************-->\n <ion-card color="darkGray" class="bounce">\n      <ion-card-content text-center>   \n        <h3>Bounce</h3>\n        <p>\n          Usage: class="bounce"\n        </p>\n      </ion-card-content>\n    </ion-card>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/animations/animations.html"*/
+            selector: 'page-alert',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/alert/alert.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Alert</ion-title>\n  </ion-navbar>\n \n</ion-header>\n\n\n<ion-content padding>\n  <button ion-button block color="gray" (click)="basicAlert()" large>Show Basic Alert</button>\n <button ion-button block color="gray" (click)="confirmAlert()" large>Confirm Alert</button>\n  <button ion-button block color="gray" (click)="promptAlert()" large>Prompt Alert</button>\n</ion-content>\n'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/alert/alert.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]])
-    ], AnimationsPage);
-    return AnimationsPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
+    ], AlertPage);
+    return AlertPage;
 }());
 
-//# sourceMappingURL=animations.js.map
+//# sourceMappingURL=alert.js.map
 
 /***/ })
 

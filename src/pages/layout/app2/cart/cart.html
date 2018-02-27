@@ -31,7 +31,6 @@
 
 
 <ion-content padding>
-
     <ion-label>
         <h2>Review Your Cart</h2>
     </ion-label>
@@ -70,18 +69,26 @@
         <p><strong>Cart Total: R{{cartTotal}}</strong></p>
     </ion-label>
     <hr>
-    <form [formGroup]="cartForm">
-        <ion-input type="text" value="{{cartTotal}}" [formControl]="cartForm.controls['cartPrice']" text-center><b>{{cartTotal}}</b></ion-input>
-        <ion-input type="text" value="{{address}}" [formControl]="cartForm.controls['address']" text-center> Enter Your Address</ion-input>
 
-        <!--
-    <ion-item>
-        <ion-label floating>Delivery Address<br>(If we don't have it):</ion-label>
-        <ion-textarea rows="6" type="text" value="{{item.address}}" [(ngModel)]="this.address"></ion-textarea>
-    </ion-item>
--->
-        <button full color="red" type="submit" ion-button>Submit Stuff</button>
+    <label>New Items Test Below</label>
+    <form [formGroup]="cartForm">
+        <ion-list>
+            <ion-item>
+                <ion-input type="text" value="{{cartTotal}}" [formControl]="cartForm.controls['cartPrice']"><b>{{cartTotal}}</b></ion-input>
+                <ion-item *ngFor="let item of items">
+                    <ion-input type="text" value="{{item.name}}" [formControl]="cartForm.controls['itemName']">{{item.name}}</ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Delivery Address (Optional)</ion-label>
+                    <ion-textarea lines="4" type="text" value="{{address}}" [formControl]="cartForm.controls['address']">Enter Your Address</ion-textarea>
+                </ion-item>
+            </ion-item>
+        </ion-list>
     </form>
-    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()" (click)="submitCart()">Complete Order</button><br>
+    <label>New Items Above</label>
+
+    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()">Complete Order</button><br>
     <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>
 </ion-content>
+
+<!-- Instead of moving it from one DB to another, maybe it's better to submit is as a normal form?-->

@@ -1,13 +1,13 @@
 webpackJsonp([35],{
 
-/***/ 441:
+/***/ 440:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DatetimePageModule", function() { return DatetimePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonPageModule", function() { return ButtonPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datetime__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__button__ = __webpack_require__(638);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DatetimePageModule = (function () {
-    function DatetimePageModule() {
+var ButtonPageModule = (function () {
+    function ButtonPageModule() {
     }
-    DatetimePageModule = __decorate([
+    ButtonPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__datetime__["a" /* DatetimePage */],
+                __WEBPACK_IMPORTED_MODULE_1__button__["a" /* ButtonPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__datetime__["a" /* DatetimePage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__button__["a" /* ButtonPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__datetime__["a" /* DatetimePage */]
+                __WEBPACK_IMPORTED_MODULE_1__button__["a" /* ButtonPage */]
             ]
         })
-    ], DatetimePageModule);
-    return DatetimePageModule;
+    ], ButtonPageModule);
+    return ButtonPageModule;
 }());
 
-//# sourceMappingURL=datetime.module.js.map
+//# sourceMappingURL=button.module.js.map
 
 /***/ }),
 
-/***/ 553:
+/***/ 638:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatetimePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ButtonPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -59,26 +59,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var DatetimePage = (function () {
-    function DatetimePage(navCtrl) {
+var ButtonPage = (function () {
+    function ButtonPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.event = {
-            month: '1990-02-19',
-            timeStarts: '07:43',
-            timeEnds: '1990-02-20',
-            time: '07:00'
-        };
     }
-    DatetimePage = __decorate([
+    ButtonPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-datetime',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/datetime/datetime.html"*/'<!--https://github.com/driftyco/ionic/blob/master/demos/src/item-sliding/pages/page-one/page-one.ts-->\n\n\n<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>DateTime</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="outer-content">\n\n    <ion-item>\n      <ion-label stacked>Stacked</ion-label>\n      <ion-datetime ></ion-datetime>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Floating</ion-label>\n      <ion-datetime  displayFormat="MMMM YY"></ion-datetime>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Floating</ion-label>\n      <ion-datetime  displayFormat="MMMM YY"></ion-datetime>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed>Fixed</ion-label>\n      <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Inline</ion-label>\n      <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>\n    </ion-item>\n\n\n  <ion-item>\n    <ion-label floating>Floating outside form</ion-label>\n    <ion-datetime displayFormat="MMMM YY"></ion-datetime>\n  </ion-item>\n  \n  <ion-list>\n  <ion-list-header>\n    Action\n  </ion-list-header>    \n    <ion-item>\n      <ion-label color="green">Start Date</ion-label>\n      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>\n    </ion-item>\n\n\n    <ion-item>\n      <ion-label color="green">Start Time</ion-label>\n      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>\n    </ion-item>\n\n    <ion-item>\n      <ion-label color="green">Ends</ion-label>\n      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeEnds"></ion-datetime>\n    </ion-item>\n\n    <ion-item>\n      <ion-label color="green">Day</ion-label>\n      <ion-datetime displayFormat="YYYY"></ion-datetime>\n    </ion-item>\n\n    <ion-item>\n      <ion-label color="green">Time</ion-label>\n      <ion-datetime displayFormat="HH"></ion-datetime>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n      <ion-list-header>\n        Date picker\n      </ion-list-header>   \n      <ion-item>\n        <ion-label color="dark">pickerFormat 1</ion-label>\n        <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" ></ion-datetime>\n      </ion-item>\n\n      <ion-item>\n        <ion-label color="dark">pickerFormat 2</ion-label>\n        <ion-datetime displayFormat="HH" pickerFormat="HH" ></ion-datetime>\n      </ion-item>\n  \n  </ion-list>\n\n</ion-content>\n<style>\n\n</style>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/datetime/datetime.html"*/
+            selector: 'page-button',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/button/button.html"*/'<ion-header>\n  <ion-navbar color="lightblue">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Button</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  text-center>\n\n  <h2>Shapes</h2>\n\n  <button ion-button full color="bluegray">Full Button</button>\n\n  <button ion-button block color="bluegray">Block Button</button>\n\n  <button ion-button round color="bluegray">Round Button</button>\n\n\n  <h2>Outlines</h2>\n\n  <button ion-button color="secondary" full outline color="bluegray">Outline + Full</button>\n\n  <button ion-button color="secondary" block outline color="bluegray">Outline + Block</button>\n\n  <button ion-button color="secondary" round outline color="bluegray">Outline + Round</button>\n\n  <h2>Icons</h2>\n\n  <button ion-button icon-left color="bluegray">\n    <ion-icon name="star"></ion-icon>\n    Left Icon\n  </button>\n\n  <button ion-button icon-right color="bluegray">\n    Right Icon\n    <ion-icon name="star"></ion-icon>\n  </button>\n\n  <button ion-button icon-only color="bluegray">\n    <ion-icon name="star"></ion-icon>\n  </button>\n\n  <button ion-button color="dark" clear icon-only>\n      <ion-icon name=\'hammer\' is-active="false"></ion-icon>\n    </button>\n\n  <h2>Sizes</h2>\n\n  <button ion-button color="bluegray" large>Large</button>\n\n  <button ion-button color="bluegray">Default</button>\n\n  <button ion-button color="bluegray" small>Small</button>\n\n\n\n\n  <h2>Colors</h2>\n\n  <button ion-button color="red">Red </button>\n\n  <button ion-button color="pink">Pink</button>\n\n  <button ion-button color="deeppurple">Deeppurple</button>\n\n  <button ion-button color="lightgreen">Lightgreen</button>\n\n  <button ion-button color="amber">Amber</button>\n\n  <button ion-button color="ios-blue">ios-blue</button>\n\n  <button ion-button color="ios-pink">ios-pink</button>\n\n\n\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/button/button.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
-    ], DatetimePage);
-    return DatetimePage;
+    ], ButtonPage);
+    return ButtonPage;
 }());
 
-//# sourceMappingURL=datetime.js.map
+//# sourceMappingURL=button.js.map
 
 /***/ })
 
