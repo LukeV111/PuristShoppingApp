@@ -1,6 +1,6 @@
 webpackJsonp([41],{
 
-/***/ 148:
+/***/ 150:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,11 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 148;
+webpackEmptyAsyncContext.id = 150;
 
 /***/ }),
 
-/***/ 190:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -91,7 +91,7 @@ var map = {
 	],
 	"../pages/components/rating/rating.module": [
 		452,
-		2
+		3
 	],
 	"../pages/components/search-bar/search-bar.module": [
 		453,
@@ -107,7 +107,7 @@ var map = {
 	],
 	"../pages/components/shrinking/shrinking.module": [
 		456,
-		3
+		4
 	],
 	"../pages/components/tab/tab.module": [
 		457,
@@ -135,23 +135,23 @@ var map = {
 	],
 	"../pages/layout/app2/cart/cart.module": [
 		463,
-		14
+		2
 	],
 	"../pages/layout/app2/category2/category2.module": [
 		464,
-		13
+		14
 	],
 	"../pages/layout/app2/contact-us/contact-us.module": [
 		465,
-		12
+		13
 	],
 	"../pages/layout/app2/detail2/detail2.module": [
 		466,
-		4
+		5
 	],
 	"../pages/layout/app2/list2/list2.module": [
 		467,
-		11
+		12
 	],
 	"../pages/layout/auth/after-login/after-login.module": [
 		468,
@@ -159,19 +159,19 @@ var map = {
 	],
 	"../pages/layout/auth/forgot/forgot.module": [
 		469,
-		10
+		11
 	],
 	"../pages/layout/auth/login/login.module": [
 		470,
-		9
+		10
 	],
 	"../pages/layout/auth/main/main.module": [
 		471,
-		8
+		9
 	],
 	"../pages/layout/auth/register/register.module": [
 		472,
-		7
+		8
 	],
 	"../pages/layout/profile/profile/profile.module": [
 		473,
@@ -179,11 +179,11 @@ var map = {
 	],
 	"../pages/layout/profile/profile2/profile2.module": [
 		474,
-		6
+		7
 	],
 	"../pages/theme/theme.module": [
 		475,
-		5
+		6
 	]
 };
 function webpackAsyncContext(req) {
@@ -197,7 +197,7 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 190;
+webpackAsyncContext.id = 192;
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -209,7 +209,7 @@ module.exports = webpackAsyncContext;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(139);

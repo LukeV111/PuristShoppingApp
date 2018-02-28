@@ -24,8 +24,11 @@ export class CartPage {
   items: any[] = [];
   itemId: any;
   cartTotal: any = 0;
+  subTotal: any = 0;
+  shippingTotal: any = 0;
   profile: FirebaseListObservable<any>;
   profile2: FirebaseListObservable<any>;
+  profile3: FirebaseObjectObservable<any>;
   uid: any;
   key: any;
   profileArray: any = [];
@@ -37,6 +40,7 @@ export class CartPage {
   public address: any[];
   public cartForm: FormGroup;
   public itemName: any[];
+  date = firebase.database.ServerValue.TIMESTAMP;
 
   //public formItems: firebase.database.Reference = firebase.database().ref('/userProfile/' + this.uid + '/completedOrders2/');
 
@@ -60,7 +64,6 @@ export class CartPage {
     this.cartForm = fb.group({
       'cartPrice': [''],
       'address': [''],
-      'itemName': ['{{item.name}}'],
     });    
 
 
@@ -87,6 +90,22 @@ export class CartPage {
 
         this.profile2 = this.afDb.list('/userProfile/' + this.uid + '/completedOrders/');
 
+
+        this.afDb.list('/userProfile/' + this.uid + '/currentOrder', {
+          query: {
+            orderByChild: "Quantity",
+            equalTo: this.Quantity
+          }
+        }).subscribe(listItems => {
+          this.subTotal = 0;
+          this.items = listItems;
+          this.items.forEach((item) => {
+            this.subTotal = this.subTotal + (item.uPrice * item.Quantity);
+          });
+
+/////////Submit cart total to Current Order before submitting all to completedOrders
+
+        /*
         this.afDb.list('/userProfile/' + this.uid + '/currentOrder', {
           query: {
             orderByChild: "Quantity",
@@ -98,10 +117,16 @@ export class CartPage {
           this.items.forEach((item) => {
             this.cartTotal = this.cartTotal + (item.uPrice * item.Quantity);
           });
+*/
+
           console.log("Cart things", this.items, "Cart Total", this.cartTotal);
 
           loadingPopup.dismiss()
         });
+        this.profile3 = this.afDb.object('/userProfile/' + this.uid);
+        this.profile3.subscribe(profile => {
+          this.profileArray = profile;
+        })
 
       } else {
         console.log("auth false");
@@ -142,11 +167,10 @@ export class CartPage {
   }
 
   completeOrder(items) {
-    
     this.profile2.push(items).then(() => {
       const toast = this.toastCtrl.create({
         message: 'Order Placed - We will be in touch with an invoice shortly.',
-        position: 'bottom',
+        position: 'middle',
         duration: 6000
       });
       //toast.onDidDismiss(this.dismissHandler);

@@ -1,14 +1,14 @@
 webpackJsonp([13],{
 
-/***/ 464:
+/***/ 465:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Category2PageModule", function() { return Category2PageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactUsPageModule", function() { return ContactUsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__category2__ = __webpack_require__(666);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_us__ = __webpack_require__(714);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,40 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import { ShrinkHeaderModule } from '../../../../components/shrink-header/shrink-header.module';
-var Category2PageModule = (function () {
-    function Category2PageModule() {
+var ContactUsPageModule = (function () {
+    function ContactUsPageModule() {
     }
-    Category2PageModule = __decorate([
+    ContactUsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__category2__["a" /* Category2Page */],
+                __WEBPACK_IMPORTED_MODULE_2__contact_us__["a" /* ContactUsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__category2__["a" /* Category2Page */])
-                //ShrinkHeaderModule 
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__contact_us__["a" /* ContactUsPage */]),
             ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_1__category2__["a" /* Category2Page */]
-            ]
         })
-    ], Category2PageModule);
-    return Category2PageModule;
+    ], ContactUsPageModule);
+    return ContactUsPageModule;
 }());
 
-//# sourceMappingURL=category2.module.js.map
+//# sourceMappingURL=contact-us.module.js.map
 
 /***/ }),
 
-/***/ 666:
+/***/ 714:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Category2Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactUsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(138);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -63,74 +56,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-var Category2Page = (function () {
-    function Category2Page(navCtrl, navParams, loadingCtrl, afDb, afAuth) {
-        var _this = this;
+/**
+ * Generated class for the ContactUsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ContactUsPage = (function () {
+    function ContactUsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.loadingCtrl = loadingCtrl;
-        this.afDb = afDb;
-        this.afAuth = afAuth;
-        this.category = [];
-        this.profileArray = [];
-        var loadingPopup = this.loadingCtrl.create({
-            spinner: 'crescent',
-            content: ''
-        });
-        loadingPopup.present();
-        this.afDb.list('/category', { query: {
-                orderByChild: "type",
-                equalTo: "puristcoffee" //You need to make the category 'puristcoffee' if you want it to be displayed
-            } }).subscribe(function (categoryItems) {
-            _this.category = categoryItems;
-            loadingPopup.dismiss();
-        });
     }
-    Category2Page.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.afAuth.authState.subscribe(function (userAuth) {
-            if (userAuth) {
-                console.log("auth true!");
-                _this.uid = userAuth.uid;
-                var loadingPopup_1 = _this.loadingCtrl.create({
-                    spinner: 'crescent',
-                    content: '',
-                    duration: 3000
-                });
-                loadingPopup_1.present();
-                _this.profile = _this.afDb.object('/userProfile/' + _this.uid);
-                _this.profile.subscribe(function (profile) {
-                    _this.profileArray = profile;
-                    loadingPopup_1.dismiss();
-                });
-            }
-            else {
-                console.log("auth false");
-                _this.navCtrl.setRoot('LoginPage');
-            }
-        });
+    ContactUsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ContactUsPage');
     };
-    Category2Page.prototype.openList = function (categoryId) {
-        this.navCtrl.push('List2Page', { categoryId: categoryId });
+    ContactUsPage.prototype.goToHome = function () {
+        this.navCtrl.setRoot('Category2Page');
     };
-    Category2Page.prototype.openCart = function () {
-        this.navCtrl.push('CartPage');
-    };
-    Category2Page.prototype.toProfile = function () {
-        this.navCtrl.push('ProfilePage');
-    };
-    Category2Page = __decorate([
+    ContactUsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-category2',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/category2/category2.html"*/'<!--*********** Header ***********-->\n<ion-header no-border>\n    <ion-navbar color="black">\n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Purist Coffee</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="openCart()">\n                <ion-icon name="cart"></ion-icon>\n                <ion-badge id="cart-badge" *ngIf="(profile | async)?.cartIcon" color="red">*</ion-badge>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <ion-card tappable *ngFor="let category of category" (click)="openList(category.$key)">\n        <div class="banner-bg" [ngStyle]="{\'background-image\': \'url(\' + category.imgBg+ \')\'}">\n            <h2 class="banner-title"> {{category.name}}</h2>\n            <p class="banner-description"> {{category.description}}</p>\n        </div>\n        <hr>\n    </ion-card>\n    <!--\n    <ion-fab right bottom>\n        <button ion-fab color="ios-orange"><ion-icon name="chatbubbles"></ion-icon></button>\n        <ion-fab-list side="left">\n            <button ion-fab><ion-icon name="call"></ion-icon></button>\n            <button ion-fab><ion-icon name="chatboxes"></ion-icon></button>\n            <button ion-fab><ion-icon name="images"></ion-icon></button>\n        </ion-fab-list>\n    </ion-fab>\n-->\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/category2/category2.html"*/
+            selector: 'page-contact-us',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/contact-us/contact-us.html"*/'<ion-header>\n    <ion-navbar color="black">\n        <ion-title>Contact Us</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n    <ion-list no-lines>\n        <ion-item>\n            <ion-icon name="ios-mail" item-left></ion-icon>\n            <p>E-mail</p>\n            <h2>hello@puristcoffee.com</h2>\n        </ion-item>\n        <ion-item>\n            <ion-icon name="ios-call" item-left></ion-icon>\n            <p>Contact Number</p>\n            <h2>087 822 1102</h2>\n        </ion-item>\n        <ion-item>\n            <ion-icon name="home" item-left></ion-icon>\n            <p>Address</p>\n            <h2>Block A, Georgian Place Office Park</h2>\n            <h2>18 Southway Street, Sandton</h2>\n        </ion-item>\n        <ion-item>\n            <ion-icon name="clock" item-left></ion-icon>\n            <p>Hours</p>\n            <h2>Weekdays: 8:30 - 4pm CAT</h2>\n        </ion-item>\n    </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/contact-us/contact-us.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]])
-    ], Category2Page);
-    return Category2Page;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], ContactUsPage);
+    return ContactUsPage;
 }());
 
-//# sourceMappingURL=category2.js.map
+//# sourceMappingURL=contact-us.js.map
 
 /***/ })
 

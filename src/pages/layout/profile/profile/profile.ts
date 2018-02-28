@@ -33,7 +33,7 @@ export class ProfilePage {
     });    
     
   }
-  ionViewWillLoad() {
+  ionViewWillLoad() {;;
     this.afAuth.authState.subscribe(userAuth => {
 
       if (userAuth) {
