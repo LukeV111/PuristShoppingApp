@@ -22,167 +22,167 @@ webpackEmptyAsyncContext.id = 150;
 
 var map = {
 	"../pages/components/accordion/accordion.module": [
-		435,
-		40
-	],
-	"../pages/components/actionsheet/actionsheet.module": [
 		436,
 		39
 	],
-	"../pages/components/alert/alert.module": [
+	"../pages/components/actionsheet/actionsheet.module": [
 		437,
 		38
 	],
-	"../pages/components/animations/animations.module": [
+	"../pages/components/alert/alert.module": [
 		438,
 		37
 	],
-	"../pages/components/badge/badge.module": [
+	"../pages/components/animations/animations.module": [
 		439,
 		36
 	],
-	"../pages/components/button/button.module": [
+	"../pages/components/badge/badge.module": [
 		440,
 		35
 	],
-	"../pages/components/datetime/datetime.module": [
+	"../pages/components/button/button.module": [
 		441,
 		34
 	],
-	"../pages/components/fab/fab.module": [
+	"../pages/components/datetime/datetime.module": [
 		442,
 		33
 	],
-	"../pages/components/fading-header/fading-header.module": [
+	"../pages/components/fab/fab.module": [
 		443,
 		32
 	],
-	"../pages/components/grid/grid.module": [
+	"../pages/components/fading-header/fading-header.module": [
 		444,
 		31
 	],
-	"../pages/components/header/header.module": [
+	"../pages/components/grid/grid.module": [
 		445,
 		30
 	],
-	"../pages/components/input/input.module": [
+	"../pages/components/header/header.module": [
 		446,
 		29
 	],
-	"../pages/components/item-sliding/item-sliding.module": [
+	"../pages/components/input/input.module": [
 		447,
 		28
 	],
-	"../pages/components/item/item.module": [
+	"../pages/components/item-sliding/item-sliding.module": [
 		448,
 		27
 	],
-	"../pages/components/label/label.module": [
+	"../pages/components/item/item.module": [
 		449,
 		26
 	],
-	"../pages/components/radio-button/radio-button.module": [
+	"../pages/components/label/label.module": [
 		450,
 		25
 	],
-	"../pages/components/range/range.module": [
+	"../pages/components/radio-button/radio-button.module": [
 		451,
 		24
 	],
-	"../pages/components/rating/rating.module": [
+	"../pages/components/range/range.module": [
 		452,
+		23
+	],
+	"../pages/components/rating/rating.module": [
+		453,
 		3
 	],
 	"../pages/components/search-bar/search-bar.module": [
-		453,
-		23
-	],
-	"../pages/components/segment/segment.module": [
 		454,
 		22
 	],
-	"../pages/components/select-option/select-option.module": [
+	"../pages/components/segment/segment.module": [
 		455,
 		21
 	],
-	"../pages/components/shrinking/shrinking.module": [
+	"../pages/components/select-option/select-option.module": [
 		456,
+		20
+	],
+	"../pages/components/shrinking/shrinking.module": [
+		457,
 		4
 	],
 	"../pages/components/tab/tab.module": [
-		457,
-		20
-	],
-	"../pages/components/table/table.module": [
 		458,
 		19
 	],
-	"../pages/components/tag/tag.module": [
+	"../pages/components/table/table.module": [
 		459,
 		18
 	],
-	"../pages/components/toast/toast.module": [
+	"../pages/components/tag/tag.module": [
 		460,
 		17
 	],
-	"../pages/components/transparent-header/transparent-header.module": [
+	"../pages/components/toast/toast.module": [
 		461,
 		16
 	],
-	"../pages/layout/app2/after-cart/after-cart.module": [
+	"../pages/components/transparent-header/transparent-header.module": [
 		462,
 		15
 	],
-	"../pages/layout/app2/cart/cart.module": [
+	"../pages/layout/app2/after-cart/after-cart.module": [
 		463,
+		40
+	],
+	"../pages/layout/app2/cart/cart.module": [
+		464,
 		2
 	],
 	"../pages/layout/app2/category2/category2.module": [
-		464,
+		465,
 		14
 	],
 	"../pages/layout/app2/contact-us/contact-us.module": [
-		465,
+		466,
 		13
 	],
 	"../pages/layout/app2/detail2/detail2.module": [
-		466,
+		467,
 		5
 	],
 	"../pages/layout/app2/list2/list2.module": [
-		467,
+		468,
 		12
 	],
 	"../pages/layout/auth/after-login/after-login.module": [
-		468,
+		469,
 		1
 	],
 	"../pages/layout/auth/forgot/forgot.module": [
-		469,
+		470,
 		11
 	],
 	"../pages/layout/auth/login/login.module": [
-		470,
+		471,
 		10
 	],
 	"../pages/layout/auth/main/main.module": [
-		471,
+		472,
 		9
 	],
 	"../pages/layout/auth/register/register.module": [
-		472,
+		473,
 		8
 	],
 	"../pages/layout/profile/profile/profile.module": [
-		473,
+		474,
 		0
 	],
 	"../pages/layout/profile/profile2/profile2.module": [
-		474,
+		475,
 		7
 	],
 	"../pages/theme/theme.module": [
-		475,
+		476,
 		6
 	]
 };
@@ -202,7 +202,7 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 276:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -211,7 +211,7 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__ = __webpack_require__(140);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -310,13 +310,70 @@ var AuthData = (function () {
 
 /***/ }),
 
-/***/ 280:
+/***/ 279:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AfterCartPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(193);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the AfterCartPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AfterCartPage = (function () {
+    function AfterCartPage(navCtrl, navParams, iab) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.iab = iab;
+        this.parameter1 = navParams.get('param1');
+    }
+    AfterCartPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AfterCartPage');
+    };
+    //You're here
+    AfterCartPage.prototype.openBrowser = function () {
+        var browser = this.iab.create('https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=10867430&amp;item_name=Purist+Coffee+Order&amp;amount=1234567890.00&amp;return_url=https%3A%2F%2Fwww.puristcoffee.com&amp;cancel_url=https%3A%2F%2Fpuristcoffee.com', '_system');
+        browser.close();
+    };
+    AfterCartPage.prototype.goToHome = function () {
+        this.navCtrl.setRoot('Category2Page');
+    };
+    AfterCartPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-after-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/after-cart/after-cart.html"*/'<ion-header>\n\n    <ion-navbar color="black">\n        <ion-title>Order Payment</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-label>\n        <h2>Thank you for your order!</h2>\n        <p><i>The total amount for your order is: <b><br><br>{{parameter1}}</b></i></p>\n    </ion-label>\n\n    <ion-label>\n        <u><b>Payment Methods:</b></u>\n    </ion-label>\n    <hr>\n    <ion-label>\n        <u><b>Pay By Card</b></u>\n    </ion-label>\n    <i>Payment is processed by PayFast</i>\n    <p>\n        <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=10867430&amp;item_name=Purist+Coffee+Order&amp;amount={{parameter1}}&amp;return_url=https%3A%2F%2Fwww.puristcoffee.com&amp;cancel_url=https%3A%2F%2Fpuristcoffee.com"><img src="https://www.payfast.co.za/images/buttons/light-small-paynow.png" width="165" height="36" alt="Pay" title="Pay Now with PayFast" /></a>\n    </p>\n    <!--\n    <button ion-button outline color="black" (click)="openBrowser()">Click Here To Pay</button>\n    -->\n    <p></p>\n    <!-- Insert reference href and interperlate amount here-->\n    <hr>\n    <ion-label>\n        <u><b>7 Day Account</b></u>\n    </ion-label>\n    <p> <i>Prior Arrangement Required. You may close the page if this applies to you.</i>\n    </p>\n    <hr>\n    <ion-label>\n        <u><b>Pay By Snapscan</b></u>\n    </ion-label>\n    <i>Enter the amount shown above and close the page when you are done. We will be notified of your payment.</i>\n    <p></p>\n    <img src="https://puristcoffee.com/wp-content/uploads/2018/02/Purist-Coffee-e1519653336313.png" align="middle">\n    <hr>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/after-cart/after-cart.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
+    ], AfterCartPage);
+    return AfterCartPage;
+}());
+
+//# sourceMappingURL=after-cart.js.map
+
+/***/ }),
+
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(303);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -324,7 +381,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 302:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -332,20 +389,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(431);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database_deprecated__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database_deprecated__ = __webpack_require__(278);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_auth__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_facebook__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_google_plus__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_auth_data__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_radio_service__ = __webpack_require__(433);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ionic_gallery_modal__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_auth_data__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_radio_service__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ionic_gallery_modal__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_pages_layout_app2_after_cart_after_cart__ = __webpack_require__(279);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -376,6 +434,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //************** import image gallery *********************//
 
 
+
 //********** firebase configuration  ************ */
 var config = {
     apiKey: 'AIzaSyDRZqq3yfwt4es02BVVGEZIO5sgOlJ0fE0',
@@ -391,7 +450,8 @@ var AppModule = (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_16__src_pages_layout_app2_after_cart_after_cart__["a" /* AfterCartPage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -447,7 +507,8 @@ var AppModule = (function () {
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_16__src_pages_layout_app2_after_cart_after_cart__["a" /* AfterCartPage */],
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__["a" /* InAppBrowser */],
@@ -474,15 +535,15 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 432:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(276);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -577,7 +638,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 433:
+/***/ 434:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -643,5 +704,5 @@ var RadioPlayer = (function () {
 
 /***/ })
 
-},[280]);
+},[281]);
 //# sourceMappingURL=main.js.map

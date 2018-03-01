@@ -12,4 +12,10 @@ page-cart {
         margin-left: auto;
         margin-right: auto;
     }
+    #myInput {
+        width: calc(100% - 10px);
+        border: 1;
+        border-radius: 5;
+        background: transparent;
+    }
 }

@@ -5,10 +5,10 @@ webpackJsonp([32],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FadingHeaderPageModule", function() { return FadingHeaderPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FabPageModule", function() { return FabPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fading_header__ = __webpack_require__(663);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fab__ = __webpack_require__(663);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FadingHeaderPageModule = (function () {
-    function FadingHeaderPageModule() {
+var FabPageModule = (function () {
+    function FabPageModule() {
     }
-    FadingHeaderPageModule = __decorate([
+    FabPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__fading_header__["a" /* FadingHeaderPage */],
+                __WEBPACK_IMPORTED_MODULE_1__fab__["a" /* FabPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__fading_header__["a" /* FadingHeaderPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__fab__["a" /* FabPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__fading_header__["a" /* FadingHeaderPage */]
+                __WEBPACK_IMPORTED_MODULE_1__fab__["a" /* FabPage */]
             ]
         })
-    ], FadingHeaderPageModule);
-    return FadingHeaderPageModule;
+    ], FabPageModule);
+    return FabPageModule;
 }());
 
-//# sourceMappingURL=fading-header.module.js.map
+//# sourceMappingURL=fab.module.js.map
 
 /***/ }),
 
@@ -45,7 +45,7 @@ var FadingHeaderPageModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FadingHeaderPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FabPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -57,92 +57,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var FadingHeaderPage = (function () {
-    function FadingHeaderPage(ref) {
-        this.ref = ref;
-        this.showToolbar = false;
-        this.transition = false;
-        // headerImgSize:string = '100%';
-        // headerImgUrl:string = '';
-        this.items = [
-            'Pokémon Yellow',
-            'Super Metroid',
-            'Mega Man X',
-            'The Legend of Zelda',
-            'Pac-Man',
-            'Super Mario World',
-            'Street Fighter II',
-            'Half Life',
-            'Final Fantasy VII',
-            'Star Fox',
-            'Tetris',
-            'Donkey Kong III',
-            'GoldenEye 007',
-            'Doom',
-            'Fallout',
-            'GTA',
-            'Halo',
-            'Pokémon Yellow',
-            'Super Metroid',
-            'Mega Man X',
-            'The Legend of Zelda',
-            'Pac-Man',
-            'Super Mario World',
-            'Street Fighter II',
-            'Half Life',
-            'Final Fantasy VII',
-            'Star Fox', 'Pokémon Yellow',
-            'Super Metroid',
-            'Mega Man X',
-            'The Legend of Zelda',
-            'Pac-Man',
-            'Super Mario World',
-            'Street Fighter II',
-            'Half Life',
-            'Final Fantasy VII',
-            'Star Fox',
-            'Tetris',
-            'Donkey Kong III',
-            'GoldenEye 007',
-            'Doom',
-            'Fallout',
-            'GTA',
-            'Halo',
-            'Pokémon Yellow',
-            'Super Metroid',
-            'Mega Man X',
-            'The Legend of Zelda',
-            'Pac-Man',
-            'Super Mario World',
-            'Street Fighter II',
-            'Half Life',
-            'Final Fantasy VII',
-            'Star Fox'
-        ];
+var FabPage = (function () {
+    function FabPage() {
     }
-    FadingHeaderPage.prototype.onScroll = function ($event) {
-        var scrollTop = $event.scrollTop;
-        this.showToolbar = scrollTop >= 100;
-        if (scrollTop < 0) {
-            this.transition = false;
-            //this.headerImgSize = `${ Math.abs(scrollTop)/2 + 100}%`;
-        }
-        else {
-            this.transition = true;
-            //this.headerImgSize = '100%'
-        }
-        this.ref.detectChanges();
-    };
-    FadingHeaderPage = __decorate([
+    FabPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-fading-header',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/fading-header/fading-header.html"*/'\n<ion-header>\n  <ion-navbar  transparent  [class.show-background]="showToolbar">\n    <button ion-button menuToggle  [hidden]="!showToolbar">\n      <ion-icon name="menu"></ion-icon>\n    </button>\n     <ion-title color="light" [hidden]="!showToolbar">Fading</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  no-padding  class="content" (ionScroll)="onScroll($event)" [class.transition]="transition"  >\n  \n  <ion-list margin-top>\n    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n      {{ item }}\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/fading-header/fading-header.html"*/
+            selector: 'page-fab',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/fab/fab.html"*/'\n<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>FABs</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-fab top right edge>\n    <button ion-fab color="gray" mini><ion-icon name="add"></ion-icon></button>\n    <ion-fab-list>\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n    </ion-fab-list>\n  </ion-fab>\n\n  <ion-fab right bottom>\n    <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>\n    <ion-fab-list side="left">\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n    </ion-fab-list>\n  </ion-fab>\n\n  <ion-fab left top>\n    <button ion-fab color="secondary"><ion-icon name="arrow-dropright"></ion-icon></button>\n    <ion-fab-list side="right">\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n    </ion-fab-list>\n  </ion-fab>\n\n  <ion-fab left bottom>\n    <button ion-fab color="dark"><ion-icon name="arrow-dropup"></ion-icon></button>\n    <ion-fab-list side="top">\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n    </ion-fab-list>\n  </ion-fab>\n\n  <ion-fab center middle>\n    <button ion-fab color="danger"><ion-icon name="md-share"></ion-icon></button>\n    <ion-fab-list side="top">\n      <button ion-fab color="primary"><ion-icon name="logo-vimeo"></ion-icon></button>\n    </ion-fab-list>\n    <ion-fab-list side="bottom">\n      <button ion-fab color="secondary"><ion-icon name="logo-facebook"></ion-icon></button>\n    </ion-fab-list>\n    <ion-fab-list side="left">\n      <button ion-fab color="light"><ion-icon name="logo-googleplus"></ion-icon></button>\n    </ion-fab-list>\n    <ion-fab-list side="right">\n      <button ion-fab color="dark"><ion-icon name="logo-twitter"></ion-icon></button>\n    </ion-fab-list>\n  </ion-fab>\n\n  <ion-fab right middle>\n    <button ion-fab color="danger"><ion-icon name="add"></ion-icon></button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/fab/fab.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]])
-    ], FadingHeaderPage);
-    return FadingHeaderPage;
+        __metadata("design:paramtypes", [])
+    ], FabPage);
+    return FabPage;
 }());
 
-//# sourceMappingURL=fading-header.js.map
+//# sourceMappingURL=fab.js.map
 
 /***/ })
 

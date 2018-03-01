@@ -38,9 +38,10 @@
     <!--Name Display-->
     <ion-card *ngFor="let item of items">
         <ion-card-header>
-            <b>{{item.name}}</b><br>
+            <b>{{item.name}}</b>
         </ion-card-header>
         <hr>
+        <ion-card-content>Unit Price: R {{item.uPrice}}</ion-card-content>
         <ion-card-content *ngIf="item.coffee">
             Grind Type: {{item.grindType}}<br>Bag Size: {{item.bagSize}}
         </ion-card-content>
@@ -52,7 +53,7 @@
         </ion-card-content>
         <ion-card-content>
             Quantity: {{item.Quantity}}
-            <br><b>Price: {{item.dynamicPrice}}</b> (R{{item.uPrice}} x {{item.Quantity}})
+            <br><b>Price: R {{item.dynamicPrice}}</b>
         </ion-card-content>
 
         <!--Buttons Below -->
@@ -65,20 +66,40 @@
             </ion-col>
         </ion-row>
     </ion-card>
+
     <ion-label>
-        <p><strong>Sub Total: R{{subTotal}}</strong></p>
-        <p><strong>Shipping: R {{shippingTotal}}</strong></p>
-        <p><strong>Cart Total: R {{cartTotal}}</strong></p>
-
+        <b>Totals</b>
     </ion-label>
-    <hr>
-
+    <ion-item>
+        <p><strong>Sub Total: R {{subTotal}}</strong></p>
+    </ion-item>
+    <ion-item>
+        <p><strong>Nationwide Shipping: R {{shippingTotal}}</strong></p>
+    </ion-item>
+    <ion-item>
+        <p><strong>Cart Total: R {{cartTotal}}</strong></p>
+    </ion-item>
     <form [formGroup]="cartForm">
-        <ion-input type="text" value="{{cartTotal}}" [formControl]="cartForm.controls['cartPrice']"><b>{{cartTotal}}</b></ion-input>
-        <ion-label><u>Delivery Address</u></ion-label>
-        <ion-textarea type="text" value="{{(profile3 | async)?.address}}" [formControl]="cartForm.controls['address']"><b>{{(profile3 | async)?.address}}</b></ion-textarea>
+        <ion-list radio-group [formControl]="cartForm.controls['collectionOption']">
+            <ion-label><b>Delivery Options:</b></ion-label>
+            <ion-item>
+                <ion-label>Delivery</ion-label>
+                <ion-radio item-left type="radio" value="No" (click)='collectionOption(cartForm.value.collectionOption, "No")'></ion-radio>
+            </ion-item>
+            <ion-item>
+                <ion-label>Collection / Prior Arrangement:</ion-label>
+                <ion-radio item-left type="radio" value="Yes" (click)='collectionOption(cartForm.value.collectionOption, "Yes")'></ion-radio>
+            </ion-item>
+        </ion-list>
+        <ion-list hidden>
+            <ion-input type="text" value="{{subTotal}}" [formControl]="cartForm.controls['subTotal']"><b>Sub Total: {{subTotal}}</b></ion-input>
+            <ion-input type="text" value="{{shippingTotal}}" [formControl]="cartForm.controls['shippingTotal']"><b>Shipping Total: {{shippingTotal}}</b></ion-input>
+            <ion-input type="text" value="{{cartTotal}}" [formControl]="cartForm.controls['cartPrice']"><b>Cart Total: {{cartTotal}}</b></ion-input>
+        </ion-list>
+        <ion-label><b>Delivery Address:</b></ion-label>
+        <!--<ion-textarea type="text" placeholder="Update your address in your profile to add it automatically." value="{{(profile3 | async)?.address}}" [formControl]="cartForm.controls['address']"><b>{{(profile3 | async)?.address}}</b></ion-textarea>-->
+        <textarea #myInput id="myInput" rows="5" maxLength="500" (keyup)="resize()" value="{{(profile3 | async)?.address}}" placeholder="Update your address in your profile to add it automatically." [formControl]="cartForm.controls['address']"></textarea>
     </form>
-
     <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()">Complete Order</button><br>
     <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>
 </ion-content>

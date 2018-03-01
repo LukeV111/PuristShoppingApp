@@ -5,10 +5,10 @@ webpackJsonp([22],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SegmentPageModule", function() { return SegmentPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchBarPageModule", function() { return SearchBarPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__segment__ = __webpack_require__(676);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_bar__ = __webpack_require__(676);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SegmentPageModule = (function () {
-    function SegmentPageModule() {
+var SearchBarPageModule = (function () {
+    function SearchBarPageModule() {
     }
-    SegmentPageModule = __decorate([
+    SearchBarPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__segment__["a" /* SegmentPage */],
+                __WEBPACK_IMPORTED_MODULE_1__search_bar__["a" /* SearchBarPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__segment__["a" /* SegmentPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__search_bar__["a" /* SearchBarPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__segment__["a" /* SegmentPage */]
+                __WEBPACK_IMPORTED_MODULE_1__search_bar__["a" /* SearchBarPage */]
             ]
         })
-    ], SegmentPageModule);
-    return SegmentPageModule;
+    ], SearchBarPageModule);
+    return SearchBarPageModule;
 }());
 
-//# sourceMappingURL=segment.module.js.map
+//# sourceMappingURL=search-bar.module.js.map
 
 /***/ }),
 
@@ -45,9 +45,9 @@ var SegmentPageModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SegmentPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchBarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,93 +65,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var SegmentPage = (function () {
-    function SegmentPage(navCtrl) {
+var SearchBarPage = (function () {
+    function SearchBarPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.appType = 'Paid';
-        this.safari = 'Shared Links';
-        this.weather = 'sunny';
-        this.apps = {
-            'Paid': [
-                {
-                    name: 'Monopoly',
-                    price: '$0.99'
-                },
-                {
-                    name: 'Angry Birds',
-                    price: '$2.99'
-                }
-            ],
-            'Free': [
-                {
-                    name: 'Snapchat',
-                    price: 'GET'
-                },
-                {
-                    name: 'Instagram',
-                    price: 'OPEN'
-                }
-            ],
-            'Top': [
-                {
-                    name: 'Spotify',
-                    price: 'OPEN'
-                },
-                {
-                    name: 'Pandora',
-                    price: 'GET'
-                }
-            ]
-        };
-        this.items = {
-            'Bookmarks': [
-                {
-                    name: 'Favorites',
-                    icon: 'ios-star-outline'
-                },
-                {
-                    name: 'History',
-                    icon: 'ios-clock-outline'
-                }
-            ],
-            'Reading List': [
-                {
-                    name: 'Terms of Service',
-                    icon: 'create'
-                },
-                {
-                    name: 'User Guide',
-                    icon: 'book'
-                }
-            ],
-            'Shared Links': [
-                {
-                    name: 'Ionic Framework',
-                    icon: 'ionic'
-                },
-                {
-                    name: 'Learn Angular',
-                    icon: 'logo-angular'
-                }
-            ]
-        };
     }
-    SegmentPage.prototype.getItems = function (type) {
-        return this.apps[type];
+    SearchBarPage.prototype.ngOnInit = function () {
+        this.setItems();
     };
-    SegmentPage.prototype.getSafariItems = function (type) {
-        return this.items[type];
+    SearchBarPage.prototype.setItems = function () {
+        this.items = ['Orange', 'Banana', 'Pear', 'Tomato', 'Grape', 'Apple', 'Cherries', 'Cranberries', 'Raspberries', 'Strawberries', 'Watermelon'];
     };
-    SegmentPage = __decorate([
+    SearchBarPage.prototype.filterItems = function (ev) {
+        this.setItems();
+        var val = ev.value;
+        if (val && val.trim() !== '') {
+            this.items = this.items.filter(function (item) {
+                return item.toLowerCase().includes(val.toLowerCase());
+            });
+        }
+    };
+    SearchBarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-segment',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/segment/segment.html"*/'<ion-header>\n\n  <ion-navbar no-border-bottom color="lightblue">\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Segment</ion-title>\n  </ion-navbar>\n  <ion-toolbar no-border-top color="lightblue">\n    <ion-segment [(ngModel)]="appType" color="light">\n      <ion-segment-button value="Paid">\n        Paid\n      </ion-segment-button>\n      <ion-segment-button value="Free">\n        Free\n      </ion-segment-button>\n      <ion-segment-button value="Top">\n        Top\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content class="outer-content">\n  <ion-list>\n    <ion-list-header>{{ appType }}</ion-list-header>\n    <ion-item *ngFor="let item of getItems(appType)">\n      {{ item.name }}\n      <button ion-button outline item-end>{{ item.price }}</button>\n    </ion-item>\n  </ion-list>\n\n  <ion-card>\n    <ion-card-header>\n      {{ safari }}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-segment [(ngModel)]="safari" color="dark">\n        <ion-segment-button value="Bookmarks">\n          <ion-icon name="book"></ion-icon>\n        </ion-segment-button>\n        <ion-segment-button value="Reading List">\n          <ion-icon ios="ios-glasses-outline" md="md-glasses"></ion-icon>\n        </ion-segment-button>\n        <ion-segment-button value="Shared Links">\n          <ion-icon ios="ios-at-outline" md="md-at"></ion-icon>\n        </ion-segment-button>\n      </ion-segment>\n      <ion-list style="margin: 0" inset>\n        <button ion-item *ngFor="let sItem of getSafariItems(safari)">\n          <ion-icon item-start [name]="sItem.icon" color="primary"></ion-icon>\n          {{ sItem.name }}\n        </button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar no-border-bottom>\n    <ion-title>\n      Weather: {{ weather == \'sunny\' ? \'96\' : \'77\' }}°\n      <ion-icon [name]="weather" color="danger"></ion-icon>\n    </ion-title>\n  </ion-toolbar>\n  <ion-toolbar no-border-top no-border-bottom>\n    <ion-segment [(ngModel)]="weather" color="danger">\n      <ion-segment-button value="sunny">\n        Sunny\n      </ion-segment-button>\n      <ion-segment-button value="rainy" checked>\n        Rainy\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/segment/segment.html"*/
+            selector: 'page-search-bar',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/search-bar/search-bar.html"*/'<ion-header>\n\n  <ion-navbar no-border-bottom color="lightblue">\n    <button ion-button menuToggle color="light">\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Searchbar</ion-title>\n  </ion-navbar>\n\n  <ion-toolbar no-border-top color="lightblue">\n    <ion-searchbar placeholder="Filter Items" (ionInput)="filterItems($event)"></ion-searchbar>\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-searchbar placeholder="Filter Items with Cancel" showCancelButton color="danger" (ionInput)="filterItems($event)"></ion-searchbar>\n\n  <p padding-left padding-right>Searchbars can be placed in a toolbar or anywhere in the content.</p>\n\n  <ion-list>\n    <ion-item *ngFor="let item of items">\n      {{ item }}\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n\n\n<ion-footer>\n\n  <ion-toolbar color="danger">\n    <ion-searchbar placeholder="Search" (ionInput)="filterItems($event)"></ion-searchbar>\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/search-bar/search-bar.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
-    ], SegmentPage);
-    return SegmentPage;
+    ], SearchBarPage);
+    return SearchBarPage;
 }());
 
-//# sourceMappingURL=segment.js.map
+//# sourceMappingURL=search-bar.js.map
 
 /***/ })
 

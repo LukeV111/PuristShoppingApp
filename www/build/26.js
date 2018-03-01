@@ -5,10 +5,10 @@ webpackJsonp([26],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LabelPageModule", function() { return LabelPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemPageModule", function() { return ItemPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__label__ = __webpack_require__(669);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__item__ = __webpack_require__(669);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LabelPageModule = (function () {
-    function LabelPageModule() {
+var ItemPageModule = (function () {
+    function ItemPageModule() {
     }
-    LabelPageModule = __decorate([
+    ItemPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_1__label__["a" /* LabelPage */],
+                __WEBPACK_IMPORTED_MODULE_1__item__["a" /* ItemPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__label__["a" /* LabelPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__item__["a" /* ItemPage */]),
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__label__["a" /* LabelPage */]
+                __WEBPACK_IMPORTED_MODULE_1__item__["a" /* ItemPage */]
             ]
         })
-    ], LabelPageModule);
-    return LabelPageModule;
+    ], ItemPageModule);
+    return ItemPageModule;
 }());
 
-//# sourceMappingURL=label.module.js.map
+//# sourceMappingURL=item.module.js.map
 
 /***/ }),
 
@@ -45,8 +45,9 @@ var LabelPageModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LabelPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,25 +58,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 /*
   Generated class for the Search page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var LabelPage = (function () {
-    function LabelPage() {
+var ItemPage = (function () {
+    function ItemPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.lists = [];
+        this.shownDetail = null;
     }
-    LabelPage = __decorate([
+    ItemPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-label',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/label/label.html"*/'\n<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Label</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="label-demo">\n\n  <ion-list>\n    <ion-item no-lines>\n      <ion-avatar item-start>\n        <img src="http://ionicframework.com/dist/preview-app/www/assets/img/avatar-leia.png">\n      </ion-avatar>\n      <ion-label>Ionic</ion-label>\n    </ion-item>\n\n\n    <ion-item>\n      <ion-label stacked color="primary">Mobile</ion-label>\n      <ion-input type="tel" value="+1 (555) 123-1234"></ion-input>\n      <ion-icon color="primary" item-right ios="ios-chatbubbles-outline" md="md-chatbubbles"></ion-icon>\n      <ion-icon color="primary" item-right ios="ios-call-outline" md="md-call"></ion-icon>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked color="primary">Email</ion-label>\n      <ion-input type="email" value="hi@ionic.io"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked color="primary">Birthday</ion-label>\n      <ion-input type="text" value="November 21, 2013"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked color="primary">Address</ion-label>\n      <ion-textarea\n        value="121 S Pinckney St\nMadison WI 53703\nUnited States">\n      </ion-textarea>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked color="dark">Notes</ion-label>\n      <ion-textarea></ion-textarea>\n    </ion-item>\n\n    <button ion-item detail-none>\n      <ion-label color="primary">Send Message</ion-label>\n    </button>\n    <button ion-item detail-none>\n      <ion-label color="primary">Share Contact</ion-label>\n    </button>\n    <button ion-item detail-none>\n      <ion-label color="primary">Add to Favorites</ion-label>\n    </button>\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/label/label.html"*/
+            selector: 'page-item',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/item/item.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Item</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content class="outer-content">\n\n  <ion-list>\n    <ion-list-header>\n      Settings\n      <button ion-button icon-only item-right  clear>\n        <ion-icon name="cog"></ion-icon>\n      </button>\n    </ion-list-header>\n\n    <ion-item-group>\n      <ion-item>\n        <ion-icon name="plane" item-left color="danger"></ion-icon>\n        <ion-label>Airplane Mode</ion-label>\n        <ion-toggle color="secondary"></ion-toggle>\n      </ion-item>\n\n      <button ion-item>\n        <ion-icon name="wifi" item-left color="primary"></ion-icon>\n        <ion-label>Wi-Fi</ion-label>\n        <ion-note item-right >The Interwebz</ion-note>\n      </button>\n\n      <button ion-item>\n        <ion-icon name="bluetooth" item-left color="primary"></ion-icon>\n        <ion-label>Bluetooth</ion-label>\n        <ion-note item-right >Off</ion-note>\n      </button>\n    </ion-item-group>\n\n    <ion-item-divider color="primary">\n      Other Settings\n      <button ion-button item-right  outline color="light">Clear</button>\n    </ion-item-divider>\n\n    <button ion-item>\n      <ion-icon name="call" item-left color="secondary"></ion-icon>\n      <ion-label>Cellular</ion-label>\n    </button>\n\n    <button ion-item>\n      <ion-icon name="link" item-left color="secondary"></ion-icon>\n      <ion-label>Personal Hotspot</ion-label>\n      <ion-note item-right >Off</ion-note>\n    </button>\n  </ion-list>\n\n  <ion-list radio-group>\n    <ion-list-header>\n      <ion-icon item-left name="phone-portrait"></ion-icon>\n      Silence Phone\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label color="dark">Always</ion-label>\n      <ion-radio value="always" checked></ion-radio>\n    </ion-item>\n    <ion-item>\n      <ion-label color="dark">Only while phone is locked</ion-label>\n      <ion-radio value="locked"></ion-radio>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n    <ion-list-header>\n      Apps Installed\n    </ion-list-header>\n\n    <ion-item>\n      <ion-icon name="ionic" item-left color="primary"></ion-icon>\n      <ion-label>Ionic View</ion-label>\n      <button ion-button outline item-right >Uninstall</button>\n    </ion-item>\n    <ion-item>\n      <ion-icon name="brush" item-left color="primary"></ion-icon>\n      <ion-label>Ionic Creator</ion-label>\n      <button ion-button outline item-right >Uninstall</button>\n    </ion-item>\n    <ion-item>\n      <ion-icon name="logo-octocat" item-left color="dark"></ion-icon>\n      <ion-label>Hubstruck</ion-label>\n      <button ion-button outline item-right >Uninstall</button>\n    </ion-item>\n    <ion-item>\n      <ion-icon name="paw" item-left color="danger"></ion-icon>\n      <ion-label>Barkpark</ion-label>\n      <button ion-button outline item-right >Uninstall</button>\n    </ion-item>\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/components/item/item.html"*/
         }),
-        __metadata("design:paramtypes", [])
-    ], LabelPage);
-    return LabelPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
+    ], ItemPage);
+    return ItemPage;
 }());
 
-//# sourceMappingURL=label.js.map
+//# sourceMappingURL=item.js.map
 
 /***/ })
 

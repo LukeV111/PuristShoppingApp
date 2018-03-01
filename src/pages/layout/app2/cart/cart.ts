@@ -21,14 +21,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 })
 export class CartPage {
+  private collection: any = {};
   items: any[] = [];
   itemId: any;
   cartTotal: any = 0;
   subTotal: any = 0;
-  shippingTotal: any = 0;
+  shippingTotal: any;
   profile: FirebaseListObservable<any>;
   profile2: FirebaseListObservable<any>;
   profile3: FirebaseObjectObservable<any>;
+  profile4: FirebaseListObservable<any>;
   uid: any;
   key: any;
   profileArray: any = [];
@@ -62,10 +64,12 @@ export class CartPage {
     });
 
     this.cartForm = fb.group({
+      'subTotal': [''],
+      'shippingTotal': [''],
       'cartPrice': [''],
       'address': [''],
+      'collectionOption': ['No'],
     });    
-
 
   }
 
@@ -89,7 +93,7 @@ export class CartPage {
         this.profile = this.afDb.list('/userProfile/' + this.uid + '/currentOrder/');
 
         this.profile2 = this.afDb.list('/userProfile/' + this.uid + '/completedOrders/');
-
+        this.profile4 = this.afDb.list('/userProfile/' + this.uid + '/cartAmounts/');
 
         this.afDb.list('/userProfile/' + this.uid + '/currentOrder', {
           query: {
@@ -101,7 +105,16 @@ export class CartPage {
           this.items = listItems;
           this.items.forEach((item) => {
             this.subTotal = this.subTotal + (item.uPrice * item.Quantity);
+            if (this.subTotal <= 699) {
+              this.shippingTotal = 75
+            } else {
+              this.shippingTotal = 0
+            }
+            this.cartTotal = this.subTotal + this.shippingTotal
           });
+          //this.profile4.push(this.subTotal)
+          
+          //this.profile4.push(this.subTotal)
 
 /////////Submit cart total to Current Order before submitting all to completedOrders
 
@@ -134,6 +147,7 @@ export class CartPage {
       };
 
     });
+
   }
 
   goToHome() {
@@ -163,13 +177,16 @@ export class CartPage {
   }
 
   toAfterCart() {
-    this.navCtrl.push('AfterCartPage');
+    //this.navCtrl.push('AfterCartPage');
+    this.navCtrl.push(AfterCartPage, {
+      param1: this.cartTotal
+    });
   }
 
   completeOrder(items) {
     this.profile2.push(items).then(() => {
       const toast = this.toastCtrl.create({
-        message: 'Order Placed - We will be in touch with an invoice shortly.',
+        message: 'Order Placed! Please pick your payment option.',
         position: 'middle',
         duration: 6000
       });
@@ -177,14 +194,31 @@ export class CartPage {
       toast.present();
     });
     this.profile2.push(this.cartForm.value)
+    this.profile2.push(firebase.database.ServerValue.TIMESTAMP)
   }
 
   private increment() { //Here is where you need to do the wholesale option.
     this.Quantity++;
   }
   
+  
   private decrement() { //Here is where you need to do the wholesale option.
     this.Quantity--;
   }
 
+
+  collectionOption(collectionOption) {
+    console.log("collectionOption = ", collectionOption);
+    if (collectionOption == "Yes") {
+      this.shippingTotal = 0;
+      this.cartTotal = this.subTotal + this.shippingTotal
+    } else if (collectionOption == "No" && this.subTotal >= 699) {
+      this.shippingTotal = 0;
+      this.cartTotal = this.subTotal + this.shippingTotal
+    }
+    else {
+      this.shippingTotal = 75;
+      this.cartTotal = this.subTotal + this.shippingTotal
+    }
+  }
 }

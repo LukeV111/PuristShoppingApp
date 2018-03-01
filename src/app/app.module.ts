@@ -27,12 +27,12 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { AuthData } from '../providers/auth-data';
 import { RadioPlayer } from '../providers/radio-service';
 
-
 //************** import image gallery *********************//
 
 import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
+import { AfterCartPage } from '../../src/pages/layout/app2/after-cart/after-cart'
 
 //********** firebase configuration  ************ */
 export const config = { 
@@ -46,7 +46,8 @@ export const config = {
   
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    AfterCartPage,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,8 @@ export const config = {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    AfterCartPage,
   ],
   providers: [
     InAppBrowser,

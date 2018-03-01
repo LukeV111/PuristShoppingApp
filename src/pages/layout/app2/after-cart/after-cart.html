@@ -2,6 +2,11 @@
 
     <ion-navbar color="black">
         <ion-title>Order Payment</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="goToHome()">
+                <ion-icon name="home"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 
 </ion-header>
@@ -10,9 +15,8 @@
 <ion-content padding>
     <ion-label>
         <h2>Thank you for your order!</h2>
-        <p><i>The total amount for your order is: <b><br><br>(CartValue)</b>.</i></p>
+        <p><i>The total amount for your order is: <b><br><br>{{parameter1}}</b></i></p>
     </ion-label>
-
 
     <ion-label>
         <u><b>Payment Methods:</b></u>
@@ -22,8 +26,12 @@
         <u><b>Pay By Card</b></u>
     </ion-label>
     <i>Payment is processed by PayFast</i>
-    <p></p>
+    <p>
+        <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=10867430&amp;item_name=Purist+Coffee+Order&amp;amount={{parameter1}}&amp;return_url=https%3A%2F%2Fwww.puristcoffee.com&amp;cancel_url=https%3A%2F%2Fpuristcoffee.com"><img src="https://www.payfast.co.za/images/buttons/light-small-paynow.png" width="165" height="36" alt="Pay" title="Pay Now with PayFast" /></a>
+    </p>
+    <!--
     <button ion-button outline color="black" (click)="openBrowser()">Click Here To Pay</button>
+    -->
     <p></p>
     <!-- Insert reference href and interperlate amount here-->
     <hr>
