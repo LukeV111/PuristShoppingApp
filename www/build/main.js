@@ -356,7 +356,7 @@ var AfterCartPage = (function () {
     };
     AfterCartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-after-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/after-cart/after-cart.html"*/'<ion-header>\n\n    <ion-navbar color="black">\n        <ion-title>Order Payment</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-label>\n        <h2>Thank you for your order!</h2>\n        <p><i>The total amount for your order is: <b><br><br>{{parameter1}}</b></i></p>\n    </ion-label>\n\n    <ion-label>\n        <u><b>Payment Methods:</b></u>\n    </ion-label>\n    <hr>\n    <ion-label>\n        <u><b>Pay By Card</b></u>\n    </ion-label>\n    <i>Payment is processed by PayFast</i>\n    <p>\n        <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=10867430&amp;item_name=Purist+Coffee+Order&amp;amount={{parameter1}}&amp;return_url=https%3A%2F%2Fwww.puristcoffee.com&amp;cancel_url=https%3A%2F%2Fpuristcoffee.com"><img src="https://www.payfast.co.za/images/buttons/light-small-paynow.png" width="165" height="36" alt="Pay" title="Pay Now with PayFast" /></a>\n    </p>\n    <!--\n    <button ion-button outline color="black" (click)="openBrowser()">Click Here To Pay</button>\n    -->\n    <p></p>\n    <!-- Insert reference href and interperlate amount here-->\n    <hr>\n    <ion-label>\n        <u><b>7 Day Account</b></u>\n    </ion-label>\n    <p> <i>Prior Arrangement Required. You may close the page if this applies to you.</i>\n    </p>\n    <hr>\n    <ion-label>\n        <u><b>Pay By Snapscan</b></u>\n    </ion-label>\n    <i>Enter the amount shown above and close the page when you are done. We will be notified of your payment.</i>\n    <p></p>\n    <img src="https://puristcoffee.com/wp-content/uploads/2018/02/Purist-Coffee-e1519653336313.png" align="middle">\n    <hr>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/after-cart/after-cart.html"*/,
+            selector: 'page-after-cart',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/after-cart/after-cart.html"*/'<ion-header>\n\n    <ion-navbar color="black">\n        <ion-title>Order Payment</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="goToHome()">\n                <ion-icon name="home"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-label>\n        <h2>Thank you for your order!</h2>\n        <p><i>The total amount for your order is: <b><br><br>R {{parameter1}}</b></i></p>\n    </ion-label>\n\n    <ion-label>\n        <u><b>Payment Methods:</b></u>\n    </ion-label>\n    <hr>\n    <ion-label>\n        <u><b>Pay By Card</b></u>\n    </ion-label>\n    <i>Payment is processed by PayFast</i>\n    <p>\n        <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=10867430&amp;item_name=Purist+Coffee+Order&amp;amount={{parameter1}}&amp;return_url=https%3A%2F%2Fwww.puristcoffee.com&amp;cancel_url=https%3A%2F%2Fpuristcoffee.com"><img src="https://www.payfast.co.za/images/buttons/light-small-paynow.png" width="165" height="36" alt="Pay" title="Pay Now with PayFast" /></a>\n    </p>\n    <!--\n    <button ion-button outline color="black" (click)="openBrowser()">Click Here To Pay</button>\n    -->\n    <p></p>\n    <!-- Insert reference href and interperlate amount here-->\n    <hr>\n    <ion-label>\n        <u><b>7 Day Account</b></u>\n    </ion-label>\n    <p> <i>Prior Arrangement Required. You may close the page if this applies to you.</i>\n    </p>\n    <hr>\n    <ion-label>\n        <u><b>Pay By Snapscan</b></u>\n    </ion-label>\n    <i>Enter the amount shown above and close the page when you are done. We will be notified of your payment.</i>\n    <p></p>\n    <img src="https://puristcoffee.com/wp-content/uploads/2018/02/Purist-Coffee-e1519653336313.png" align="middle">\n    <hr>\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/PuristShoppingApp/PuristShoppingApp/src/pages/layout/app2/after-cart/after-cart.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
     ], AfterCartPage);
@@ -386,6 +386,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* unused harmony export config */
+/* unused harmony export config2 */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
@@ -443,6 +444,15 @@ var config = {
     projectId: 'purist-coffee-shopping-app',
     storageBucket: 'purist-coffee-shopping-app.appspot.com',
     messagingSenderId: '465756601376'
+};
+//********** firebase SpAn configuration  ************ */
+var config2 = {
+    apiKey: 'AIzaSyC7htrI1a0PAxNAD9vr61VW7WHd2q9u0c4',
+    authDomain: 'span-order-tracking-app.firebaseapp.com',
+    databaseURL: 'https://span-order-tracking-app.firebaseio.com',
+    projectId: 'span-order-tracking-app',
+    storageBucket: 'span-order-tracking-app.appspot.com',
+    messagingSenderId: '600260179957'
 };
 var AppModule = (function () {
     function AppModule() {

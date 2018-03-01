@@ -43,6 +43,16 @@ export const config = {
   storageBucket: 'purist-coffee-shopping-app.appspot.com', 
   messagingSenderId: '465756601376' 
 };
+
+//********** firebase SpAn configuration  ************ */
+export const config2 = {
+  apiKey: 'AIzaSyC7htrI1a0PAxNAD9vr61VW7WHd2q9u0c4',
+  authDomain: 'span-order-tracking-app.firebaseapp.com',
+  databaseURL: 'https://span-order-tracking-app.firebaseio.com',
+  projectId: 'span-order-tracking-app',
+  storageBucket: 'span-order-tracking-app.appspot.com',
+  messagingSenderId: '600260179957'
+};
   
 @NgModule({
   declarations: [

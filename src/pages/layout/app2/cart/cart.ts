@@ -31,6 +31,7 @@ export class CartPage {
   profile2: FirebaseListObservable<any>;
   profile3: FirebaseObjectObservable<any>;
   profile4: FirebaseListObservable<any>;
+  adminProfile: FirebaseListObservable<any>;
   uid: any;
   key: any;
   profileArray: any = [];
@@ -94,6 +95,7 @@ export class CartPage {
 
         this.profile2 = this.afDb.list('/userProfile/' + this.uid + '/completedOrders/');
         this.profile4 = this.afDb.list('/userProfile/' + this.uid + '/cartAmounts/');
+        this.adminProfile = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/')
 
         this.afDb.list('/userProfile/' + this.uid + '/currentOrder', {
           query: {
@@ -184,6 +186,8 @@ export class CartPage {
   }
 
   completeOrder(items) {
+    this.adminProfile.push(items)
+    this.adminProfile.push(this.cartForm.value)
     this.profile2.push(items).then(() => {
       const toast = this.toastCtrl.create({
         message: 'Order Placed! Please pick your payment option.',
@@ -195,7 +199,7 @@ export class CartPage {
     });
     this.profile2.push(this.cartForm.value)
     this.profile2.push(firebase.database.ServerValue.TIMESTAMP)
-  }
+      }
 
   private increment() { //Here is where you need to do the wholesale option.
     this.Quantity++;
