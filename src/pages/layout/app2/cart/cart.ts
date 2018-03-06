@@ -33,6 +33,7 @@ export class CartPage {
   profile4: FirebaseListObservable<any>;
   adminProfile: FirebaseListObservable<any>;
   uid: any;
+  userEmail: any;
   key: any;
   profileArray: any = [];
   Quantity: any;
@@ -95,7 +96,7 @@ export class CartPage {
 
         this.profile2 = this.afDb.list('/userProfile/' + this.uid + '/completedOrders/');
         this.profile4 = this.afDb.list('/userProfile/' + this.uid + '/cartAmounts/');
-        this.adminProfile = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/')
+        this.adminProfile = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/' + this.uid)
 
         this.afDb.list('/userProfile/' + this.uid + '/currentOrder', {
           query: {

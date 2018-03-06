@@ -13,8 +13,8 @@ get_orders = (firebase.get('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrde
 
 json.dumps(get_orders) #Turns it into JSON
 
-for orders in get_orders():
-	orderList.append(orders) #Appends all the ids to a list.
+#for orders in get_orders():
+#	orderList.append(orders) #Appends all the ids to a list.
 
 print get_orders #Dictionary of all the data.
 

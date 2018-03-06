@@ -98,7 +98,7 @@
         </ion-list>
         <ion-label><b>Delivery Address:</b></ion-label>
         <!--<ion-textarea type="text" placeholder="Update your address in your profile to add it automatically." value="{{(profile3 | async)?.address}}" [formControl]="cartForm.controls['address']"><b>{{(profile3 | async)?.address}}</b></ion-textarea>-->
-        <textarea #myInput id="myInput" rows="5" maxLength="500" (keyup)="resize()" value="{{(profile3 | async)?.address}}" placeholder="Update your address in your profile to add it automatically." [formControl]="cartForm.controls['address']"></textarea>
+        <textarea #myInput id="myInput" rows="5" maxLength="500" value="{{(profile3 | async)?.address}}" placeholder="Update your address in your profile to add it automatically." [formControl]="cartForm.controls['address']"></textarea>
     </form>
     <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()">Complete Order</button><br>
     <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>
