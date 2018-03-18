@@ -43,7 +43,9 @@ export class Detail2Page {
   public uid: any;
   public cartPrice: any;
   public uPrice: any;
-
+  public BuPrice: any;
+  public SOuPrice: any;
+  public DEuPrice: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public fb: FormBuilder, public loadingCtrl: LoadingController, public afDb: AngularFireDatabase, public afAuth: AngularFireAuth, private toastCtrl: ToastController, public authData: AuthData) {
     this.userProfile = afDb.list('/userProfile/');
@@ -115,7 +117,9 @@ export class Detail2Page {
         console.log("auth false");
         this.navCtrl.setRoot('LoginPage');
       }
-      
+      this.BuPrice = 275
+      this.SOuPrice = 350
+      this.DEuPrice = 295
     });
     
     //this.dynamicPrice = this.otherObject //So this does effect some change. You just need to get it right here now.
@@ -152,20 +156,49 @@ export class Detail2Page {
 
   //Here is where you need to switch the value of dynamicPrice
 
-  priceChangeAll(bag, type) {
+  // priceChangeAll(bag, type, quantity) {
+  //   console.log("priceChangeAll = ", bag, type, quantity);
+  //   if (bag == "1kg" && type == "blend" && quantity <= "3") {
+  //     this.uPrice = 275;
+  //     this.dynamicPrice = this.uPrice * this.currentNumber;
+  //   } else if (bag == "1kg" && type == "blend" && quantity >= "4"){
+  //     this.uPrice = 215;
+  //     this.dynamicPrice = this.uPrice * this.currentNumber;
+  //   }else if (bag == "250g" && type == "blend" && quantity <= "1000") {
+  //     this.uPrice = 90;
+  //     this.dynamicPrice = this.uPrice * this.currentNumber;
+  //   } else if (bag == "1kg" && type == "Single Origin" && quantity <= "3") {
+  //     this.uPrice = 350;
+  //     this.dynamicPrice = this.uPrice * this.currentNumber;
+  //   } else if (bag == "1kg" && type == "Single Origin" && quantity >= "4") {
+  //     this.uPrice = 245;
+  //     this.dynamicPrice = this.uPrice * this.currentNumber;
+  //   }else if (bag == "250g" && type == "Single Origin" && quantity <= "1000") {
+  //     this.uPrice = 105;
+  //     this.dynamicPrice = this.uPrice * this.currentNumber;
+  //   }
+  // }
+
+  priceChangeAll(bag, type) { //Coffee Bags Only
     console.log("priceChangeAll = ", bag, type);
     if (bag == "1kg" && type == "blend") {
-      this.uPrice = 275;
-      this.dynamicPrice = this.uPrice * this.currentNumber;
-    }else if (bag == "250g" && type == "blend") {
-      this.uPrice = 90;
-      this.dynamicPrice = this.uPrice * this.currentNumber;
-    }else if (bag == "1kg" && type == "Single Origin") {
-      this.uPrice = 345;
-      this.dynamicPrice = this.uPrice * this.currentNumber;
-    }else if (bag == "250g" && type == "Single Origin") {
-      this.uPrice = 105;
-      this.dynamicPrice = this.uPrice * this.currentNumber;
+      this.BuPrice = 275;
+      this.dynamicPrice = this.BuPrice * this.currentNumber;
+    } else if (bag == "250g" && type == "blend") {
+      this.BuPrice = 90;
+      this.dynamicPrice = this.BuPrice * this.currentNumber;
+    } else if (bag == "1kg" && type == "Single Origin") {
+      this.SOuPrice = 350;
+      this.dynamicPrice = this.SOuPrice * this.currentNumber;
+    } else if (bag == "250g" && type == "Single Origin") {
+      this.SOuPrice = 105;
+      this.dynamicPrice = this.SOuPrice * this.currentNumber;
+    } else if (bag == "1kg" && type == "Decaf") {
+      this.DEuPrice = 295;
+      this.dynamicPrice = this.DEuPrice * this.currentNumber;
+    } else if (bag == "250g" && type == "Decaf") {
+      this.DEuPrice = 105;
+      this.dynamicPrice = this.DEuPrice * this.currentNumber;
     }
   }
 
@@ -240,28 +273,153 @@ calculateTotal(){
     this.navCtrl.setRoot('Category2Page');
   }
 
-  private increment() { //Here is where you need to do the wholesale option.
+//For other products
+
+  private increment() {
     this.currentNumber++;
     if (this.uPrice) {
+      console.log(this.currentNumber)
       this.dynamicPrice = this.uPrice * this.currentNumber;
     }else{
+      console.log(this.currentNumber)
       this.dynamicPrice = this.orderForm.value.price * this.currentNumber;
     }
   }
 
   private decrement() {
     if (this.currentNumber == 1) {
-      // code...
     }else{
       this.currentNumber--;
       if (this.uPrice) {
+        console.log(this.currentNumber)
         this.dynamicPrice = this.uPrice * this.currentNumber;
-      }else{
+      }
+      else{
         this.dynamicPrice = this.orderForm.value.price * this.currentNumber;
+        console.log(this.currentNumber)
       }
     }
     
   }
+  //For coffee blends - Getting somewhere now. Need to catch the 250g option though.
 
+  private blendIncrement() {
+    this.currentNumber++;
+    if (this.BuPrice >= 91 && this.currentNumber <= 3) {
+      console.log(this.currentNumber)
+      console.log(this.BuPrice)
+      this.dynamicPrice = this.BuPrice * this.currentNumber;
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    } else if (this.BuPrice >= 91 && this.currentNumber > 3) {
+      console.log(this.currentNumber)
+      console.log(this.BuPrice)
+      this.dynamicPrice = (this.BuPrice * 0.78181818181818) * this.currentNumber;
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    } else {
+      console.log(this.currentNumber)
+      console.log(this.BuPrice)
+      this.dynamicPrice = 90 * this.currentNumber;
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    }
+  }
+
+  private blendDecrement() {
+    if (this.currentNumber == 1) {
+    } else {
+      this.currentNumber --;
+      if (this.BuPrice >= 91 && this.currentNumber <= 3) {
+        console.log(this.currentNumber)
+        console.log(this.BuPrice)
+        this.dynamicPrice = this.BuPrice * this.currentNumber;
+        this.dynamicPrice = Math.ceil(this.dynamicPrice);
+      } else if (this.BuPrice >= 91 && this.currentNumber > 3) {
+        console.log(this.currentNumber)
+        console.log(this.BuPrice)
+        this.dynamicPrice = (this.BuPrice * 0.78181818181818) * this.currentNumber;
+        this.dynamicPrice = Math.ceil(this.dynamicPrice);
+      } else {
+        this.dynamicPrice = 90 * this.currentNumber;
+        console.log(this.currentNumber)
+        console.log(this.BuPrice)
+        this.dynamicPrice = Math.ceil(this.dynamicPrice);
+      }
+    }
   }	
 
+  private SOIncrement() {
+  this.currentNumber++;
+    if (this.SOuPrice >= 106 && this.currentNumber <= 3) {
+    console.log(this.currentNumber)
+      this.dynamicPrice = this.SOuPrice * this.currentNumber;
+    this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    } else if (this.SOuPrice >= 106 && this.currentNumber > 3) {
+    console.log(this.currentNumber)
+      this.dynamicPrice = (this.SOuPrice * 0.7) * this.currentNumber;
+    this.dynamicPrice = Math.ceil(this.dynamicPrice);
+  } else {
+    console.log(this.currentNumber)
+    this.dynamicPrice = 105 * this.currentNumber;
+    this.dynamicPrice = Math.ceil(this.dynamicPrice);
+}
+
+}
+
+  private SODecrement() {
+  if (this.currentNumber == 1) {
+  } else {
+    this.currentNumber--;
+    if (this.SOuPrice >= 106 && this.currentNumber <= 3) {
+      console.log(this.currentNumber)
+      this.dynamicPrice = this.SOuPrice * this.currentNumber;
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    } else if (this.SOuPrice >= 106 && this.currentNumber > 3) {
+      console.log(this.currentNumber)
+      this.dynamicPrice = (this.SOuPrice * 0.7) * this.currentNumber;
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    } else {
+      this.dynamicPrice = 105 * this.currentNumber;
+      console.log(this.currentNumber)
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    }
+  }
+}
+
+  private DeIncrement() {
+    this.currentNumber++;
+    if (this.DEuPrice >= 106 && this.currentNumber <= 3) {
+      console.log(this.currentNumber)
+      this.dynamicPrice = this.DEuPrice * this.currentNumber;
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    } else if (this.DEuPrice >= 106 && this.currentNumber > 3) {
+      console.log(this.currentNumber)
+      this.dynamicPrice = (this.DEuPrice * 0.7966101694915254) * this.currentNumber;
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    } else {
+      console.log(this.currentNumber)
+      this.dynamicPrice = 105 * this.currentNumber;
+      this.dynamicPrice = Math.ceil(this.dynamicPrice);
+    }
+
+  }
+
+  private DeDecrement() {
+    if (this.currentNumber == 1) {
+    } else {
+      this.currentNumber--;
+      if (this.DEuPrice >= 106 && this.currentNumber <= 3) {
+        console.log(this.currentNumber)
+        this.dynamicPrice = this.DEuPrice * this.currentNumber;
+        this.dynamicPrice = Math.ceil(this.dynamicPrice);
+      } else if (this.DEuPrice >= 106 && this.currentNumber > 3) {
+        console.log(this.currentNumber)
+        this.dynamicPrice = (this.DEuPrice * 0.7966101694915254) * this.currentNumber;
+        this.dynamicPrice = Math.ceil(this.dynamicPrice);
+      } else {
+        this.dynamicPrice = 105 * this.currentNumber;
+        console.log(this.currentNumber)
+        this.dynamicPrice = Math.ceil(this.dynamicPrice);
+      }
+    }
+  }
+
+}

@@ -36,6 +36,13 @@
     </ion-label>
     <!--Name Input-->
     <!--Name Display-->
+    <!-- <form [formGroup]="productForm" *ngFor="let item of items"> -->
+    <!-- I think it's because the value is the same, so it just takes that last one-->
+    <!-- <form [formGroup]="productForm">
+        <label>Item Form Here</label>
+        <ion-input *ngFor="let item of items" type="text" value="{{item.name}}" [formControl]="productForm.controls['itemName']">{{item.name}}</ion-input>
+        <button type="submit" color="red" ion-button full (click)="completeOrderTest(items)">Complete Order Test</button><br>
+    </form> -->
     <ion-card *ngFor="let item of items">
         <ion-card-header>
             <b>{{item.name}}</b>
@@ -55,7 +62,6 @@
             Quantity: {{item.Quantity}}
             <br><b>Price: R {{item.dynamicPrice}}</b>
         </ion-card-content>
-
         <!--Buttons Below -->
 
         <ion-row>
@@ -79,6 +85,7 @@
     <ion-item>
         <p><strong>Cart Total: R {{cartTotal}}</strong></p>
     </ion-item>
+
     <form [formGroup]="cartForm">
         <ion-list radio-group [formControl]="cartForm.controls['collectionOption']">
             <ion-label><b>Delivery Options:</b></ion-label>
@@ -95,12 +102,14 @@
             <ion-input type="text" value="{{subTotal}}" [formControl]="cartForm.controls['subTotal']"><b>Sub Total: {{subTotal}}</b></ion-input>
             <ion-input type="text" value="{{shippingTotal}}" [formControl]="cartForm.controls['shippingTotal']"><b>Shipping Total: {{shippingTotal}}</b></ion-input>
             <ion-input type="text" value="{{cartTotal}}" [formControl]="cartForm.controls['cartPrice']"><b>Cart Total: {{cartTotal}}</b></ion-input>
+            <ion-input type="text" value="{{(profile3 | async)?.name}}" [formControl]="cartForm.controls['name']"></ion-input>
+            <!-- <ion-datetime displayFormat="DD/MM/YYYY" value="{ dateTime }" [formControl]="addOrderForm.controls['dateTime']" [(ngModel)]="dateTime" ngDefaultControl></ion-datetime> -->
         </ion-list>
         <ion-label><b>Delivery Address:</b></ion-label>
         <!--<ion-textarea type="text" placeholder="Update your address in your profile to add it automatically." value="{{(profile3 | async)?.address}}" [formControl]="cartForm.controls['address']"><b>{{(profile3 | async)?.address}}</b></ion-textarea>-->
         <textarea #myInput id="myInput" rows="5" maxLength="500" value="{{(profile3 | async)?.address}}" placeholder="Update your address in your profile to add it automatically." [formControl]="cartForm.controls['address']"></textarea>
     </form>
-    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearCart()" (click)="clearIcon()" (click)="toAfterCart()">Complete Order</button><br>
+    <button type="submit" color="red" ion-button full (click)="completeOrder(items)" (click)="clearIcon()">Complete Order</button><br>
     <button type="submit" color="gray" ion-button full (click)="clearCart(bottom)" (click)="clearIcon()">Clear Cart</button>
 </ion-content>
 

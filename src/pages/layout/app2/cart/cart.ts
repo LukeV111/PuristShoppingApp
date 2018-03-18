@@ -5,7 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthData } from '../../../../providers/auth-data';
 import * as firebase from 'firebase';
 import { AfterCartPage } from '../after-cart/after-cart';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 
 /**
  * Generated class for the CartPage page.
@@ -28,10 +28,12 @@ export class CartPage {
   subTotal: any = 0;
   shippingTotal: any;
   profile: FirebaseListObservable<any>;
+  SpAn: FirebaseListObservable<any>;
   profile2: FirebaseListObservable<any>;
   profile3: FirebaseObjectObservable<any>;
   profile4: FirebaseListObservable<any>;
   adminProfile: FirebaseListObservable<any>;
+  adminProfile2: FirebaseListObservable<any>;
   uid: any;
   userEmail: any;
   key: any;
@@ -43,8 +45,9 @@ export class CartPage {
   name: any;
   public address: any[];
   public cartForm: FormGroup;
+  public productForm: FormGroup;
   public itemName: any[];
-  date = firebase.database.ServerValue.TIMESTAMP;
+  dateTime: String = new Date().toISOString();
 
   //public formItems: firebase.database.Reference = firebase.database().ref('/userProfile/' + this.uid + '/completedOrders2/');
 
@@ -56,7 +59,7 @@ export class CartPage {
 
     this.itemId = this.navParams.get('itemId');
 
-    this.afDb.list( '/ userProfile / ' + this.uid + ' / currentOrder', { //Ok so here needs to be the list in the currentOrder thing.
+    this.afDb.list( '/ userProfile / ' + this.uid + ' / currentOrder', {
       query: {
         orderByChild: "Quantity",
         equalTo: this.Quantity
@@ -71,8 +74,13 @@ export class CartPage {
       'cartPrice': [''],
       'address': [''],
       'collectionOption': ['No'],
+      'name': [''],
+      'dateTime': [''],
     });    
-
+  
+    this.productForm = fb.group({
+      'itemName': [''],
+    });
   }
 
   ionViewDidLoad() {
@@ -91,12 +99,14 @@ export class CartPage {
         });
         loadingPopup.present();
 
-
+        // this.SpAn = this.afDb.list('/users/0qHEeoVer6OfHIgjJbi4Z9bgfX02/CurrentOrders/');
         this.profile = this.afDb.list('/userProfile/' + this.uid + '/currentOrder/');
 
         this.profile2 = this.afDb.list('/userProfile/' + this.uid + '/completedOrders/');
         this.profile4 = this.afDb.list('/userProfile/' + this.uid + '/cartAmounts/');
         this.adminProfile = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/' + this.uid)
+        this.adminProfile2 = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/')
+
 
         this.afDb.list('/userProfile/' + this.uid + '/currentOrder', {
           query: {
@@ -139,6 +149,7 @@ export class CartPage {
 
           loadingPopup.dismiss()
         });
+
         this.profile3 = this.afDb.object('/userProfile/' + this.uid);
         this.profile3.subscribe(profile => {
           this.profileArray = profile;
@@ -155,10 +166,6 @@ export class CartPage {
 
   goToHome() {
     this.navCtrl.setRoot('Category2Page');
-  }
-
-  editProduct() {
-    this.navCtrl.push('EditProductInCartPage');
   }
 
   deleteProduct(item) {
@@ -179,16 +186,22 @@ export class CartPage {
     this.profile2.push(this.address);
   }
 
-  toAfterCart() {
-    //this.navCtrl.push('AfterCartPage');
-    this.navCtrl.push(AfterCartPage, {
-      param1: this.cartTotal
-    });
-  }
+  // toAfterCart() {
+  //   //this.navCtrl.push('AfterCartPage');
+  //   this.navCtrl.push(AfterCartPage, {
+  //     param1: this.cartTotal
+  //   });
+  // }
 
   completeOrder(items) {
-    this.adminProfile.push(items)
-    this.adminProfile.push(this.cartForm.value)
+    //Admin Stuff
+    //this.adminProfile.push(items)
+    this.adminProfile2.push(this.cartForm.value)
+    items.forEach(item => {
+      this.adminProfile2.push(this.productForm.value)
+    });
+    this.adminProfile2.push(firebase.database.ServerValue.TIMESTAMP)
+  //User Stuff
     this.profile2.push(items).then(() => {
       const toast = this.toastCtrl.create({
         message: 'Order Placed! Please pick your payment option.',
@@ -200,17 +213,24 @@ export class CartPage {
     });
     this.profile2.push(this.cartForm.value)
     this.profile2.push(firebase.database.ServerValue.TIMESTAMP)
+    this.navCtrl.push(AfterCartPage, {
+      param1: this.cartTotal
+    });
+    this.afDb.list('/userProfile/' + this.uid + '/currentOrder/').remove();
       }
 
-  private increment() { //Here is where you need to do the wholesale option.
-    this.Quantity++;
+
+  completeOrderTest(items) {
+    this.adminProfile2.push(this.productForm.value)
+    // items.forEach(item => {
+    //   this.adminProfile2.push(this.productForm.value)
+    // });
   }
   
   
   private decrement() { //Here is where you need to do the wholesale option.
     this.Quantity--;
   }
-
 
   collectionOption(collectionOption) {
     console.log("collectionOption = ", collectionOption);
@@ -227,3 +247,5 @@ export class CartPage {
     }
   }
 }
+
+//WhooHoo

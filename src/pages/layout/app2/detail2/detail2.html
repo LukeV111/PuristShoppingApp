@@ -52,7 +52,7 @@
             <h3 padding>
                 Current Price (ZAR):
                 <ion-item *ngIf="dynamicPrice" no-lines text-center>
-                    <b>{{dynamicPrice}}</b>
+                    <b>{{dynamicPrice}}</b><br>
                 </ion-item>
                 <!--This here is after you have already selcted the option-->
                 <ion-input type="text" value="{{(item | async)?.price}}" [formControl]="orderForm.controls['price']" *ngIf="!dynamicPrice" text-center><b>{{(item | async)?.price}}</b></ion-input>
@@ -105,13 +105,42 @@
                         </ion-input>
                         <hr>
                     </ion-item>
-                    <ion-item>
+                    <!-- Coffee Blend Quantity -->
+                    <ion-item *ngIf="(item | async)?.blend1kg">
+                        Blend Quantity:&nbsp;&nbsp;
+                        <ion-icon name="remove" (click)="blendDecrement()"></ion-icon>
+                        &nbsp;&nbsp;{{ currentNumber }}&nbsp;&nbsp;
+                        <ion-icon name="add" (click)="blendIncrement()"></ion-icon>
+                        <hr>
+                    </ion-item>
+
+                    <!-- Coffee Single Origin Quantity -->
+                    <ion-item *ngIf="(item | async)?.SO1kg">
+                        Single Origin Quantity:&nbsp;&nbsp;
+                        <ion-icon name="remove" (click)="SODecrement()"></ion-icon>
+                        &nbsp;&nbsp;{{ currentNumber }}&nbsp;&nbsp;
+                        <ion-icon name="add" (click)="SOIncrement()"></ion-icon>
+                        <hr>
+                    </ion-item>
+
+                    <!-- Coffee Decaf Quantity -->
+                    <ion-item *ngIf="(item | async)?.decaf">
+                        Decaf Quantity:&nbsp;&nbsp;
+                        <ion-icon name="remove" (click)="DeDecrement()"></ion-icon>
+                        &nbsp;&nbsp;{{ currentNumber }}&nbsp;&nbsp;
+                        <ion-icon name="add" (click)="DeIncrement()"></ion-icon>
+                        <hr>
+                    </ion-item>
+
+                    <!-- Other, Normal Quantities. Leave this alone. -->
+                    <ion-item *ngIf="!(item | async)?.coffee">
                         Quantity:&nbsp;&nbsp;
                         <ion-icon name="remove" (click)="decrement()"></ion-icon>
                         &nbsp;&nbsp;{{ currentNumber }}&nbsp;&nbsp;
                         <ion-icon name="add" (click)="increment()"></ion-icon>
                         <hr>
                     </ion-item>
+
 
                     <ion-list radio-group [formControl]="orderForm.controls['grindType']" *ngIf="(item | async)?.coffee" ngDefaultControl>
                         <ion-label><b>Coffee Type</b></ion-label>
@@ -164,7 +193,7 @@
                         <hr>
                     </ion-list>
                     <ion-label *ngIf="(item | async)?.coffee"><b>Bag Size</b></ion-label>
-                    <ion-list radio-group [formControl]="orderForm.controls['bagSize']" *ngIf="(item | async)?.coffee" ngDefaultControl>
+                    <ion-list radio-group [formControl]="orderForm.controls['bagSize']" *ngIf="(item | async)?.blend1kg" ngDefaultControl>
                         <ion-item *ngIf="!(item | async)?.singleOrigin">
                             <ion-label>1kg Bag</ion-label>
                             <ion-radio item-left type="radio" value="1kg" checked (click)='priceChangeAll(orderForm.value.bagSize, "blend")'></ion-radio>
@@ -187,6 +216,19 @@
                         </ion-item>
                         <hr>
                     </ion-list>
+
+                    <ion-list radio-group [formControl]="orderForm.controls['bagSize']" *ngIf="(item | async)?.decaf" ngDefaultControl>
+                        <ion-item>
+                            <ion-label>1kg Bag</ion-label>
+                            <ion-radio item-left type="radio" value="1kg" checked (click)='priceChangeAll(orderForm.value.bagSize, "Decaf")'></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>250g Bag</ion-label>
+                            <ion-radio item-left value="250g" (click)='priceChangeAll(orderForm.value.bagSize, "Decaf")'></ion-radio>
+                        </ion-item>
+                        <hr>
+                    </ion-list>
+
                 </ion-list>
 
             </ion-card-content>
