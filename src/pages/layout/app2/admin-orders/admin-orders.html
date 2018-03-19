@@ -1,0 +1,18 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Admin Order List</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item *ngFor="let customerOrder of customerOrders">
+            <b>Order:</b> {{ customerOrder.key }}
+        </ion-item>
+    </ion-list>
+
+</ion-content>

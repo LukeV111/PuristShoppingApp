@@ -21,9 +21,9 @@ export class Category2Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public afDb: AngularFireDatabase, public afAuth: AngularFireAuth,) {
 
-      let loadingPopup = this.loadingCtrl.create({
+  let loadingPopup = this.loadingCtrl.create({
         spinner: 'crescent',
-        content: ''
+        content: 'Loading...'
       });
       loadingPopup.present();
 
@@ -48,12 +48,12 @@ export class Category2Page {
           content: '',
           duration: 3000
         });
-        loadingPopup.present();
+        //loadingPopup.present();
 
         this.profile = this.afDb.object('/userProfile/' + this.uid);
         this.profile.subscribe(profile => {
           this.profileArray = profile;
-          loadingPopup.dismiss();
+          //loadingPopup.dismiss();
         })
       
       } else {

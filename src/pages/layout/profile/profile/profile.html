@@ -55,6 +55,9 @@
             <br>
             <button ion-button block mode="ios" color="black" (click)="logout()">
           Logout
+        </button >
+            <button *ngIf="(profile | async)?.admin" ion-button block mode="ios" color="black" (click)="toAdminOrders()">
+          To Admin Orders
         </button>
         </div>
     </form>

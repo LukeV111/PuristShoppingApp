@@ -1,219 +1,17 @@
-webpackJsonp([41],{
+webpackJsonp([42],{
 
-/***/ 150:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 150;
-
-/***/ }),
-
-/***/ 192:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"../pages/components/accordion/accordion.module": [
-		436,
-		39
-	],
-	"../pages/components/actionsheet/actionsheet.module": [
-		437,
-		38
-	],
-	"../pages/components/alert/alert.module": [
-		438,
-		37
-	],
-	"../pages/components/animations/animations.module": [
-		439,
-		36
-	],
-	"../pages/components/badge/badge.module": [
-		440,
-		35
-	],
-	"../pages/components/button/button.module": [
-		441,
-		34
-	],
-	"../pages/components/datetime/datetime.module": [
-		442,
-		33
-	],
-	"../pages/components/fab/fab.module": [
-		443,
-		32
-	],
-	"../pages/components/fading-header/fading-header.module": [
-		444,
-		31
-	],
-	"../pages/components/grid/grid.module": [
-		445,
-		30
-	],
-	"../pages/components/header/header.module": [
-		446,
-		29
-	],
-	"../pages/components/input/input.module": [
-		447,
-		28
-	],
-	"../pages/components/item-sliding/item-sliding.module": [
-		448,
-		27
-	],
-	"../pages/components/item/item.module": [
-		449,
-		26
-	],
-	"../pages/components/label/label.module": [
-		450,
-		25
-	],
-	"../pages/components/radio-button/radio-button.module": [
-		451,
-		24
-	],
-	"../pages/components/range/range.module": [
-		452,
-		23
-	],
-	"../pages/components/rating/rating.module": [
-		453,
-		3
-	],
-	"../pages/components/search-bar/search-bar.module": [
-		454,
-		22
-	],
-	"../pages/components/segment/segment.module": [
-		455,
-		21
-	],
-	"../pages/components/select-option/select-option.module": [
-		456,
-		20
-	],
-	"../pages/components/shrinking/shrinking.module": [
-		457,
-		4
-	],
-	"../pages/components/tab/tab.module": [
-		458,
-		19
-	],
-	"../pages/components/table/table.module": [
-		459,
-		18
-	],
-	"../pages/components/tag/tag.module": [
-		460,
-		17
-	],
-	"../pages/components/toast/toast.module": [
-		461,
-		16
-	],
-	"../pages/components/transparent-header/transparent-header.module": [
-		462,
-		15
-	],
-	"../pages/layout/app2/after-cart/after-cart.module": [
-		463,
-		40
-	],
-	"../pages/layout/app2/cart/cart.module": [
-		464,
-		2
-	],
-	"../pages/layout/app2/category2/category2.module": [
-		465,
-		14
-	],
-	"../pages/layout/app2/contact-us/contact-us.module": [
-		466,
-		13
-	],
-	"../pages/layout/app2/detail2/detail2.module": [
-		467,
-		5
-	],
-	"../pages/layout/app2/list2/list2.module": [
-		468,
-		12
-	],
-	"../pages/layout/auth/after-login/after-login.module": [
-		469,
-		1
-	],
-	"../pages/layout/auth/forgot/forgot.module": [
-		470,
-		11
-	],
-	"../pages/layout/auth/login/login.module": [
-		471,
-		10
-	],
-	"../pages/layout/auth/main/main.module": [
-		472,
-		9
-	],
-	"../pages/layout/auth/register/register.module": [
-		473,
-		8
-	],
-	"../pages/layout/profile/profile/profile.module": [
-		474,
-		0
-	],
-	"../pages/layout/profile/profile2/profile2.module": [
-		475,
-		7
-	],
-	"../pages/theme/theme.module": [
-		476,
-		6
-	]
-};
-function webpackAsyncContext(req) {
-	var ids = map[req];
-	if(!ids)
-		return Promise.reject(new Error("Cannot find module '" + req + "'."));
-	return __webpack_require__.e(ids[1]).then(function() {
-		return __webpack_require__(ids[0]);
-	});
-};
-webpackAsyncContext.keys = function webpackAsyncContextKeys() {
-	return Object.keys(map);
-};
-webpackAsyncContext.id = 192;
-module.exports = webpackAsyncContext;
-
-/***/ }),
-
-/***/ 277:
+/***/ 154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__ = __webpack_require__(157);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -310,14 +108,303 @@ var AuthData = (function () {
 
 /***/ }),
 
-/***/ 279:
+/***/ 165:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 165;
+
+/***/ }),
+
+/***/ 207:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/components/accordion/accordion.module": [
+		484,
+		39
+	],
+	"../pages/components/actionsheet/actionsheet.module": [
+		485,
+		38
+	],
+	"../pages/components/alert/alert.module": [
+		486,
+		37
+	],
+	"../pages/components/animations/animations.module": [
+		487,
+		36
+	],
+	"../pages/components/badge/badge.module": [
+		488,
+		35
+	],
+	"../pages/components/button/button.module": [
+		489,
+		34
+	],
+	"../pages/components/datetime/datetime.module": [
+		490,
+		33
+	],
+	"../pages/components/fab/fab.module": [
+		491,
+		32
+	],
+	"../pages/components/fading-header/fading-header.module": [
+		492,
+		31
+	],
+	"../pages/components/grid/grid.module": [
+		493,
+		30
+	],
+	"../pages/components/header/header.module": [
+		494,
+		29
+	],
+	"../pages/components/input/input.module": [
+		495,
+		28
+	],
+	"../pages/components/item-sliding/item-sliding.module": [
+		496,
+		27
+	],
+	"../pages/components/item/item.module": [
+		497,
+		26
+	],
+	"../pages/components/label/label.module": [
+		498,
+		25
+	],
+	"../pages/components/radio-button/radio-button.module": [
+		499,
+		24
+	],
+	"../pages/components/range/range.module": [
+		500,
+		23
+	],
+	"../pages/components/rating/rating.module": [
+		501,
+		3
+	],
+	"../pages/components/search-bar/search-bar.module": [
+		502,
+		22
+	],
+	"../pages/components/segment/segment.module": [
+		503,
+		21
+	],
+	"../pages/components/select-option/select-option.module": [
+		504,
+		20
+	],
+	"../pages/components/shrinking/shrinking.module": [
+		505,
+		4
+	],
+	"../pages/components/tab/tab.module": [
+		506,
+		19
+	],
+	"../pages/components/table/table.module": [
+		507,
+		18
+	],
+	"../pages/components/tag/tag.module": [
+		508,
+		17
+	],
+	"../pages/components/toast/toast.module": [
+		509,
+		16
+	],
+	"../pages/components/transparent-header/transparent-header.module": [
+		510,
+		15
+	],
+	"../pages/layout/app2/admin-orders/admin-orders.module": [
+		511,
+		41
+	],
+	"../pages/layout/app2/after-cart/after-cart.module": [
+		512,
+		40
+	],
+	"../pages/layout/app2/cart/cart.module": [
+		513,
+		2
+	],
+	"../pages/layout/app2/category2/category2.module": [
+		514,
+		14
+	],
+	"../pages/layout/app2/contact-us/contact-us.module": [
+		515,
+		13
+	],
+	"../pages/layout/app2/detail2/detail2.module": [
+		516,
+		5
+	],
+	"../pages/layout/app2/list2/list2.module": [
+		517,
+		12
+	],
+	"../pages/layout/auth/after-login/after-login.module": [
+		518,
+		1
+	],
+	"../pages/layout/auth/forgot/forgot.module": [
+		519,
+		11
+	],
+	"../pages/layout/auth/login/login.module": [
+		520,
+		10
+	],
+	"../pages/layout/auth/main/main.module": [
+		521,
+		9
+	],
+	"../pages/layout/auth/register/register.module": [
+		522,
+		8
+	],
+	"../pages/layout/profile/profile/profile.module": [
+		523,
+		0
+	],
+	"../pages/layout/profile/profile2/profile2.module": [
+		524,
+		7
+	],
+	"../pages/theme/theme.module": [
+		525,
+		6
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 207;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 301:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminOrdersPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_data__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database_deprecated__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var AdminOrdersPage = (function () {
+    function AdminOrdersPage(navCtrl, navParams, authData, afAuth, afDb) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.authData = authData;
+        this.afAuth = afAuth;
+        this.afDb = afDb;
+        this.profilePicture = "https://www.gravatar.com/avatar/";
+        this.profileArray = [];
+        this.customerOrders = [];
+        this.customerOrdersRef = __WEBPACK_IMPORTED_MODULE_5_firebase___default.a.database().ref('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/'); //Path to orders.
+        this.itemId = this.navParams.get('itemId');
+    }
+    AdminOrdersPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        console.log('ionViewDidLoad AdminOrdersPage');
+        console.log(this.itemId);
+        this.afAuth.authState.subscribe(function (userAuth) {
+            if (userAuth) {
+                console.log("auth true!");
+                _this.uid = userAuth.uid;
+                _this.email = userAuth.email;
+                _this.profile = _this.afDb.object('/userProfile/' + _this.uid);
+                _this.profile.subscribe(function (profile) {
+                    _this.profileArray = profile;
+                });
+            }
+            else {
+                console.log("auth false");
+                _this.navCtrl.setRoot('LoginPage');
+            }
+        });
+        this.customerOrdersRef.on('value', function (itemSnapshot) {
+            _this.customerOrders = [];
+            itemSnapshot.forEach(function (itemSnap) {
+                var item = itemSnap.val();
+                item.key = itemSnap.key;
+                _this.customerOrders.push(item);
+                return false;
+            });
+        });
+    };
+    AdminOrdersPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-admin-orders',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/layout/app2/admin-orders/admin-orders.html"*/'<ion-header>\n\n    <ion-navbar>\n        <ion-title>Admin Order List</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-list>\n        <ion-item *ngFor="let customerOrder of customerOrders">\n            <b>Order:</b> {{ customerOrder.key }}\n        </ion-item>\n    </ion-list>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/layout/app2/admin-orders/admin-orders.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_data__["a" /* AuthData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_data__["a" /* AuthData */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_database_deprecated__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_database_deprecated__["a" /* AngularFireDatabase */]) === "function" && _e || Object])
+    ], AdminOrdersPage);
+    return AdminOrdersPage;
+    var _a, _b, _c, _d, _e;
+}());
+
+//# sourceMappingURL=admin-orders.js.map
+
+/***/ }),
+
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AfterCartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(259);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -367,13 +454,13 @@ var AfterCartPage = (function () {
 
 /***/ }),
 
-/***/ 281:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(327);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -381,30 +468,31 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 303:
+/***/ 327:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export config */
 /* unused harmony export config2 */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(432);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(433);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database_deprecated__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_auth__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_facebook__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_google_plus__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_auth_data__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_radio_service__ = __webpack_require__(434);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ionic_gallery_modal__ = __webpack_require__(435);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_pages_layout_app2_after_cart_after_cart__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(480);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database_deprecated__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_auth__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_facebook__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_google_plus__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_auth_data__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_radio_service__ = __webpack_require__(482);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ionic_gallery_modal__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_pages_layout_app2_after_cart_after_cart__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__src_pages_layout_app2_admin_orders_admin_orders__ = __webpack_require__(301);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -436,6 +524,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 //********** firebase configuration  ************ */
 var config = {
     apiKey: 'AIzaSyDRZqq3yfwt4es02BVVGEZIO5sgOlJ0fE0',
@@ -462,6 +551,7 @@ var AppModule = (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_16__src_pages_layout_app2_after_cart_after_cart__["a" /* AfterCartPage */],
+                __WEBPACK_IMPORTED_MODULE_17__src_pages_layout_app2_admin_orders_admin_orders__["a" /* AdminOrdersPage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -495,6 +585,7 @@ var AppModule = (function () {
                         { loadChildren: '../pages/components/tag/tag.module#TagPageModule', name: 'TagPage', segment: 'tag', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/components/toast/toast.module#ToastPageModule', name: 'ToastPage', segment: 'toast', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/components/transparent-header/transparent-header.module#TransparentHeaderPageModule', name: 'TransparentHeaderPage', segment: 'transparent-header', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/layout/app2/admin-orders/admin-orders.module#AdminOrdersPageModule', name: 'AdminOrdersPage', segment: 'admin-orders', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layout/app2/after-cart/after-cart.module#AfterCartPageModule', name: 'AfterCartPage', segment: 'after-cart', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layout/app2/cart/cart.module#CartPageModule', name: 'CartPage', segment: 'cart', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layout/app2/category2/category2.module#Category2PageModule', name: 'Category2Page', segment: 'category2', priority: 'low', defaultHistory: [] },
@@ -519,6 +610,7 @@ var AppModule = (function () {
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_16__src_pages_layout_app2_after_cart_after_cart__["a" /* AfterCartPage */],
+                __WEBPACK_IMPORTED_MODULE_17__src_pages_layout_app2_admin_orders_admin_orders__["a" /* AdminOrdersPage */],
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser__["a" /* InAppBrowser */],
@@ -545,15 +637,15 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 433:
+/***/ 481:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(300);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -648,7 +740,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 434:
+/***/ 482:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -714,5 +806,5 @@ var RadioPlayer = (function () {
 
 /***/ })
 
-},[281]);
+},[305]);
 //# sourceMappingURL=main.js.map

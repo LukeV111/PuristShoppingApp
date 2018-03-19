@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 465:
+/***/ 514:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Category2PageModule", function() { return Category2PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__category2__ = __webpack_require__(713);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__category2__ = __webpack_require__(839);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -43,15 +43,15 @@ var Category2PageModule = (function () {
 
 /***/ }),
 
-/***/ 713:
+/***/ 839:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Category2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77,7 +77,7 @@ var Category2Page = (function () {
         this.profileArray = [];
         var loadingPopup = this.loadingCtrl.create({
             spinner: 'crescent',
-            content: ''
+            content: 'Loading...'
         });
         loadingPopup.present();
         this.afDb.list('/category', { query: {
@@ -94,16 +94,16 @@ var Category2Page = (function () {
             if (userAuth) {
                 console.log("auth true!");
                 _this.uid = userAuth.uid;
-                var loadingPopup_1 = _this.loadingCtrl.create({
+                var loadingPopup = _this.loadingCtrl.create({
                     spinner: 'crescent',
                     content: '',
                     duration: 3000
                 });
-                loadingPopup_1.present();
+                //loadingPopup.present();
                 _this.profile = _this.afDb.object('/userProfile/' + _this.uid);
                 _this.profile.subscribe(function (profile) {
                     _this.profileArray = profile;
-                    loadingPopup_1.dismiss();
+                    //loadingPopup.dismiss();
                 });
             }
             else {

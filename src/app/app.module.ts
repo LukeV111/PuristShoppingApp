@@ -33,6 +33,8 @@ import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { AfterCartPage } from '../../src/pages/layout/app2/after-cart/after-cart'
+import { AdminOrdersPage } from '../../src/pages/layout/app2/admin-orders/admin-orders'
+
 
 //********** firebase configuration  ************ */
 export const config = { 
@@ -58,6 +60,7 @@ export const config2 = {
   declarations: [
     MyApp,
     AfterCartPage,
+    AdminOrdersPage,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ export const config2 = {
   entryComponents: [
     MyApp,
     AfterCartPage,
+    AdminOrdersPage,
   ],
   providers: [
     InAppBrowser,

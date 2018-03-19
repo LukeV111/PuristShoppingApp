@@ -6,6 +6,7 @@ import { AuthData } from '../../../../providers/auth-data';
 import * as firebase from 'firebase';
 import { AfterCartPage } from '../after-cart/after-cart';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import * as moment from 'moment'
 
 /**
  * Generated class for the CartPage page.
@@ -47,7 +48,9 @@ export class CartPage {
   public cartForm: FormGroup;
   public productForm: FormGroup;
   public itemName: any[];
-  dateTime: String = new Date().toISOString();
+  //dateTime: String = new Date().toISOString();
+  dateTime = moment().format();
+  serverTime: any;
 
   //public formItems: firebase.database.Reference = firebase.database().ref('/userProfile/' + this.uid + '/completedOrders2/');
 
@@ -89,7 +92,7 @@ export class CartPage {
       if (userAuth) {
         console.log("auth true!")
         this.uid = userAuth.uid;
-        //this.email = userAuth.email;
+        //this.userEmail = userAuth.email;
         //this.profilePicture = "https://www.gravatar.com/avatar/" + md5(this.email.toLowerCase(), 'hex');
 
         let loadingPopup = this.loadingCtrl.create({
@@ -104,7 +107,7 @@ export class CartPage {
 
         this.profile2 = this.afDb.list('/userProfile/' + this.uid + '/completedOrders/');
         this.profile4 = this.afDb.list('/userProfile/' + this.uid + '/cartAmounts/');
-        this.adminProfile = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/' + this.uid)
+        this.adminProfile = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/' + this.dateTime)
         this.adminProfile2 = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/')
 
 
@@ -195,12 +198,13 @@ export class CartPage {
 
   completeOrder(items) {
     //Admin Stuff
-    //this.adminProfile.push(items)
-    this.adminProfile2.push(this.cartForm.value)
-    items.forEach(item => {
-      this.adminProfile2.push(this.productForm.value)
-    });
-    this.adminProfile2.push(firebase.database.ServerValue.TIMESTAMP)
+    this.adminProfile.push(items)
+    this.adminProfile.push(this.cartForm.value)
+    this.adminProfile.push(this.uid)
+    //items.forEach(item => {
+    //  this.adminProfile.push(items)
+    //});
+    this.adminProfile.push(firebase.database.ServerValue.TIMESTAMP)
   //User Stuff
     this.profile2.push(items).then(() => {
       const toast = this.toastCtrl.create({
@@ -216,16 +220,18 @@ export class CartPage {
     this.navCtrl.push(AfterCartPage, {
       param1: this.cartTotal
     });
-    this.afDb.list('/userProfile/' + this.uid + '/currentOrder/').remove();
-      }
-
-
-  completeOrderTest(items) {
-    this.adminProfile2.push(this.productForm.value)
+   //this.afDb.list('/userProfile/' + this.uid + '/currentOrder/').remove();
+      }//
+  //completeOrderTest(items) {
+    //this.adminProfile2.push(this.productForm.value)
     // items.forEach(item => {
     //   this.adminProfile2.push(this.productForm.value)
     // });
-  }
+  //}
+
+  completeOrderTest(items) {
+    this.adminProfile2.push(items);
+  }    
   
   
   private decrement() { //Here is where you need to do the wholesale option.

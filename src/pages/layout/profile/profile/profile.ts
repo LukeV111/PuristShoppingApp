@@ -5,6 +5,7 @@ import { AuthData } from '../../../../providers/auth-data';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdminOrdersPage } from '../../app2/admin-orders/admin-orders'
 
 
 import md5 from 'crypto-md5'; // dependencies:"crypto-md5"
@@ -98,6 +99,10 @@ export class ProfilePage {
       duration: 3000
     });
     toast.present();
+  }
+
+  toAdminOrders() {
+    this.navCtrl.push(AdminOrdersPage)
   }
 
 
