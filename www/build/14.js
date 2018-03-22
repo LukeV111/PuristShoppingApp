@@ -7,7 +7,7 @@ webpackJsonp([14],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Category2PageModule", function() { return Category2PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__category2__ = __webpack_require__(839);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__category2__ = __webpack_require__(840);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -43,7 +43,7 @@ var Category2PageModule = (function () {
 
 /***/ }),
 
-/***/ 839:
+/***/ 840:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -125,7 +125,7 @@ var Category2Page = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-category2',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/layout/app2/category2/category2.html"*/'<!--*********** Header ***********-->\n<ion-header no-border>\n    <ion-navbar color="black">\n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Purist Coffee</ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="openCart()">\n                <ion-icon name="cart"></ion-icon>\n                <ion-badge id="cart-badge" *ngIf="(profile | async)?.cartIcon" color="red">*</ion-badge>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <ion-card tappable *ngFor="let category of category" (click)="openList(category.$key)">\n        <div class="banner-bg" [ngStyle]="{\'background-image\': \'url(\' + category.imgBg+ \')\'}">\n            <h2 class="banner-title"> {{category.name}}</h2>\n            <p class="banner-description"> {{category.description}}</p>\n        </div>\n        <hr>\n    </ion-card>\n    <!--\n    <ion-fab right bottom>\n        <button ion-fab color="ios-orange"><ion-icon name="chatbubbles"></ion-icon></button>\n        <ion-fab-list side="left">\n            <button ion-fab><ion-icon name="call"></ion-icon></button>\n            <button ion-fab><ion-icon name="chatboxes"></ion-icon></button>\n            <button ion-fab><ion-icon name="images"></ion-icon></button>\n        </ion-fab-list>\n    </ion-fab>\n-->\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/layout/app2/category2/category2.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], Category2Page);
     return Category2Page;
 }());

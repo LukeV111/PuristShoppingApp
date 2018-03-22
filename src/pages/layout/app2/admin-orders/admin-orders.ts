@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AuthData } from '../../../../providers/auth-data';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuth } from 'angularfire2/auth';
 import firebase from 'firebase';
+import { OrderDetailsPage } from '../order-details/order-details'
 
 
 @IonicPage()
@@ -14,6 +15,7 @@ import firebase from 'firebase';
 export class AdminOrdersPage {
 
   itemId: any; 
+  item: any;
   email: any;
   profilePicture: any = "https://www.gravatar.com/avatar/"
   profileArray: any = [];
@@ -22,12 +24,12 @@ export class AdminOrdersPage {
   public customerOrders: Array<any> = [];
   public customerOrdersRef: firebase.database.Reference = firebase.database().ref('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/'); //Path to orders.
 
-
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public authData: AuthData,
     public afAuth: AngularFireAuth,
     public afDb: AngularFireDatabase,
+    public modalCtrl: ModalController
   ) {
     this.itemId = this.navParams.get('itemId');
   }
@@ -55,14 +57,24 @@ export class AdminOrdersPage {
 
     this.customerOrdersRef.on('value', itemSnapshot => {
       this.customerOrders = [];
-      itemSnapshot.forEach(itemSnap => {
-        let item = itemSnap.val();
-        item.key = itemSnap.key
+      itemSnapshot.forEach(customerOrder => {
+        let item = customerOrder.val();
+        item.key = customerOrder.key;
         this.customerOrders.push(item);
         return false;
       });
     });
 
   }
+  openOrderDetails(customerOrder) {
+    let myModal = this.modalCtrl.create(OrderDetailsPage, customerOrder);
+    myModal.present(customerOrder);
+  }
+
+
+  // openOrderDetails(customerOrder) {
+  //   this.navCtrl.push(OrderDetailsPage, customerOrder)
+  // }
+
   }
 

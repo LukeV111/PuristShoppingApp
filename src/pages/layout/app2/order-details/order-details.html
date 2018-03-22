@@ -1,0 +1,31 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Order Details</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="closeModal()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h2><u>Customer Details</u></h2>
+    <b>Customer Name: </b>{{ customerOrder.name }}<br><br>
+    <b>Deliver To: </b>{{ customerOrder.address }}<br><br>
+    <b>Collect at our offices?: </b>{{ customerOrder.collectionOption }}<br><br>
+    <b>Shipping Total:</b> {{ customerOrder.shippingTotal }}<br><br>
+    <b>Sub Total: </b>{{ customerOrder.subTotal }}<br><br>
+    <b>Grand Total: </b>{{ customerOrder.cartPrice }}<br><br>
+    <hr>
+    <h2><u>Ordered Items</u></h2>
+
+    <ion-list *ngFor="let item of specificOrder">
+        <ion-item>
+            {{ item.name }}
+        </ion-item>
+    </ion-list>
+</ion-content>

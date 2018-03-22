@@ -7,7 +7,7 @@ webpackJsonp([28],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputPageModule", function() { return InputPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__input__ = __webpack_require__(817);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__input__ = __webpack_require__(818);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var InputPageModule = (function () {
 
 /***/ }),
 
-/***/ 817:
+/***/ 818:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73,7 +73,7 @@ var InputPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-input',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/components/input/input.html"*/'<ion-header>\n  <ion-navbar  color="lightblue" >\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Input</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n\n<ion-list>\n  <ion-item>\n    <ion-label color="primary">Inline Label</ion-label>\n    <ion-input placeholder="Text Input"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label color="primary" fixed>Fixed Label</ion-label>\n    <ion-input type="tel" placeholder="Tel Input"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-input type="number" placeholder="Number Input with no label, ex: 092032333"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label color="primary" stacked>Stacked Label</ion-label>\n    <ion-input type="email" placeholder="Email Input"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label color="primary" stacked>Stacked Label</ion-label>\n    <ion-input type="password" placeholder="Password Input"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label color="primary" floating>Floating Label</ion-label>\n    <ion-input></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-input placeholder="Clear Input" clearInput></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-textarea placeholder="Textarea"></ion-textarea>\n  </ion-item>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/components/input/input.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]])
     ], InputPage);
     return InputPage;
 }());

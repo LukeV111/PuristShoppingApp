@@ -33,7 +33,7 @@ export class CartPage {
   profile2: FirebaseListObservable<any>;
   profile3: FirebaseObjectObservable<any>;
   profile4: FirebaseListObservable<any>;
-  adminProfile: FirebaseListObservable<any>;
+  adminProfile: FirebaseObjectObservable<any>;
   adminProfile2: FirebaseListObservable<any>;
   uid: any;
   userEmail: any;
@@ -78,7 +78,7 @@ export class CartPage {
       'address': [''],
       'collectionOption': ['No'],
       'name': [''],
-      'dateTime': [''],
+      'dateTime': [this.dateTime],
     });    
   
     this.productForm = fb.group({
@@ -107,8 +107,8 @@ export class CartPage {
 
         this.profile2 = this.afDb.list('/userProfile/' + this.uid + '/completedOrders/');
         this.profile4 = this.afDb.list('/userProfile/' + this.uid + '/cartAmounts/');
-        this.adminProfile = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/' + this.dateTime)
-        this.adminProfile2 = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/')
+        this.adminProfile = this.afDb.object('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/' + this.dateTime)
+        this.adminProfile2 = this.afDb.list('/userProfile/icfbF0f63QV8bjJUYKwnOwYPCMf2/placedOrders/' + this.dateTime)
 
 
         this.afDb.list('/userProfile/' + this.uid + '/currentOrder', {
@@ -198,13 +198,14 @@ export class CartPage {
 
   completeOrder(items) {
     //Admin Stuff
-    this.adminProfile.push(items)
-    this.adminProfile.push(this.cartForm.value)
-    this.adminProfile.push(this.uid)
+    this.adminProfile.update(items)
+    this.adminProfile.update(this.cartForm.value)
+    this.adminProfile2.push(this.uid)
     //items.forEach(item => {
     //  this.adminProfile.push(items)
     //});
-    this.adminProfile.push(firebase.database.ServerValue.TIMESTAMP)
+    //this.adminProfile.push(firebase.database.ServerValue.TIMESTAMP)
+    this.adminProfile2.push(this.dateTime)
   //User Stuff
     this.profile2.push(items).then(() => {
       const toast = this.toastCtrl.create({
@@ -220,7 +221,7 @@ export class CartPage {
     this.navCtrl.push(AfterCartPage, {
       param1: this.cartTotal
     });
-   //this.afDb.list('/userProfile/' + this.uid + '/currentOrder/').remove();
+   this.afDb.list('/userProfile/' + this.uid + '/currentOrder/').remove();
       }//
   //completeOrderTest(items) {
     //this.adminProfile2.push(this.productForm.value)

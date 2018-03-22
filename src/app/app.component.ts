@@ -51,7 +51,6 @@ export class MyApp {
               //{name:'Profile2',component: 'Profile2Page'},
               //{name:'Profile3',component: 'Profile3Page'},
               //{name:'Profile4', component: 'Profile4Page'},
-              //{name:'Radio player',component:'RadioListPage'},
 
            // { name:'Search Products',component:'SearchPage'}, // Use this to search for products later on!
               //{name:'Timeline',component: 'TimelinePage'}
@@ -81,7 +80,6 @@ export class MyApp {
                 {name:'Item',component:'ItemPage'},
                 {name:'Item sliding',component:'ItemSlidingPage'},
                 {name:'Label',component:'LabelPage'},
-                {name:'Radio button',component:'RadioButtonPage'},
                 {name:'Rating',component:'RatingPage'},
                 
                 {name:'Range',component:'RangePage'},

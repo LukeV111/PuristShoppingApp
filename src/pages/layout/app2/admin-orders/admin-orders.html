@@ -10,9 +10,13 @@
 <ion-content padding>
 
     <ion-list>
-        <ion-item *ngFor="let customerOrder of customerOrders">
-            <b>Order:</b> {{ customerOrder.key }}
+        <ion-item tappable *ngFor="let customerOrder of customerOrders" (click)="openOrderDetails(customerOrder)">
+            <b>Order:</b> {{ customerOrder.key }}<br>
+            <b>By:</b> {{ customerOrder.name }}
         </ion-item>
     </ion-list>
+
+    <!-- <button ion-button block (click)="openOrderDetails()">Open Details</button> -->
+
 
 </ion-content>

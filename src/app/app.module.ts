@@ -25,7 +25,6 @@ import { GooglePlus } from '@ionic-native/google-plus';
 
 //*********** Provider **************/
 import { AuthData } from '../providers/auth-data';
-import { RadioPlayer } from '../providers/radio-service';
 
 //************** import image gallery *********************//
 
@@ -34,6 +33,7 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { AfterCartPage } from '../../src/pages/layout/app2/after-cart/after-cart'
 import { AdminOrdersPage } from '../../src/pages/layout/app2/admin-orders/admin-orders'
+import { OrderDetailsPage } from '../../src/pages/layout/app2/order-details/order-details'
 
 
 //********** firebase configuration  ************ */
@@ -61,6 +61,7 @@ export const config2 = {
     MyApp,
     AfterCartPage,
     AdminOrdersPage,
+    OrderDetailsPage,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +77,7 @@ export const config2 = {
     MyApp,
     AfterCartPage,
     AdminOrdersPage,
+    OrderDetailsPage,
   ],
   providers: [
     InAppBrowser,
@@ -89,7 +91,6 @@ export const config2 = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthData,
     Facebook,
-    RadioPlayer,
     Facebook,
     GooglePlus
   ]

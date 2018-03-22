@@ -1,13 +1,13 @@
 webpackJsonp([7],{
 
-/***/ 524:
+/***/ 525:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Profile2PageModule", function() { return Profile2PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profile2__ = __webpack_require__(850);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profile2__ = __webpack_require__(851);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var Profile2PageModule = (function () {
 
 /***/ }),
 
-/***/ 850:
+/***/ 851:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -112,7 +112,7 @@ var Profile2Page = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-profile2',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/layout/profile/profile2/profile2.html"*/'<ion-header no-border>\n    <ion-navbar transparent>\n        <button ion-button menuToggle>\n          <ion-icon name="menu" color="light"  [hidden]="showToolbar"></ion-icon>\n        </button>\n        <ion-title color="light" [hidden]="showToolbar">Detail</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content no-padding class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n\n    <div class="profile-header" [ngStyle]="{\'background-image\': \'url(\' + (profile2 | async)?.imgCover + \')\'}"></div>\n    <div class="profile">\n        <div class="profile-box">\n            <ion-img class="profile-image" src="{{(profile2 | async)?.imgProfile}}"></ion-img>\n            <h3 id="profile2-name" padding-top>{{(profile2 | async)?.name}}</h3>\n            <button ion-button *ngIf="!following" block color="green" (click)="follow()">Follow</button>\n            <button ion-button icon-left *ngIf="following" block color="gray" (click)="follow()">\n            <ion-icon name="checkmark"></ion-icon>\n            Following\n          </button>\n\n            <ion-list no-lines padding-top>\n                <ion-item class="icon-align">\n                    <ion-icon name="md-cafe" item-left></ion-icon>\n                    <h2>Opening time</h2>\n                    <div [innerHTML]="(profile2 | async)?.openingTime" class="opening-time"></div>\n                </ion-item>\n                <ion-item class="icon-align" text-wrap>\n                    <ion-icon name="ios-pin" item-left></ion-icon>\n                    <h2>About</h2>\n                    <p>{{(profile2 | async)?.aboutMe}}</p>\n                </ion-item>\n                <ion-item class="icon-align">\n                    <ion-icon name="ios-call" item-left></ion-icon>\n                    <h2>{{(profile2 | async)?.phone}}</h2>\n                    <p>Contact</p>\n                </ion-item>\n                <ion-item class="icon-align">\n                    <ion-icon name="logo-facebook" item-left></ion-icon>\n                    <h2>facebook.com/starbuck</h2>\n                    <p>facebook</p>\n                </ion-item>\n                <ion-item class="icon-align">\n                    <ion-icon name="logo-skype" item-left></ion-icon>\n                    <h2>starbuck@outlook.com</h2>\n                    <p>skype</p>\n                </ion-item>\n            </ion-list>\n\n        </div>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/layout/profile/profile2/profile2.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database_deprecated__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]])
     ], Profile2Page);
     return Profile2Page;
 }());

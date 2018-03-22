@@ -7,7 +7,7 @@ webpackJsonp([15],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransparentHeaderPageModule", function() { return TransparentHeaderPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transparent_header__ = __webpack_require__(836);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transparent_header__ = __webpack_require__(837);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var TransparentHeaderPageModule = (function () {
 
 /***/ }),
 
-/***/ 836:
+/***/ 837:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73,7 +73,7 @@ var TransparentHeaderPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-transparent-header',template:/*ion-inline-start:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/components/transparent-header/transparent-header.html"*/'<ion-header no-border>\n  <ion-navbar transparent>\n    <button ion-button menuToggle>\n      <ion-icon name="menu" color="light"></ion-icon>\n    </button>\n    <ion-title color="light">Transparent header</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content fullscreen>\n\n  <ion-card color="lightblue">\n    <ion-card-header>\n      Card header\n    </ion-card-header>\n    <ion-card-content>\n      <ion-card-title>\n        Title\n      </ion-card-title>\n      Some normal text in content.\n      <h3>h3 in content</h3>\n      <p>\n        Paragraph in content.\n      </p>\n      <p>\n        Another paragraph in content.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card color="lightblue">\n    <ion-card-header>\n      Card header\n    </ion-card-header>\n    <ion-card-content>\n      <ion-card-title>\n        Title\n      </ion-card-title>\n      Some normal text in content.\n      <h3>h3 in content</h3>\n      <p>\n        Paragraph in content.\n      </p>\n      <p>\n        Another paragraph in content.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card color="lightblue">\n    <ion-card-header>\n      Card header\n    </ion-card-header>\n    <ion-card-content>\n      <ion-card-title>\n        Title\n      </ion-card-title>\n      Some normal text in content.\n      <h3>h3 in content</h3>\n      <p>\n        Paragraph in content.\n      </p>\n      <p>\n        Another paragraph in content.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card color="lightblue">\n    <ion-card-header>\n      Card header\n    </ion-card-header>\n    <ion-card-content>\n      <ion-card-title>\n        Title\n      </ion-card-title>\n      Some normal text in content.\n      <h3>h3 in content</h3>\n      <p>\n        Paragraph in content.\n      </p>\n      <p>\n        Another paragraph in content.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"/Users/LukeVenter/Desktop/PuristShoppingApp/src/pages/components/transparent-header/transparent-header.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]])
     ], TransparentHeaderPage);
     return TransparentHeaderPage;
 }());

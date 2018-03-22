@@ -1,14 +1,14 @@
 webpackJsonp([41],{
 
-/***/ 511:
+/***/ 512:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminOrdersPageModule", function() { return AdminOrdersPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AfterCartPageModule", function() { return AfterCartPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_orders__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__after_cart__ = __webpack_require__(304);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdminOrdersPageModule = (function () {
-    function AdminOrdersPageModule() {
+var AfterCartPageModule = (function () {
+    function AfterCartPageModule() {
     }
-    AdminOrdersPageModule = __decorate([
+    AfterCartPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__admin_orders__["a" /* AdminOrdersPage */],
+                __WEBPACK_IMPORTED_MODULE_2__after_cart__["a" /* AfterCartPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__admin_orders__["a" /* AdminOrdersPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__after_cart__["a" /* AfterCartPage */]),
             ],
         })
-    ], AdminOrdersPageModule);
-    return AdminOrdersPageModule;
+    ], AfterCartPageModule);
+    return AfterCartPageModule;
 }());
 
-//# sourceMappingURL=admin-orders.module.js.map
+//# sourceMappingURL=after-cart.module.js.map
 
 /***/ })
 

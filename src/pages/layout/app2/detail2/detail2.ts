@@ -50,23 +50,23 @@ export class Detail2Page {
   constructor(public navCtrl: NavController, public navParams: NavParams, public fb: FormBuilder, public loadingCtrl: LoadingController, public afDb: AngularFireDatabase, public afAuth: AngularFireAuth, private toastCtrl: ToastController, public authData: AuthData) {
     this.userProfile = afDb.list('/userProfile/');
       this.orderForm = fb.group({
-        'name': [''],
-        'price': [''],
+        'name': [],
+        'price': [],
         'grindType': ['Whole Beans'],
         'bagSize': ['1kg'],
         'Quantity': ['1'],
         'coffeeIndicator': ['true'],
-        'item': [''],
-        'coffee': [''],
-        'singleOrigin': [''],
-        'decaf': [''],
-        'retailOne': [''],
-        'wholesaleOne': [''],
-        'twofifty': [''],
+        'item': [],
+        'coffee': [],
+        'singleOrigin': [],
+        'decaf': [],
+        'retailOne': [],
+        'wholesaleOne': [],
+        'twofifty': [],
         'dripFilterCoffee': ['Estandar'],
-        'dripFilterCustom': [''],
+        'dripFilterCustom': [],
         'emptyDripFilters': ['Pack of 25'],
-        'emptyDripFiltersCustom': [''],
+        'emptyDripFiltersCustom': [],
     });    
       this.itemId = this.navParams.get('itemId');
       console.log("Test");
